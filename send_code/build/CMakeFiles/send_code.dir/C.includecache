@@ -1379,8 +1379,6 @@ h264_send.h
 /home/linux/srx/send_code/src/h264_send.h
 time_send.h
 /home/linux/srx/send_code/src/time_send.h
-stdio.h
--
 
 /home/linux/srx/send_code/src/time_src/time_send.c
 ../../inc/time_inc/time_send.h

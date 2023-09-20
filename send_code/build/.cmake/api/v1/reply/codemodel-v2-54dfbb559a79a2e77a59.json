@@ -48,7 +48,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/linux/srx/build",
+		"build" : "/home/linux/srx/send_code/build",
 		"source" : "/home/linux/srx/send_code"
 	},
 	"version" : 
