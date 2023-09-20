@@ -1,22 +1,23 @@
-#include <arpa/inet.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <sys/socket.h>
-#include <sys/time.h>
-#include <unistd.h>
+#include "cmd_send.h"
+#include "h264_send.h"
+#include "time_send.h"
 
-// 发送H264码流函数
-
-// 广播授时
-
-// 单播网络延时校正
-
-
-int main(int argc,const char * argv[])
+int main(int argc, char** argv)
 {
+    if (send_time() < 0) {
+        printf("send_time error\n");
+        return -1;
+    }
 
-	
+    if (send_cmd() < 0) {
+        printf("send_cmd error\n");
+        return -1;
+    }
 
-	return 0;
+    if (send_h264(argc, argv) < 0) {
+        printf("send_h264 error\n");
+        return -1;
+    }
+
+    return 0;
 }

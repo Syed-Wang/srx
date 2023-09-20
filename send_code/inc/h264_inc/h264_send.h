@@ -7,8 +7,13 @@
 #include "mpp_enc_roi_utils.h"
 #include "mpp_env.h"
 #include "mpp_mem.h"
+#include "mpp_time.h"
 #include "rk_mpi.h"
 #include "utils.h"
+
+#define PORT "8113" // H264端口
+#define GROUP_IP "224.100.200.1" // 组播地址
+#define RET_LEN 1400 // 接收缓冲区大小
 
 // 测试多路编码参数
 typedef struct
@@ -136,7 +141,7 @@ typedef struct _RTP_FIXED_HEADER {
     unsigned int timestamp;
     /**/ /* bytes 8-11 */
     unsigned int ssrc; /**/ /* stream number is used here. */
-} _RTP_FIXED_HEADER;
+} RTP_FIXED_HEADER;
 
 // NALU头 (NALU: Network Abstraction Layer Unit)
 typedef struct _NALU_HEADER {
@@ -212,6 +217,6 @@ int enc_test_multi(MpiEncTestArgs* cmd, const char* name);
  * @param argv 参数列表
  * @return int 返回值 0-成功 -1-失败
  */
-int h264_send(int argc, char* argv[]);
+int send_h264(int argc, char** argv);
 
 #endif // __H264_SEND_H__

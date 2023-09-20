@@ -1,0 +1,3 @@
+/home/linux/srx/send_code/build/CMakeFiles/rebuild_cache.dir
+/home/linux/srx/send_code/build/CMakeFiles/edit_cache.dir
+/home/linux/srx/send_code/build/CMakeFiles/send_code.dir

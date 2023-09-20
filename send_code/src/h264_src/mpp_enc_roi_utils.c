@@ -19,7 +19,6 @@
 #include <string.h>
 
 #include "rk_type.h"
-
 #include "mpp_env.h"
 #include "mpp_mem.h"
 #include "mpp_soc.h"

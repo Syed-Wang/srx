@@ -1,0 +1,281 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "/home/linux/srx/send_code/bin/send_code"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"link_directories",
+			"add_compile_options",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 143,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 102,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 118,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 75,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : " -ldrm -lrockchip_mpp -lpthread -pie -fPIE -lc -ldl -lm  -g  "
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-fPIC"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 4,
+					"path" : "/home/linux/srx/send_code"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/linux/srx/send_code/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/usr/local/AID"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/build/libdrm-2.4.109/include/drm"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/build/libdrm-2.4.109"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/rockchip"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/build/rockchip-mpp-develop/osal/inc"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/build/rockchip-mpp-develop/utils"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/build/rockchip-mpp-develop/inc"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/build/rockchip-mpp-develop/mpp/base/inc"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/linux/srx/send_code/inc/cmd_inc"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/linux/srx/send_code/inc/h264_inc"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/linux/srx/send_code/inc/time_inc"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/linux/rk356x_linux_230210/external/mpp/inc"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/linux/rk356x_linux_230210/external/mpp/utils"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/linux/rk356x_linux_230210/external/mpp/osal/inc"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/linux/rk356x_linux_230210/external/mpp/mpp/inc"
+				}
+			],
+			"language" : "C",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10
+			]
+		}
+	],
+	"id" : "send_code::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-ldrm -lrockchip_mpp -lpthread -pie -fPIE -lc -ldl -lm  -g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-rdynamic",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-L/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-L/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/lib64",
+				"role" : "libraryPath"
+			}
+		],
+		"language" : "C"
+	},
+	"name" : "send_code",
+	"nameOnDisk" : "send_code",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/cmd_src/cmd_send.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/h264_src/camera_source.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/h264_src/dictionary.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/h264_src/h264_send.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/h264_src/iniparser.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/h264_src/mpi_enc_utils.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/h264_src/mpp_enc_roi_utils.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/h264_src/mpp_opt.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/h264_src/utils.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/time_src/time_send.c",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}
