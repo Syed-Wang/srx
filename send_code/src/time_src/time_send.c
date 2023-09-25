@@ -1,4 +1,4 @@
-#include "../../inc/time_inc/time_send.h"
+#include "time_send.h"
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <netinet/ip.h>
@@ -54,6 +54,7 @@ int send_time()
             perror("sendto time error");
             return -1;
         }
+        printf("---------------time_end---------------\n");
         sleep(1); // 1s
     }
 

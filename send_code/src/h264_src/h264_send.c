@@ -1,4 +1,4 @@
-#include "../../inc/h264_inc/h264_send.h"
+#include "h264_send.h"
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <netinet/ip.h>
@@ -397,7 +397,7 @@ MPP_RET send_data_to_udp(char* ptr, size_t len)
     // 2. 设置组播属性
     struct sockaddr_in addr;
     addr.sin_family = AF_INET;
-    addr.sin_port = htons(atoi(PORT));
+    addr.sin_port = htons(atoi(H264_PORT));
     addr.sin_addr.s_addr = inet_addr(GROUP_IP);
 
     // 3. 发送数据
@@ -747,6 +747,7 @@ MPP_RET test_mpp_run(MpiEncMultiCtxInfo* info)
                             }
                         }
                     }
+                    printf("---------------h264_end---------------\n");
                 }
 
                 if (p->fp_verify && !p->pkt_eos) {

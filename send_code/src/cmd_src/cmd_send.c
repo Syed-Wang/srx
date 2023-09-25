@@ -1,4 +1,4 @@
-#include "../../inc/cmd_inc/cmd_send.h"
+#include "cmd_send.h"
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <netinet/ip.h>
@@ -32,6 +32,10 @@ int send_cmd()
     struct timeval tv;
     unsigned long long detect_time, ack_time, gap; // 探测时间，应答时间，时间差
     char buf[128]; // 接收缓冲区
+    char ip_addr[100][16]; // 记录网络中所有节点的 IP 地址，100 个节点
+    memset(ip_addr, 0, sizeof(ip_addr)); // 初始化
+    memcpy(ip_addr[0], "192.168.0.180", 16); // 本机IP
+
     while (1) {
         // 探测时间
         gettimeofday(&tv, NULL);
@@ -59,16 +63,18 @@ int send_cmd()
         printf("gap: %llu\n", gap);
 
         // 设置时间差
-        sprintf(buf, CMD_SET_TIME_GAP(% llu), gap);
+        // sprintf(buf, CMD_SET_TIME_GAP(% llu), gap);
+        sprintf(buf, "/setTimeGap:d,%llu;", gap);
         ret = sendto(cmd_socketfd, buf, strlen(buf), 0, (struct sockaddr*)&cmd_addr, sizeof(cmd_addr));
         if (ret < 0) {
             perror("sendto set time gap error");
             return -1;
         }
         printf("send_gap: %s\n", buf); // 打印发送的数据包
-        printf("------------------------------\n");
+        printf("---------------cmd_end---------------\n");
 
-        sleep(1); // 1s
+        // 休眠 0.02s
+        usleep(20000);
     }
 
     // 关闭套接字

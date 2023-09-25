@@ -40,7 +40,7 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pie -fPIE -lc -ldl -lm ")
 #出现error的原因是C++设计的比C更加安全，它不能自动的将void *转换为其它指针类型,解决方法：CFLAGS = -fpermissive
 # set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -g ")
 #包含c++11特性
-#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g -Wall -g   -fpermissive  ")
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g -Wall -g   -fpermissive  ")
 
 # compiler/linker flags
 # set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --sysroot=${MYSYSROOT}" CACHE INTERNAL "" FORCE)
@@ -66,7 +66,7 @@ set(PROJECT_BINARY_DIR ${PROJECT_SOURCE_DIR}/build)
 #add_subdirectory(${PROJECT_SOURCE_DIR}/utils) #need Cmakelist.txt
 #查找当前目录下的所有源文件，并将名称保存到DIR_LIB_SRCS目录
 # aux_source_directory(${PROJECT_SOURCE_DIR}/src/ DIR_LIB_SRCS)
-file(GLOB_RECURSE DIR_LIB_SRCS main.c ${PROJECT_SOURCE_DIR}/src/***/**.c)
+file(GLOB_RECURSE DIR_LIB_SRCS ${PROJECT_SOURCE_DIR}/src/main.c ${PROJECT_SOURCE_DIR}/src/**/*.c)
 
 # 指定头文件路径
 set(INCLUDE_PATH /home/linux/rk356x_linux_230210/external/mpp)

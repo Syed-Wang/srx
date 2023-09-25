@@ -13,4 +13,6 @@ typedef struct {
     unsigned long long time; // 本机系统时间(us)
 } time_packet_t;
 
+int send_time();
+
 #endif // __TIME_SEND_H__

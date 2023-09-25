@@ -11,7 +11,7 @@
 #include "rk_mpi.h"
 #include "utils.h"
 
-#define PORT "8113" // H264端口
+#define H264_PORT "8113" // H264端口
 #define GROUP_IP "224.100.200.1" // 组播地址
 #define RET_LEN 1400 // 接收缓冲区大小
 
@@ -209,6 +209,15 @@ void* enc_test(void* arg);
  * @return int 返回值 0-成功 -1-失败
  */
 int enc_test_multi(MpiEncTestArgs* cmd, const char* name);
+
+/**
+ * @brief 发送数据到UDP
+ *
+ * @param ptr 数据指针
+ * @param len 数据长度
+ * @return MPP_RET
+ */
+MPP_RET send_data_to_udp(char* ptr, size_t len);
 
 /**
  * @brief 发送H264码流

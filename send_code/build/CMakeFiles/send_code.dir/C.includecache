@@ -1180,33 +1180,9 @@ bits/unistd.h
 bits/unistd_ext.h
 -
 
-/home/linux/srx/send_code/inc/cmd_inc/cmd_send.h
-
-/home/linux/srx/send_code/inc/h264_inc/h264_send.h
-camera_source.h
-/home/linux/srx/send_code/inc/h264_inc/camera_source.h
-mpi_enc_utils.h
-/home/linux/srx/send_code/inc/h264_inc/mpi_enc_utils.h
-mpp_common.h
-/home/linux/srx/send_code/inc/h264_inc/mpp_common.h
-mpp_enc_roi_utils.h
-/home/linux/srx/send_code/inc/h264_inc/mpp_enc_roi_utils.h
-mpp_env.h
-/home/linux/srx/send_code/inc/h264_inc/mpp_env.h
-mpp_mem.h
-/home/linux/srx/send_code/inc/h264_inc/mpp_mem.h
-mpp_time.h
-/home/linux/srx/send_code/inc/h264_inc/mpp_time.h
-rk_mpi.h
-/home/linux/srx/send_code/inc/h264_inc/rk_mpi.h
-utils.h
-/home/linux/srx/send_code/inc/h264_inc/utils.h
-
-/home/linux/srx/send_code/inc/time_inc/time_send.h
-
 /home/linux/srx/send_code/src/cmd_src/cmd_send.c
-../../inc/cmd_inc/cmd_send.h
-/home/linux/srx/send_code/inc/cmd_inc/cmd_send.h
+cmd_send.h
+/home/linux/srx/send_code/src/cmd_src/cmd_send.h
 arpa/inet.h
 -
 netinet/in.h
@@ -1271,8 +1247,8 @@ unistd.h
 -
 
 /home/linux/srx/send_code/src/h264_src/h264_send.c
-../../inc/h264_inc/h264_send.h
-/home/linux/srx/send_code/inc/h264_inc/h264_send.h
+h264_send.h
+/home/linux/srx/send_code/src/h264_src/h264_send.h
 arpa/inet.h
 -
 netinet/in.h
@@ -1379,10 +1355,16 @@ h264_send.h
 /home/linux/srx/send_code/src/h264_send.h
 time_send.h
 /home/linux/srx/send_code/src/time_send.h
+pthread.h
+-
+stdio.h
+-
+stdlib.h
+-
 
 /home/linux/srx/send_code/src/time_src/time_send.c
-../../inc/time_inc/time_send.h
-/home/linux/srx/send_code/inc/time_inc/time_send.h
+time_send.h
+/home/linux/srx/send_code/src/time_src/time_send.h
 arpa/inet.h
 -
 netinet/in.h
