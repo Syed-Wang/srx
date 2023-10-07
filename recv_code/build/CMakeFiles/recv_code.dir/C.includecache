@@ -63,6 +63,8 @@ stdio.h
 -
 stdlib.h
 -
+string.h
+-
 
 /home/linux/srx/recv_code/src/time_recv.c
 time_recv.h
@@ -71,13 +73,25 @@ tool.h
 /home/linux/srx/recv_code/src/tool.h
 arpa/inet.h
 -
+errno.h
+-
+netinet/ip.h
+-
 stdio.h
 -
 stdlib.h
 -
+string.h
+-
 sys/socket.h
 -
+sys/time.h
+-
+sys/types.h
+-
 unistd.h
+-
+pthread.h
 -
 
 /home/linux/srx/recv_code/utils/tool.c
@@ -92,6 +106,8 @@ stdlib.h
 string.h
 -
 sys/socket.h
+-
+sys/time.h
 -
 
 /home/linux/srx/recv_code/utils/tool.h

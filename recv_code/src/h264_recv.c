@@ -14,7 +14,18 @@ int recv_h264()
         return -1;
     }
     struct sockaddr_in h264_addr; // H264地址
-    set_bind_addr(h264_socketfd, &h264_addr, INADDR_ANY, H264_PORT);
+
+    // 设置端口复用
+    int opt = 1; // 端口复用标志
+    if (setsockopt(h264_socketfd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt)) < 0) {
+        perror("setsockopt error");
+        return -1;
+    }
+
+    if (set_bind_addr(h264_socketfd, &h264_addr, INADDR_ANY, H264_PORT) < 0) {
+        printf("set_bind_addr error");
+        return -1;
+    }
     // 设置组播属性
     struct ip_mreqn group;
     memset(&group, 0, sizeof(group));

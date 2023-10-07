@@ -9,12 +9,16 @@
 #include <sys/time.h>
 #include <sys/types.h>
 #include <unistd.h>
+#include "tool.h"
 
-int send_cmd()
+int device_num = 0; // 初始 0 个设备就绪
+
+int send_cmd(const char* recv_addr)
 {
     int cmd_socketfd; // 指令套接字
     struct sockaddr_in cmd_addr; // 指令地址
     int ret;
+    int flag = 1;
 
     // 创建套接字
     cmd_socketfd = socket(AF_INET, SOCK_DGRAM, 0); // UDP
@@ -27,14 +31,14 @@ int send_cmd()
     memset(&cmd_addr, 0, sizeof(cmd_addr));
     cmd_addr.sin_family = AF_INET;
     cmd_addr.sin_port = htons(atoi(CMD_PORT));
-    cmd_addr.sin_addr.s_addr = inet_addr(UNICAST_IP);
+    cmd_addr.sin_addr.s_addr = inet_addr(recv_addr);
 
     struct timeval tv;
     unsigned long long detect_time, ack_time, gap; // 探测时间，应答时间，时间差
     char buf[128]; // 接收缓冲区
-    char ip_addr[100][16]; // 记录网络中所有节点的 IP 地址，100 个节点
-    memset(ip_addr, 0, sizeof(ip_addr)); // 初始化
-    memcpy(ip_addr[0], "192.168.0.180", 16); // 本机IP
+
+    struct sockaddr_in addr; // 接收地址
+    socklen_t addrlen = sizeof(addr); // 接收地址长度
 
     while (1) {
         // 探测时间
@@ -48,11 +52,23 @@ int send_cmd()
         printf("send_detect: %s, time: %llu\n", CMD_DETECT_TIME_GAP, detect_time); // 打印发送的数据包
 
         // 接收
-        ret = recvfrom(cmd_socketfd, buf, sizeof(buf), 0, NULL, NULL);
-        if (ret < 0) {
-            perror("recvfrom error");
-            return -1;
+        // ret = recvfrom(cmd_socketfd, buf, sizeof(buf), 0, NULL, NULL);
+        {
+            memset(buf, 0, sizeof(buf));
+            ret = recvfrom(cmd_socketfd, buf, sizeof(buf), 0, (struct sockaddr*)&addr, &addrlen);
+            if (ret < 0) {
+                perror("recvfrom error");
+                return -1;
+            }
         }
+        while (strcmp(inet_ntoa(addr.sin_addr), recv_addr) != 0)
+            ; // 接收到的数据包不是从指定地址发来的，继续接收
+
+        if (flag) {
+            device_num++;
+            flag = 0;
+        }
+
         buf[ret] = '\0';
         gettimeofday(&tv, NULL);
         ack_time = tv.tv_sec * 1000000 + tv.tv_usec; // us
@@ -81,4 +97,79 @@ int send_cmd()
     close(cmd_socketfd);
 
     return 0;
+}
+
+int send_cmd_broadcast(const char* cmd)
+{
+    int cmd_socketfd; // 指令套接字
+    struct sockaddr_in cmd_addr; // 指令地址
+    int broadcast = 1; // 广播标志
+    int ret;
+
+    // 创建套接字
+    cmd_socketfd = socket(AF_INET, SOCK_DGRAM, 0); // UDP
+    if (cmd_socketfd < 0) {
+        perror("socket cmd error");
+        return -1;
+    }
+
+    // 设置套接字选项
+    ret = setsockopt(cmd_socketfd, SOL_SOCKET, SO_BROADCAST, &broadcast, sizeof(broadcast)); // 广播
+    if (ret < 0) {
+        perror("setsockopt cmd error");
+        return -1;
+    }
+
+    // 设置地址
+    memset(&cmd_addr, 0, sizeof(cmd_addr));
+    cmd_addr.sin_family = AF_INET;
+    cmd_addr.sin_port = htons(atoi(CMD_PORT));
+    cmd_addr.sin_addr.s_addr = htonl(INADDR_BROADCAST);
+
+    // 发送指令
+    ret = sendto(cmd_socketfd, cmd, strlen(cmd), 0, (struct sockaddr*)&cmd_addr, sizeof(cmd_addr)); // 广播
+    if (ret < 0) {
+        perror("sendto cmd error");
+        return -1;
+    }
+    printf("send_cmd: %s\n", cmd); // 打印发送的数据包
+
+    // 关闭套接字
+    close(cmd_socketfd);
+
+    return 0;
+}
+
+char cmd_buf[128]; // 存放接收的指令
+char* recv_cmd_broadcast()
+{
+    int cmd_socketfd = socket(AF_INET, SOCK_DGRAM, 0);
+    if (cmd_socketfd < 0) {
+        perror("socket cmd error");
+        return NULL;
+    }
+    struct sockaddr_in cmd_addr; // 指令地址
+
+    // 设置端口复用
+    int opt = 1;
+    if (setsockopt(cmd_socketfd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt)) < 0) {
+        perror("setsockopt time error");
+        return NULL;
+    }
+
+    set_bind_addr(cmd_socketfd, &cmd_addr, INADDR_BROADCAST, CMD_PORT);
+
+    memset(cmd_buf, 0, sizeof(cmd_buf));
+
+    // 接收命令
+    if (recvfrom(cmd_socketfd, cmd_buf, sizeof(cmd_buf), 0, NULL, NULL) < 0) {
+        perror("recvfrom cmd error");
+        return NULL;
+    }
+    DEBUG_PRINT("recv_cmd: %s\n", cmd_buf);
+
+    // 关闭套接字
+    close(cmd_socketfd);
+
+    return cmd_buf;
 }

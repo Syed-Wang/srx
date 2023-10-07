@@ -4,6 +4,7 @@
 #include <stdlib.h> // atoi
 #include <string.h> // memset
 #include <sys/socket.h> // socket bind
+#include <sys/time.h> // gettimeofday
 
 int set_bind_addr(int socketfd, struct sockaddr_in* addr, unsigned int ip, const char* port)
 {
@@ -20,4 +21,11 @@ int set_bind_addr(int socketfd, struct sockaddr_in* addr, unsigned int ip, const
         return -1;
     }
     return ret;
+}
+
+unsigned long long get_time_us()
+{
+    struct timeval tv;
+    gettimeofday(&tv, NULL);
+    return tv.tv_sec * 1000000 + tv.tv_usec; // us
 }

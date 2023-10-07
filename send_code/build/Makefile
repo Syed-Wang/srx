@@ -420,6 +420,33 @@ src/time_src/time_send.c.s:
 	$(MAKE) -f CMakeFiles/send_code.dir/build.make CMakeFiles/send_code.dir/src/time_src/time_send.c.s
 .PHONY : src/time_src/time_send.c.s
 
+utils/tool.o: utils/tool.c.o
+
+.PHONY : utils/tool.o
+
+# target to build an object file
+utils/tool.c.o:
+	$(MAKE) -f CMakeFiles/send_code.dir/build.make CMakeFiles/send_code.dir/utils/tool.c.o
+.PHONY : utils/tool.c.o
+
+utils/tool.i: utils/tool.c.i
+
+.PHONY : utils/tool.i
+
+# target to preprocess a source file
+utils/tool.c.i:
+	$(MAKE) -f CMakeFiles/send_code.dir/build.make CMakeFiles/send_code.dir/utils/tool.c.i
+.PHONY : utils/tool.c.i
+
+utils/tool.s: utils/tool.c.s
+
+.PHONY : utils/tool.s
+
+# target to generate assembly for a file
+utils/tool.c.s:
+	$(MAKE) -f CMakeFiles/send_code.dir/build.make CMakeFiles/send_code.dir/utils/tool.c.s
+.PHONY : utils/tool.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -462,6 +489,9 @@ help:
 	@echo "... src/time_src/time_send.o"
 	@echo "... src/time_src/time_send.i"
 	@echo "... src/time_src/time_send.s"
+	@echo "... utils/tool.o"
+	@echo "... utils/tool.i"
+	@echo "... utils/tool.s"
 .PHONY : help
 
 

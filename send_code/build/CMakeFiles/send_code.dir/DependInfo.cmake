@@ -15,6 +15,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/linux/srx/send_code/src/h264_src/utils.c" "/home/linux/srx/send_code/build/CMakeFiles/send_code.dir/src/h264_src/utils.c.o"
   "/home/linux/srx/send_code/src/main.c" "/home/linux/srx/send_code/build/CMakeFiles/send_code.dir/src/main.c.o"
   "/home/linux/srx/send_code/src/time_src/time_send.c" "/home/linux/srx/send_code/build/CMakeFiles/send_code.dir/src/time_src/time_send.c.o"
+  "/home/linux/srx/send_code/utils/tool.c" "/home/linux/srx/send_code/build/CMakeFiles/send_code.dir/utils/tool.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -38,6 +39,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "/home/linux/rk356x_linux_230210/external/mpp/utils"
   "/home/linux/rk356x_linux_230210/external/mpp/osal/inc"
   "/home/linux/rk356x_linux_230210/external/mpp/mpp/inc"
+  "../utils"
   )
 
 # Targets to which this target links.

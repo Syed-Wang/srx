@@ -12,6 +12,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/send_code.dir/src/h264_src/utils.c.o"
   "CMakeFiles/send_code.dir/src/main.c.o"
   "CMakeFiles/send_code.dir/src/time_src/time_send.c.o"
+  "CMakeFiles/send_code.dir/utils/tool.c.o"
 )
 
 # Per-language clean rules from dependency scanning.

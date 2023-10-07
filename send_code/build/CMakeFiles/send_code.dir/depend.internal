@@ -3,6 +3,7 @@
 
 CMakeFiles/send_code.dir/src/cmd_src/cmd_send.c.o
  ../inc/cmd_inc/cmd_send.h
+ ../utils/tool.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/alloca.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/arpa/inet.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/asm-generic/socket.h
@@ -1158,18 +1159,24 @@ CMakeFiles/send_code.dir/src/main.c.o
  /home/linux/srx/send_code/src/main.c
 CMakeFiles/send_code.dir/src/time_src/time_send.c.o
  ../inc/time_inc/time_send.h
+ ../utils/tool.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/alloca.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/arpa/inet.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/asm-generic/errno-base.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/asm-generic/errno.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/asm-generic/socket.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/asm-generic/sockios.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/asm/errno.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/asm/socket.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/asm/sockios.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/atomic_wide_counter.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/byteswap.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/confname.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/cpu-set.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/endian.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/endianness.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/environments.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/errno.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/floatn-common.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/floatn.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/getopt_core.h
@@ -1178,6 +1185,112 @@ CMakeFiles/send_code.dir/src/time_src/time_send.c.o
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/libc-header-start.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/long-double.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/posix_opt.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/pthread_stack_min-dynamic.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/pthread_stack_min.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/pthreadtypes-arch.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/pthreadtypes.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/sched.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/select.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/select2.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/setjmp.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/sockaddr.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/socket-constants.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/socket.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/socket2.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/socket_type.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdint-intn.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdint-uintn.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdio-ldbl.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdio.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdio2.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdio_lim.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdlib-bsearch.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdlib-float.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdlib-ldbl.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/stdlib.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/string_fortified.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/strings_fortified.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/struct_mutex.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/struct_rwlock.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/thread-shared-types.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/time.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/time64.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/timesize.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/timex.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/types.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/types/FILE.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/types/__FILE.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/types/__fpos64_t.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/types/__fpos_t.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/types/__locale_t.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/types/__mbstate_t.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/types/__sigset_t.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/types/clock_t.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/types/clockid_t.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/types/cookie_io_functions_t.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/types/error_t.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/types/locale_t.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/types/sigset_t.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/types/struct_FILE.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/types/struct___jmp_buf_tag.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/types/struct_iovec.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/types/struct_itimerspec.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/types/struct_osockaddr.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/types/struct_sched_param.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/types/struct_timespec.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/types/struct_timeval.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/types/struct_tm.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/types/time_t.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/types/timer_t.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/typesizes.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/uintn-identity.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/unistd.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/unistd_ext.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/waitflags.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/waitstatus.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/wordsize.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/endian.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/errno.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/features-time64.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/features.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/gnu/stubs-lp64.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/gnu/stubs.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/linux/errno.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/netinet/in.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/netinet/ip.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/pthread.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/sched.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/stdc-predef.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/stdio.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/stdlib.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/string.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/strings.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/sys/cdefs.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/sys/select.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/sys/socket.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/sys/time.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/sys/types.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/time.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/unistd.h
+ /home/linux/srx/send_code/src/time_src/time_send.c
+CMakeFiles/send_code.dir/utils/tool.c.o
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/alloca.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/arpa/inet.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/asm-generic/socket.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/asm-generic/sockios.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/asm/socket.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/asm/sockios.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/atomic_wide_counter.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/byteswap.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/endian.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/endianness.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/floatn-common.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/floatn.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/getopt_core.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/getopt_posix.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/in.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/libc-header-start.h
+ /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/long-double.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/pthreadtypes-arch.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/pthreadtypes.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/select.h
@@ -1226,8 +1339,6 @@ CMakeFiles/send_code.dir/src/time_src/time_send.c.o
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/types/timer_t.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/typesizes.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/uintn-identity.h
- /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/unistd.h
- /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/unistd_ext.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/waitflags.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/waitstatus.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/bits/wordsize.h
@@ -1237,7 +1348,6 @@ CMakeFiles/send_code.dir/src/time_src/time_send.c.o
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/gnu/stubs-lp64.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/gnu/stubs.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/netinet/in.h
- /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/netinet/ip.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/stdc-predef.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/stdio.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/stdlib.h
@@ -1248,5 +1358,5 @@ CMakeFiles/send_code.dir/src/time_src/time_send.c.o
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/sys/socket.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/sys/time.h
  /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/sys/types.h
- /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot/usr/include/unistd.h
- /home/linux/srx/send_code/src/time_src/time_send.c
+ /home/linux/srx/send_code/utils/tool.c
+ /home/linux/srx/send_code/utils/tool.h

@@ -30,6 +30,10 @@ utils.h
 
 ../inc/time_inc/time_send.h
 
+../utils/tool.h
+netinet/in.h
+-
+
 /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/build/rockchip-mpp-develop/mpp/base/inc/mpp_trie.h
 rk_type.h
 /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/build/rockchip-mpp-develop/mpp/base/inc/rk_type.h
@@ -1203,6 +1207,8 @@ sys/types.h
 -
 unistd.h
 -
+tool.h
+/home/linux/srx/send_code/src/cmd_src/tool.h
 
 /home/linux/srx/send_code/src/h264_src/camera_source.c
 stdio.h
@@ -1367,9 +1373,13 @@ time_send.h
 /home/linux/srx/send_code/src/time_src/time_send.h
 arpa/inet.h
 -
+errno.h
+-
 netinet/in.h
 -
 netinet/ip.h
+-
+pthread.h
 -
 stdio.h
 -
@@ -1384,5 +1394,27 @@ sys/time.h
 sys/types.h
 -
 unistd.h
+-
+tool.h
+/home/linux/srx/send_code/src/time_src/tool.h
+
+/home/linux/srx/send_code/utils/tool.c
+tool.h
+/home/linux/srx/send_code/utils/tool.h
+arpa/inet.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+sys/socket.h
+-
+sys/time.h
+-
+
+/home/linux/srx/send_code/utils/tool.h
+netinet/in.h
 -
 

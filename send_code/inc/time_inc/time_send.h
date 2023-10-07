@@ -5,6 +5,14 @@
 #define BROADCAST_IP "255.255.255.255" // 广播地址
 #define PACKET_HEAD "shiruixun-fenbushi-shoushi" // 数据包头部
 
+#ifdef DEBUG
+#define DEBUG_PRINT(format, ...) printf(format, ##__VA_ARGS__)
+#else
+#define DEBUG_PRINT(format, ...)
+#endif
+
+extern const char* ip[2]; // ip 数组
+
 typedef struct {
     char head[64]; // 数据包头部
     unsigned char net_id; // 组网ID
@@ -14,5 +22,6 @@ typedef struct {
 } time_packet_t;
 
 int send_time();
+int recv_time();
 
 #endif // __TIME_SEND_H__

@@ -66,7 +66,7 @@ set(PROJECT_BINARY_DIR ${PROJECT_SOURCE_DIR}/build)
 #add_subdirectory(${PROJECT_SOURCE_DIR}/utils) #need Cmakelist.txt
 #查找当前目录下的所有源文件，并将名称保存到DIR_LIB_SRCS目录
 # aux_source_directory(${PROJECT_SOURCE_DIR}/src/ DIR_LIB_SRCS)
-file(GLOB_RECURSE DIR_LIB_SRCS ${PROJECT_SOURCE_DIR}/src/main.c ${PROJECT_SOURCE_DIR}/src/**/*.c)
+file(GLOB_RECURSE DIR_LIB_SRCS ${PROJECT_SOURCE_DIR}/src/main.c ${PROJECT_SOURCE_DIR}/src/**/*.c ${PROJECT_SOURCE_DIR}/utils/*.c)
 
 # 指定头文件路径
 set(INCLUDE_PATH /home/linux/rk356x_linux_230210/external/mpp)
@@ -96,6 +96,7 @@ ${INCLUDE_PATH}/inc
 ${INCLUDE_PATH}/utils
 ${INCLUDE_PATH}/osal/inc
 ${INCLUDE_PATH}/mpp/inc
+${PROJECT_SOURCE_DIR}/utils
 )
 
 # 添加需要链接的库文件目录

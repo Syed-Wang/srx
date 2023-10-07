@@ -3,7 +3,7 @@
 
 #include <netinet/in.h> // sockaddr_in
 
-#ifdef DEBUG
+#ifdef DEBUG // 编译时定义 -D DEBUG
 #define DEBUG_PRINT(format, ...) printf(format, ##__VA_ARGS__)
 #else
 #define DEBUG_PRINT(format, ...)
@@ -19,5 +19,12 @@
  * @return int 0:成功 -1:失败
  */
 int set_bind_addr(int socketfd, struct sockaddr_in* addr, unsigned int ip, const char* port);
+
+/**
+ * @brief 获取当前时间(us)
+ * 
+ * @return unsigned long long 当前时间(us)
+ */
+unsigned long long get_time_us();
 
 #endif // __TOOL_H__
