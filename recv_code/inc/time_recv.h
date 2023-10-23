@@ -4,8 +4,10 @@
 #define TIME_PORT "8111" // 授时端口
 #define PACKET_HEAD "shiruixun-fenbushi-shoushi" // 数据包头部
 
-extern const char* ip[2]; // ip 数组
+extern char ip[128][16]; // ip 数组
+extern unsigned char net_id; // 组网 id
 
+// 授时包结构体
 typedef struct {
     char head[64]; // 数据包头部
     unsigned char net_id; // 组网ID

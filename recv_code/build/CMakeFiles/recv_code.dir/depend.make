@@ -11,12 +11,22 @@ CMakeFiles/recv_code.dir/src/h264_recv.c.o: ../src/h264_recv.c
 
 CMakeFiles/recv_code.dir/src/main.c.o: ../inc/cmd_recv.h
 CMakeFiles/recv_code.dir/src/main.c.o: ../inc/h264_recv.h
+CMakeFiles/recv_code.dir/src/main.c.o: ../inc/sys_config.h
 CMakeFiles/recv_code.dir/src/main.c.o: ../inc/time_recv.h
+CMakeFiles/recv_code.dir/src/main.c.o: ../utils/tool.h
 CMakeFiles/recv_code.dir/src/main.c.o: ../src/main.c
+
+CMakeFiles/recv_code.dir/src/sys_config.c.o: ../inc/cmd_recv.h
+CMakeFiles/recv_code.dir/src/sys_config.c.o: ../inc/sys_config.h
+CMakeFiles/recv_code.dir/src/sys_config.c.o: ../utils/cJSON.h
+CMakeFiles/recv_code.dir/src/sys_config.c.o: ../src/sys_config.c
 
 CMakeFiles/recv_code.dir/src/time_recv.c.o: ../inc/time_recv.h
 CMakeFiles/recv_code.dir/src/time_recv.c.o: ../utils/tool.h
 CMakeFiles/recv_code.dir/src/time_recv.c.o: ../src/time_recv.c
+
+CMakeFiles/recv_code.dir/utils/cJSON.c.o: ../utils/cJSON.c
+CMakeFiles/recv_code.dir/utils/cJSON.c.o: ../utils/cJSON.h
 
 CMakeFiles/recv_code.dir/utils/tool.c.o: ../utils/tool.c
 CMakeFiles/recv_code.dir/utils/tool.c.o: ../utils/tool.h

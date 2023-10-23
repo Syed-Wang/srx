@@ -7,7 +7,9 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/linux/srx/recv_code/src/cmd_recv.c" "/home/linux/srx/recv_code/build/CMakeFiles/recv_code.dir/src/cmd_recv.c.o"
   "/home/linux/srx/recv_code/src/h264_recv.c" "/home/linux/srx/recv_code/build/CMakeFiles/recv_code.dir/src/h264_recv.c.o"
   "/home/linux/srx/recv_code/src/main.c" "/home/linux/srx/recv_code/build/CMakeFiles/recv_code.dir/src/main.c.o"
+  "/home/linux/srx/recv_code/src/sys_config.c" "/home/linux/srx/recv_code/build/CMakeFiles/recv_code.dir/src/sys_config.c.o"
   "/home/linux/srx/recv_code/src/time_recv.c" "/home/linux/srx/recv_code/build/CMakeFiles/recv_code.dir/src/time_recv.c.o"
+  "/home/linux/srx/recv_code/utils/cJSON.c" "/home/linux/srx/recv_code/build/CMakeFiles/recv_code.dir/utils/cJSON.c.o"
   "/home/linux/srx/recv_code/utils/tool.c" "/home/linux/srx/recv_code/build/CMakeFiles/recv_code.dir/utils/tool.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")

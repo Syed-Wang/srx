@@ -7,10 +7,20 @@
 #IncludeRegexTransform: 
 
 ../inc/cmd_recv.h
+arpa/inet.h
+-
 
 ../inc/h264_recv.h
 
+../inc/sys_config.h
+cmd_recv.h
+-
+
 ../inc/time_recv.h
+
+../utils/cJSON.h
+stddef.h
+-
 
 ../utils/tool.h
 netinet/in.h
@@ -55,6 +65,8 @@ cmd_recv.h
 /home/linux/srx/recv_code/src/cmd_recv.h
 h264_recv.h
 /home/linux/srx/recv_code/src/h264_recv.h
+sys_config.h
+/home/linux/srx/recv_code/src/sys_config.h
 time_recv.h
 /home/linux/srx/recv_code/src/time_recv.h
 pthread.h
@@ -64,6 +76,16 @@ stdio.h
 stdlib.h
 -
 string.h
+-
+tool.h
+-
+
+/home/linux/srx/recv_code/src/sys_config.c
+sys_config.h
+/home/linux/srx/recv_code/src/sys_config.h
+cJSON.h
+/home/linux/srx/recv_code/src/cJSON.h
+stdio.h
 -
 
 /home/linux/srx/recv_code/src/time_recv.c
@@ -76,6 +98,8 @@ arpa/inet.h
 errno.h
 -
 netinet/ip.h
+-
+pthread.h
 -
 stdio.h
 -
@@ -91,13 +115,39 @@ sys/types.h
 -
 unistd.h
 -
-pthread.h
+
+/home/linux/srx/recv_code/utils/cJSON.c
+string.h
+-
+stdio.h
+-
+math.h
+-
+stdlib.h
+-
+limits.h
+-
+ctype.h
+-
+float.h
+-
+locale.h
+-
+cJSON.h
+/home/linux/srx/recv_code/utils/cJSON.h
+
+/home/linux/srx/recv_code/utils/cJSON.h
+stddef.h
 -
 
 /home/linux/srx/recv_code/utils/tool.c
 tool.h
 /home/linux/srx/recv_code/utils/tool.h
 arpa/inet.h
+-
+ifaddrs.h
+-
+netdb.h
 -
 stdio.h
 -

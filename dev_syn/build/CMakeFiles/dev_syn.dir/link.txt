@@ -1,0 +1,1 @@
+/usr/bin/cc  -pthread -w -g   CMakeFiles/dev_syn.dir/src/cmd.c.o CMakeFiles/dev_syn.dir/src/main.c.o CMakeFiles/dev_syn.dir/src/sys_config.c.o CMakeFiles/dev_syn.dir/src/time.c.o CMakeFiles/dev_syn.dir/utils/cJSON.c.o CMakeFiles/dev_syn.dir/utils/tool.c.o  -o ../bin/dev_syn 

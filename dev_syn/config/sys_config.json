@@ -1,0 +1,16 @@
+{
+	"fps":	{
+		"frame_rate":	60,
+		"sync_encoder":	0,
+		"priority":	0,
+		"net_flag":	0
+	},
+	"window":	{
+		"id":	1,
+		"src_ip":	"192.168.0.180",
+		"x":	0,
+		"y":	0,
+		"w":	1920,
+		"h":	1080
+	}
+}

@@ -96,9 +96,22 @@ CMakeFiles/recv_code.dir/src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/recv_code.dir/src/main.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/srx/recv_code/src/main.c -o CMakeFiles/recv_code.dir/src/main.c.s
 
+CMakeFiles/recv_code.dir/src/sys_config.c.o: CMakeFiles/recv_code.dir/flags.make
+CMakeFiles/recv_code.dir/src/sys_config.c.o: ../src/sys_config.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/recv_code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/recv_code.dir/src/sys_config.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/recv_code.dir/src/sys_config.c.o   -c /home/linux/srx/recv_code/src/sys_config.c
+
+CMakeFiles/recv_code.dir/src/sys_config.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/recv_code.dir/src/sys_config.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linux/srx/recv_code/src/sys_config.c > CMakeFiles/recv_code.dir/src/sys_config.c.i
+
+CMakeFiles/recv_code.dir/src/sys_config.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/recv_code.dir/src/sys_config.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/srx/recv_code/src/sys_config.c -o CMakeFiles/recv_code.dir/src/sys_config.c.s
+
 CMakeFiles/recv_code.dir/src/time_recv.c.o: CMakeFiles/recv_code.dir/flags.make
 CMakeFiles/recv_code.dir/src/time_recv.c.o: ../src/time_recv.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/recv_code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/recv_code.dir/src/time_recv.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/recv_code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/recv_code.dir/src/time_recv.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/recv_code.dir/src/time_recv.c.o   -c /home/linux/srx/recv_code/src/time_recv.c
 
 CMakeFiles/recv_code.dir/src/time_recv.c.i: cmake_force
@@ -109,9 +122,22 @@ CMakeFiles/recv_code.dir/src/time_recv.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/recv_code.dir/src/time_recv.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/srx/recv_code/src/time_recv.c -o CMakeFiles/recv_code.dir/src/time_recv.c.s
 
+CMakeFiles/recv_code.dir/utils/cJSON.c.o: CMakeFiles/recv_code.dir/flags.make
+CMakeFiles/recv_code.dir/utils/cJSON.c.o: ../utils/cJSON.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/recv_code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/recv_code.dir/utils/cJSON.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/recv_code.dir/utils/cJSON.c.o   -c /home/linux/srx/recv_code/utils/cJSON.c
+
+CMakeFiles/recv_code.dir/utils/cJSON.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/recv_code.dir/utils/cJSON.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linux/srx/recv_code/utils/cJSON.c > CMakeFiles/recv_code.dir/utils/cJSON.c.i
+
+CMakeFiles/recv_code.dir/utils/cJSON.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/recv_code.dir/utils/cJSON.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/srx/recv_code/utils/cJSON.c -o CMakeFiles/recv_code.dir/utils/cJSON.c.s
+
 CMakeFiles/recv_code.dir/utils/tool.c.o: CMakeFiles/recv_code.dir/flags.make
 CMakeFiles/recv_code.dir/utils/tool.c.o: ../utils/tool.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/recv_code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/recv_code.dir/utils/tool.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/recv_code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/recv_code.dir/utils/tool.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/recv_code.dir/utils/tool.c.o   -c /home/linux/srx/recv_code/utils/tool.c
 
 CMakeFiles/recv_code.dir/utils/tool.c.i: cmake_force
@@ -127,7 +153,9 @@ recv_code_OBJECTS = \
 "CMakeFiles/recv_code.dir/src/cmd_recv.c.o" \
 "CMakeFiles/recv_code.dir/src/h264_recv.c.o" \
 "CMakeFiles/recv_code.dir/src/main.c.o" \
+"CMakeFiles/recv_code.dir/src/sys_config.c.o" \
 "CMakeFiles/recv_code.dir/src/time_recv.c.o" \
+"CMakeFiles/recv_code.dir/utils/cJSON.c.o" \
 "CMakeFiles/recv_code.dir/utils/tool.c.o"
 
 # External object files for target recv_code
@@ -136,11 +164,13 @@ recv_code_EXTERNAL_OBJECTS =
 ../bin/recv_code: CMakeFiles/recv_code.dir/src/cmd_recv.c.o
 ../bin/recv_code: CMakeFiles/recv_code.dir/src/h264_recv.c.o
 ../bin/recv_code: CMakeFiles/recv_code.dir/src/main.c.o
+../bin/recv_code: CMakeFiles/recv_code.dir/src/sys_config.c.o
 ../bin/recv_code: CMakeFiles/recv_code.dir/src/time_recv.c.o
+../bin/recv_code: CMakeFiles/recv_code.dir/utils/cJSON.c.o
 ../bin/recv_code: CMakeFiles/recv_code.dir/utils/tool.c.o
 ../bin/recv_code: CMakeFiles/recv_code.dir/build.make
 ../bin/recv_code: CMakeFiles/recv_code.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/linux/srx/recv_code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable ../bin/recv_code"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/linux/srx/recv_code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable ../bin/recv_code"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/recv_code.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

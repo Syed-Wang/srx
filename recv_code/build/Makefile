@@ -204,6 +204,33 @@ src/main.c.s:
 	$(MAKE) -f CMakeFiles/recv_code.dir/build.make CMakeFiles/recv_code.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/sys_config.o: src/sys_config.c.o
+
+.PHONY : src/sys_config.o
+
+# target to build an object file
+src/sys_config.c.o:
+	$(MAKE) -f CMakeFiles/recv_code.dir/build.make CMakeFiles/recv_code.dir/src/sys_config.c.o
+.PHONY : src/sys_config.c.o
+
+src/sys_config.i: src/sys_config.c.i
+
+.PHONY : src/sys_config.i
+
+# target to preprocess a source file
+src/sys_config.c.i:
+	$(MAKE) -f CMakeFiles/recv_code.dir/build.make CMakeFiles/recv_code.dir/src/sys_config.c.i
+.PHONY : src/sys_config.c.i
+
+src/sys_config.s: src/sys_config.c.s
+
+.PHONY : src/sys_config.s
+
+# target to generate assembly for a file
+src/sys_config.c.s:
+	$(MAKE) -f CMakeFiles/recv_code.dir/build.make CMakeFiles/recv_code.dir/src/sys_config.c.s
+.PHONY : src/sys_config.c.s
+
 src/time_recv.o: src/time_recv.c.o
 
 .PHONY : src/time_recv.o
@@ -230,6 +257,33 @@ src/time_recv.s: src/time_recv.c.s
 src/time_recv.c.s:
 	$(MAKE) -f CMakeFiles/recv_code.dir/build.make CMakeFiles/recv_code.dir/src/time_recv.c.s
 .PHONY : src/time_recv.c.s
+
+utils/cJSON.o: utils/cJSON.c.o
+
+.PHONY : utils/cJSON.o
+
+# target to build an object file
+utils/cJSON.c.o:
+	$(MAKE) -f CMakeFiles/recv_code.dir/build.make CMakeFiles/recv_code.dir/utils/cJSON.c.o
+.PHONY : utils/cJSON.c.o
+
+utils/cJSON.i: utils/cJSON.c.i
+
+.PHONY : utils/cJSON.i
+
+# target to preprocess a source file
+utils/cJSON.c.i:
+	$(MAKE) -f CMakeFiles/recv_code.dir/build.make CMakeFiles/recv_code.dir/utils/cJSON.c.i
+.PHONY : utils/cJSON.c.i
+
+utils/cJSON.s: utils/cJSON.c.s
+
+.PHONY : utils/cJSON.s
+
+# target to generate assembly for a file
+utils/cJSON.c.s:
+	$(MAKE) -f CMakeFiles/recv_code.dir/build.make CMakeFiles/recv_code.dir/utils/cJSON.c.s
+.PHONY : utils/cJSON.c.s
 
 utils/tool.o: utils/tool.c.o
 
@@ -276,9 +330,15 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/sys_config.o"
+	@echo "... src/sys_config.i"
+	@echo "... src/sys_config.s"
 	@echo "... src/time_recv.o"
 	@echo "... src/time_recv.i"
 	@echo "... src/time_recv.s"
+	@echo "... utils/cJSON.o"
+	@echo "... utils/cJSON.i"
+	@echo "... utils/cJSON.s"
 	@echo "... utils/tool.o"
 	@echo "... utils/tool.i"
 	@echo "... utils/tool.s"

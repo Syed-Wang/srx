@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/linux/srx/dev_syn/build",
+  "command": "/usr/bin/cc  -I/home/linux/srx/dev_syn/inc -I/home/linux/srx/dev_syn/utils   -pthread -w -g   -o CMakeFiles/dev_syn.dir/src/cmd.c.o   -c /home/linux/srx/dev_syn/src/cmd.c",
+  "file": "/home/linux/srx/dev_syn/src/cmd.c"
+},
+{
+  "directory": "/home/linux/srx/dev_syn/build",
+  "command": "/usr/bin/cc  -I/home/linux/srx/dev_syn/inc -I/home/linux/srx/dev_syn/utils   -pthread -w -g   -o CMakeFiles/dev_syn.dir/src/main.c.o   -c /home/linux/srx/dev_syn/src/main.c",
+  "file": "/home/linux/srx/dev_syn/src/main.c"
+},
+{
+  "directory": "/home/linux/srx/dev_syn/build",
+  "command": "/usr/bin/cc  -I/home/linux/srx/dev_syn/inc -I/home/linux/srx/dev_syn/utils   -pthread -w -g   -o CMakeFiles/dev_syn.dir/src/sys_config.c.o   -c /home/linux/srx/dev_syn/src/sys_config.c",
+  "file": "/home/linux/srx/dev_syn/src/sys_config.c"
+},
+{
+  "directory": "/home/linux/srx/dev_syn/build",
+  "command": "/usr/bin/cc  -I/home/linux/srx/dev_syn/inc -I/home/linux/srx/dev_syn/utils   -pthread -w -g   -o CMakeFiles/dev_syn.dir/src/time.c.o   -c /home/linux/srx/dev_syn/src/time.c",
+  "file": "/home/linux/srx/dev_syn/src/time.c"
+},
+{
+  "directory": "/home/linux/srx/dev_syn/build",
+  "command": "/usr/bin/cc  -I/home/linux/srx/dev_syn/inc -I/home/linux/srx/dev_syn/utils   -pthread -w -g   -o CMakeFiles/dev_syn.dir/utils/cJSON.c.o   -c /home/linux/srx/dev_syn/utils/cJSON.c",
+  "file": "/home/linux/srx/dev_syn/utils/cJSON.c"
+},
+{
+  "directory": "/home/linux/srx/dev_syn/build",
+  "command": "/usr/bin/cc  -I/home/linux/srx/dev_syn/inc -I/home/linux/srx/dev_syn/utils   -pthread -w -g   -o CMakeFiles/dev_syn.dir/utils/tool.c.o   -c /home/linux/srx/dev_syn/utils/tool.c",
+  "file": "/home/linux/srx/dev_syn/utils/tool.c"
+}
+]

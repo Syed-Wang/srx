@@ -12,12 +12,6 @@ typedef struct {
     char** argv;
 } h264_arg_t;
 
-// ip 数组
-/* const char* ip[] = {
-    "192.168.0.180", // 设备0 (本机)(开发板)
-    "192.168.0.100", // 设备1
-}; */
-
 // 线程函数
 void* thread_send_time(void* arg)
 {
@@ -81,6 +75,7 @@ int main(int argc, char** argv)
         perror("pthread_create h264 error");
         exit(1);
     }
+
     // 给所有 IP 发送 cmd (本机除外)
     for (int i = 0; i < sizeof(ip) / sizeof(ip[0]); i++) {
         if (i == 0)
@@ -95,10 +90,13 @@ int main(int argc, char** argv)
     while (device_num < sizeof(ip) / sizeof(ip[0]) - 1)
         ;
     send_cmd_broadcast(CMD_START);
+    // 广播发送配置 IP 指令
+    send_cmd_broadcast(CMD_SET_IP);
 
     // 等待接收 /stopTimeServer:d,0; 指令 (广播) 和 修改授时服务器 /setTimeServer:s," #ip "; 指令 (广播)
-     char buf[128] = { 0 }; // 接收缓冲区
+    char buf[128] = { 0 }; // 接收缓冲区
     while (1) {
+        memset(buf, 0, sizeof(buf));
         if (strcmp(recv_cmd_broadcast(), CMD_TIME_SERVER_STOP) == 0) {
             printf("stop time server\n");
             pthread_cancel(tid[0]);
@@ -112,6 +110,10 @@ int main(int argc, char** argv)
                 }
                 printf("start time server\n");
             }
+        } else if (strcmp(cmd_buf, CMD_GET_IP) == 0) {
+            printf("get ip\n");
+            // 返回返送本机IP地址
+            send_cmd_broadcast(ip[1]);
         }
     }
 

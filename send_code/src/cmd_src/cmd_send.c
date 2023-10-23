@@ -1,4 +1,5 @@
 #include "cmd_send.h"
+#include "tool.h"
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <netinet/ip.h>
@@ -9,7 +10,6 @@
 #include <sys/time.h>
 #include <sys/types.h>
 #include <unistd.h>
-#include "tool.h"
 
 int device_num = 0; // 初始 0 个设备就绪
 
@@ -18,7 +18,7 @@ int send_cmd(const char* recv_addr)
     int cmd_socketfd; // 指令套接字
     struct sockaddr_in cmd_addr; // 指令地址
     int ret;
-    int flag = 1;
+    int flag = 1; // 标志是否第一次发送指令
 
     // 创建套接字
     cmd_socketfd = socket(AF_INET, SOCK_DGRAM, 0); // UDP
@@ -132,7 +132,7 @@ int send_cmd_broadcast(const char* cmd)
         perror("sendto cmd error");
         return -1;
     }
-    printf("send_cmd: %s\n", cmd); // 打印发送的数据包
+    DEBUG_PRINT("send_cmd: %s\n", cmd); // 打印发送的数据包
 
     // 关闭套接字
     close(cmd_socketfd);
@@ -172,4 +172,30 @@ char* recv_cmd_broadcast()
     close(cmd_socketfd);
 
     return cmd_buf;
+}
+
+// 判段是否是 IP 地址
+int is_ip(const char* ip)
+{
+    int a, b, c, d;
+    if (sscanf(ip, "%d.%d.%d.%d", &a, &b, &c, &d) != 4)
+        return 0;
+    if (a < 0 || a > 255)
+        return 0;
+    if (b < 0 || b > 255)
+        return 0;
+    if (c < 0 || c > 255)
+        return 0;
+    if (d < 0 || d > 255)
+        return 0;
+    return 1;
+}
+
+int sync_ip()
+{
+    while (1) {
+        // 广播发送获取 IP 指令
+        send_cmd_broadcast(CMD_GET_IP);
+        usleep(100000); // 100ms
+    }
 }

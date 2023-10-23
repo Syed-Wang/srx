@@ -7,6 +7,8 @@
 #include <sys/socket.h>
 #include <unistd.h>
 
+unsigned char request_flag = 0; // 请求模式标志
+
 int recv_cmd()
 {
     int cmd_socketfd = socket(AF_INET, SOCK_DGRAM, 0);
@@ -109,6 +111,47 @@ int recv_cmd()
     return 0;
 }
 
+int send_cmd_broadcast(const char* cmd)
+{
+    int cmd_socketfd; // 指令套接字
+    struct sockaddr_in cmd_addr; // 指令地址
+    int broadcast = 1; // 广播标志
+    int ret;
+
+    // 创建套接字
+    cmd_socketfd = socket(AF_INET, SOCK_DGRAM, 0); // UDP
+    if (cmd_socketfd < 0) {
+        perror("socket cmd error");
+        return -1;
+    }
+
+    // 设置套接字选项
+    ret = setsockopt(cmd_socketfd, SOL_SOCKET, SO_BROADCAST, &broadcast, sizeof(broadcast)); // 广播
+    if (ret < 0) {
+        perror("setsockopt cmd error");
+        return -1;
+    }
+
+    // 设置地址
+    memset(&cmd_addr, 0, sizeof(cmd_addr));
+    cmd_addr.sin_family = AF_INET;
+    cmd_addr.sin_port = htons(atoi(CMD_PORT));
+    cmd_addr.sin_addr.s_addr = htonl(INADDR_BROADCAST);
+
+    // 发送指令
+    ret = sendto(cmd_socketfd, cmd, strlen(cmd), 0, (struct sockaddr*)&cmd_addr, sizeof(cmd_addr)); // 广播
+    if (ret < 0) {
+        perror("sendto cmd error");
+        return -1;
+    }
+    DEBUG_PRINT("send_cmd: %s\n", cmd); // 打印发送的数据包
+
+    // 关闭套接字
+    close(cmd_socketfd);
+
+    return 0;
+}
+
 char cmd_buf[128]; // 存放接收的指令
 char* recv_cmd_broadcast()
 {
@@ -144,4 +187,30 @@ char* recv_cmd_broadcast()
     close(cmd_socketfd);
 
     return cmd_buf;
+}
+
+// 判段是否是 IP 地址
+int is_ip(const char* ip)
+{
+    int a, b, c, d;
+    if (sscanf(ip, "%d.%d.%d.%d", &a, &b, &c, &d) != 4)
+        return 0;
+    if (a < 0 || a > 255)
+        return 0;
+    if (b < 0 || b > 255)
+        return 0;
+    if (c < 0 || c > 255)
+        return 0;
+    if (d < 0 || d > 255)
+        return 0;
+    return 1;
+}
+
+int sync_ip()
+{
+    while (1) {
+        // 广播发送获取 IP 指令
+        send_cmd_broadcast(CMD_GET_IP);
+        usleep(100000); // 100ms
+    }
 }

@@ -3,6 +3,7 @@
 #include <arpa/inet.h>
 #include <errno.h>
 #include <netinet/ip.h>
+#include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -10,13 +11,12 @@
 #include <sys/time.h>
 #include <sys/types.h>
 #include <unistd.h>
-#include <pthread.h>
 
 // ip 数组
-const char* ip[2] = {
-    "192.168.0.180", // 设备0 (开发板)
-    "192.168.0.100", // 设备1 (本机)
-};
+char ip[128][16] = { 0 };
+
+// 当前设备组网 id
+unsigned char net_id = 0;
 
 void* thread_send_time_1(void* arg)
 {
@@ -71,6 +71,7 @@ int recv_time()
     int flag = 0; // 线程创建标志
     struct sockaddr_in addr; // 地址
     socklen_t addr_len = sizeof(addr);
+    char ip_buf[16] = { 0 };
     // 接收时间
     while (1) {
         // 接收授时包
@@ -92,7 +93,9 @@ int recv_time()
         }
 
         // 如果收到同优先级授时包，并且ip地址比当前授时ip小，并且如果授时包线程在执行则停止发送授时包，当前设备作为客户端只接收授时包
-        if (strcmp(time_packet.head, PACKET_HEAD) == 0 && time_packet.priority == 0x01 && ntohl(addr.sin_addr.s_addr) < ntohl(inet_addr(ip[1])) && flag == 1) {
+        memset(ip_buf, 0, sizeof(ip_buf));
+        get_local_ip("eth0", ip_buf); // 获取本机IP地址
+        if (strcmp(time_packet.head, PACKET_HEAD) == 0 && time_packet.priority == 0x01 && strcmp(ip_buf, inet_ntoa(addr.sin_addr)) > 0 && flag == 1) {
             pthread_cancel(tid); // 取消发送授时包线程
             flag = 0;
         }
@@ -147,7 +150,7 @@ int send_time()
     // 发送时间
     memset(&time_packet, 0, sizeof(time_packet));
     strcpy(time_packet.head, PACKET_HEAD);
-    time_packet.net_id = 0x01;
+    time_packet.net_id = net_id;
     time_packet.priority = 0x01; // 优先级 1
     time_packet.net_flag = 0x01; // 组网标志 1
     struct timeval tv;
