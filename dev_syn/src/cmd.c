@@ -1,4 +1,5 @@
 #include "cmd.h"
+#include "sys_config.h"
 #include "tool.h"
 #include <arpa/inet.h>
 #include <stdio.h>
@@ -62,7 +63,7 @@ int send_cmd_unicast(struct sockaddr_in* addr, const char* cmd)
         return -1;
     }
 
-    PTR_DEBUG("send_cmd_unicast: %s\n", cmd); // 打印发送的数据包
+    PTR_DEBUG("%s\n", cmd); // 打印发送的数据包
 
     // 关闭套接字
     close(cmd_socketfd);
@@ -92,8 +93,9 @@ int recv_cmd(struct sockaddr_in* addr, char* cmd)
         return -1;
     }
 
+    socklen_t server_addr_len = sizeof(*addr);
     // 接收指令
-    if (recvfrom(cmd_socketfd, cmd, CMD_BUF_SIZE, 0, (struct sockaddr*)addr, (socklen_t*)sizeof(*addr)) < 0) {
+    if (recvfrom(cmd_socketfd, cmd, CMD_BUF_SIZE, 0, (struct sockaddr*)addr, &server_addr_len) < 0) {
         PTR_PERROR("recvfrom cmd error");
         return -1;
     }
@@ -107,22 +109,29 @@ int recv_cmd(struct sockaddr_in* addr, char* cmd)
 }
 
 char ip[128][16] = { 0 }; // 组网中所有节点 ip 数组
+// char ip[128][16] = { "192.168.0.100", 0 };
 int net_id = 0; // 组网 ID
 char local_ip[16] = { 0 }; // 本机 IP 地址
 int node_num = 0; // 组网中节点数量
 unsigned long long* detect_time = NULL; // 探测时间
+unsigned long long time_gap = 0; // 时间差
+char tmp_ip[128][16] = { 0 }; // 临时 ip 数组
 
 int cmd_handler(struct sockaddr_in* addr, const char* cmd)
 {
     if (!strcmp(cmd, CMD_GET_IP)) { // 获取节点 IP
         char ip_buf[16] = { 0 };
-        get_local_ip("eth0", ip_buf); // 获取本机IP地址
-        send_cmd_broadcast(ip_buf);
-    } else if (!strncmp(cmd, CMD_SET_NETWORK_ID(0, 0), 16)) { // 选择设备进行组网，并分配组网ID
+        if (send_cmd_unicast(addr, local_ip) < 0) { // 单播发送本机 IP 地址
+            PTRERR("send_cmd_unicast error");
+            return -1;
+        }
+    } else if (!strncmp(cmd, CMD_SET_NETWORK_ID(0, 0), 13)) { // 选择设备进行组网，并分配组网ID
         // 字符串解析
         char ip_buf[16] = { 0 }; // IP 地址
         int net_id_buf = 0; // 组网 ID
-        sscanf(cmd, CMD_SET_NETWORK_ID(% s, % i), ip_buf, &net_id);
+        sscanf(cmd, "/setNetworkID:s,%[^,],%d;", ip_buf, &net_id_buf); // %[^,]：匹配除逗号以外的所有字符
+
+        PTR_DEBUG("ip: %s, id: %d\n", ip_buf, net_id_buf);
 
         if (is_ip(ip_buf) && net_id_buf > 0) { // 判断是否为 IP 地址和组网 ID
             // 判断是否为本机 IP 地址
@@ -137,23 +146,29 @@ int cmd_handler(struct sockaddr_in* addr, const char* cmd)
                 }
             }
             // 组网内所有节点同步组网中的所有节点 IP 地址
-            if (net_id_buf == net_id) {
-                // 组网 ID 相同，保存 IP 地址
+            if (net_id_buf == net_id) { // // 组网 ID 相同，保存 IP 地址
                 for (int i = 0; i < sizeof(ip) / sizeof(ip[0]); i++) {
                     if (!strcmp(ip[i], ip_buf)) {
-                        // 已存在，跳过
-                        break;
+                        break; // 已存在，跳过
                     }
                     if (!strcmp(ip[i], "")) {
                         // 不存在，保存
                         strcpy(ip[i], ip_buf);
                         node_num++;
+                        PTR_DEBUG("ip[%d]: %s, node_num: %d\n", i, ip[i], node_num);
+                        // 更新设备系统配置文件
+                        fps.ip = ip; // 更新 IP 地址表
+                        if (save_sys_config(&fps, &window) < 0) {
+                            PTRERR("save_sys_config error");
+                            return -1;
+                        }
                         break;
                     }
                 }
                 // 再发送自己的 IP 地址和组网 ID，与其他节点同步
                 char cmd_buf[CMD_BUF_SIZE] = { 0 };
-                sprintf(cmd_buf, CMD_SET_NETWORK_ID(% s, % d), local_ip, net_id);
+                // sprintf(cmd_buf, CMD_SET_NETWORK_ID(% s, % d), local_ip, net_id);
+                sprintf(cmd_buf, "/setNetworkID:s,%s,%d;", local_ip, net_id);
                 send_cmd_broadcast(cmd_buf);
             }
         }
@@ -192,14 +207,31 @@ int cmd_handler(struct sockaddr_in* addr, const char* cmd)
         }
     } else if (!strncmp(cmd, CMD_SET_TIME_GAP(0), 13)) { // 设置时间差
         // 字符串解析
-        unsigned long long gap = 0; // 时间差
-        sscanf(cmd, CMD_SET_TIME_GAP(% llu), &gap);
-        PTR_DEBUG("gap: %llu\n", gap);
-        // TODO
+        sscanf(cmd, CMD_SET_TIME_GAP(% llu), &time_gap);
+        PTR_DEBUG("gap: %llu\n", time_gap);
+    } else if (!strcmp(cmd, CMD_GET_IP_LIST)) {
+        // 发送 IP 地址数组
+        for (int i = 0; i < node_num; i++) {
+            send_cmd_unicast(addr, ip[i]);
+        }
+    } else if (is_ip(cmd)) {
+        PTR_DEBUG("recv ip: %s\n", cmd);
+        // 保存 IP 地址
+        for (int i = 0; i < sizeof(tmp_ip) / sizeof(tmp_ip[0]); i++) {
+            if (!strcmp(tmp_ip[i], cmd)) {
+                // 已存在，跳过
+                break;
+            }
+            if (!strcmp(tmp_ip[i], "")) {
+                // 不存在，保存
+                strcpy(tmp_ip[i], cmd);
+                PTR_DEBUG("tmp_ip[%d]: %s\n", i, tmp_ip[i]);
+                break;
+            }
+        }
     } else if (!strcmp(cmd, CMD_START)) { // 开始指令
         // TODO
-    } else {
-        PTR_DEBUG("unknown cmd: %s\n", cmd);
+        PTR_DEBUG("start\n");
     }
 
     return 0;
@@ -256,6 +288,49 @@ int detect_time_gap()
     free(detect_time);
     detect_time = NULL;
     close(cmd_socketfd);
+
+    return 0;
+}
+
+int confirm_ready()
+{
+    struct sockaddr_in cmd_addr; // 指令地址
+    cmd_addr.sin_family = AF_INET;
+    cmd_addr.sin_port = htons(atoi(CMD_PORT));
+    int i, j, k, flag = 0;
+    for (i = 0; i < node_num; i++) {
+        cmd_addr.sin_addr.s_addr = inet_addr(ip[i]);
+        memset(tmp_ip, 0, sizeof(tmp_ip)); // 先清空临时 ip 数组
+        if (send_cmd_unicast(&cmd_addr, CMD_GET_IP_LIST) < 0) {
+            PTRERR("send_cmd_unicast error");
+            return -1;
+        }
+        sleep(1); // 等待 1s，完成接收
+        // 比对 IP 表
+        flag = 1; // 标志是否所有节点都已就绪
+        for (j = 0; j < node_num; j++) {
+            for (k = 0; k < node_num; k++) {
+                if (!strcmp(ip[j], tmp_ip[k])) {
+                    break;
+                }
+                if (!strcmp(tmp_ip[k], "")) {
+                    flag = 0;
+                    break;
+                }
+            }
+            if (flag == 0) {
+                break;
+            }
+        }
+        if (flag == 0) { // 当前节点未就绪，结束
+            return 0;
+        }
+    }
+
+    if (flag == 1) { // 所有节点都已就绪
+        PTR_DEBUG("all ready\n");
+        return 1;
+    }
 
     return 0;
 }

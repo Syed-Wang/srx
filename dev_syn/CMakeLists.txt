@@ -1,8 +1,10 @@
 cmake_minimum_required(VERSION 3.15) # CMake 最低版本号要求
 project(dev_syn) # 项目信息
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pthread -w") # 设置编译选项
-# set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pthread -D DEBUG") # 设置编译选项
+# set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D ARM")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D X86")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pthread -w") # 设置编译选项 -w:关闭警告
+# set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D DEBUG") # 设置编译选项
 
 set(PROJECT_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}) # 设置源文件目录
 set(PROJECT_BINARY_DIR ${PROJECT_SOURCE_DIR}/build) # 设置编译目录

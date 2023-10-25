@@ -3,8 +3,21 @@
 #include "tool.h"
 #include <stdio.h>
 
-fps_t fps; // 帧率结构体
-window_t window; // 窗口结构体
+fps_t fps = {
+    .frame_rate = 60,
+    .sync_encoder = 0,
+    .priority = 0,
+    .net_flag = 0,
+    .ip = ip
+}; // 帧率结构体
+window_t window = {
+    .id = 1,
+    .src_ip = "192.168.0.180",
+    .x = 0,
+    .y = 0,
+    .w = 1920,
+    .h = 1080
+}; // 窗口结构体
 
 int save_sys_config(fps_t* fps, window_t* window)
 {
@@ -24,9 +37,13 @@ int save_sys_config(fps_t* fps, window_t* window)
     cJSON_AddNumberToObject(fps_obj, "sync_encoder", fps->sync_encoder);
     cJSON_AddNumberToObject(fps_obj, "priority", fps->priority);
     cJSON_AddNumberToObject(fps_obj, "net_flag", fps->net_flag);
-    // 添加 ip 数组到 fps 对象
-    cJSON* ip_array = cJSON_CreateStringArray((const char**)fps->ip, 128);
-    cJSON_AddItemToObject(fps_obj, "ip", ip_array);
+
+    // 添加 ip 数组到 fps 对象 (类型：char ip[128][16])
+    cJSON* ip_array = cJSON_CreateArray(); // 创建 ip 数组
+    for (int i = 0; i < node_num; i++) {
+        cJSON_AddItemToArray(ip_array, cJSON_CreateString(fps->ip[i])); // 添加 ip 到 ip 数组
+    }
+    cJSON_AddItemToObject(fps_obj, "ip", ip_array); // 添加 ip 数组到 fps 对象
 
     // window 对象
     cJSON_AddNumberToObject(window_obj, "id", window->id);

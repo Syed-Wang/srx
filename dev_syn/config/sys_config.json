@@ -3,7 +3,8 @@
 		"frame_rate":	60,
 		"sync_encoder":	0,
 		"priority":	0,
-		"net_flag":	0
+		"net_flag":	0,
+		"ip":	[]
 	},
 	"window":	{
 		"id":	1,

@@ -16,7 +16,11 @@
     } while (0)
 
 #ifdef DEBUG // 编译时定义 -D DEBUG
-#define PTR_DEBUG(format, ...) printf(format, ##__VA_ARGS__)
+#define PTR_DEBUG(format, ...)                              \
+    do {                                                    \
+        printf("%s %s %d: ", __FILE__, __func__, __LINE__); \
+        printf(format, ##__VA_ARGS__);                      \
+    } while (0)
 #else
 #define PTR_DEBUG(format, ...)
 #endif
