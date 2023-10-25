@@ -1,6 +1,8 @@
 #ifndef __TIME_H__
 #define __TIME_H__
 
+#include <netinet/in.h> // sockaddr_in
+
 #define TIME_PORT "8111" // 授时端口
 #define PACKET_HEAD "shiruixun-fenbushi-shoushi" // 数据包头部
 
@@ -21,5 +23,14 @@ typedef struct {
  * @return int 成功返回 0，失败返回 -1
  */
 int send_time_broadcast();
+
+/**
+ * @brief 接收授时包函数
+ * 
+ * @param addr 存放发送方地址
+ * @param time_packet 存放接收的授时包
+ * @return int 成功返回 0，失败返回 -1
+ */
+int recv_time(struct sockaddr_in* addr, time_packet_t* time_packet);
 
 #endif // __TIME_H__

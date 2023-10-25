@@ -109,7 +109,6 @@ int recv_cmd(struct sockaddr_in* addr, char* cmd)
 }
 
 char ip[128][16] = { 0 }; // 组网中所有节点 ip 数组
-// char ip[128][16] = { "192.168.0.100", 0 };
 int net_id = 0; // 组网 ID
 char local_ip[16] = { 0 }; // 本机 IP 地址
 int node_num = 0; // 组网中节点数量

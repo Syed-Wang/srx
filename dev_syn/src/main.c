@@ -8,8 +8,10 @@
 #include <string.h>
 #include <sys/time.h> // setitimer()
 
-struct sockaddr_in cmd_addr; // 指令地址
+struct sockaddr_in time_addr; // 授时包发送端地址
+struct sockaddr_in cmd_addr; // 指令发送端地址
 char cmd[CMD_BUF_SIZE] = { 0 }; // 指令缓冲区
+time_packet_t time_packet; // 时间包
 
 // 定时器处理函数
 void timer_handler(int signum)
@@ -20,8 +22,20 @@ void timer_handler(int signum)
     }
 }
 
+// 接收授时包线程(所有设备始终保持接收授时包)
+void* thread_recv_time(void* arg)
+{
+    while (1) {
+        memset(&time_packet, 0, sizeof(time_packet));
+        if (recv_time(&time_addr, &time_packet) < 0) {
+            PTRERR("recv_time error");
+            exit(1);
+        }
+    }
+}
+
 // 接收指令线程
-void* thread_recv(void* arg)
+void* thread_recv_cmd(void* arg)
 {
     while (1) {
         memset(cmd, 0, sizeof(cmd));
@@ -35,15 +49,7 @@ void* thread_recv(void* arg)
 // 处理指令线程
 void* thread_deal_cmd(void* arg)
 {
-    // struct sockaddr_in cmd_addr; // 指令地址
-    // char cmd[CMD_BUF_SIZE] = { 0 }; // 指令缓冲区
-
     while (1) {
-        /*         memset(cmd, 0, sizeof(cmd));
-                if (recv_cmd(&cmd_addr, cmd) < 0) {
-                    PTRERR("recv_cmd error");
-                    exit(1);
-                } */
         if (cmd_handler(&cmd_addr, cmd) < 0) {
             PTRERR("cmd_handler error");
             exit(1);
@@ -104,8 +110,8 @@ void* thread_confirm_ready(void* arg)
 
 int main(int argc, const char* argv[])
 {
-    // 1. 每个节点独立配置IP地址和掩码
-    # ifdef ARM
+// 1. 每个节点独立配置IP地址和掩码
+#ifdef ARM
     if (system("udhcpc -i eth0 -b") < 0) { // 申请IP地址 -i eth0:指定网卡 -b:后台运行
         PTRERR("system udhcpc error");
         return -1;
@@ -114,13 +120,13 @@ int main(int argc, const char* argv[])
         PTRERR("get_local_ip error");
         return -1;
     }
-    # endif
-    # ifdef X86
+#endif
+#ifdef X86
     if (get_local_ip("ens33", local_ip) < 0) { // 获取本机IP地址
         PTRERR("get_local_ip error");
         return -1;
     }
-    # endif
+#endif
 
     // 2. 初始化当前设备系统配置，保存到JSON文件
     if (save_sys_config(&fps, &window) < 0) {
@@ -128,9 +134,15 @@ int main(int argc, const char* argv[])
         return -1;
     }
 
+    // 创建接收授时包线程
+    pthread_t tid_recv_time;
+    if (pthread_create(&tid_recv_time, NULL, thread_recv_time, NULL) != 0) {
+        PTR_PERROR("pthread_create recv_time error");
+        return -1;
+    }
     // 创建接收指令线程
     pthread_t tid_recv;
-    if (pthread_create(&tid_recv, NULL, thread_recv, NULL) != 0) {
+    if (pthread_create(&tid_recv, NULL, thread_recv_cmd, NULL) != 0) {
         PTR_PERROR("pthread_create recv error");
         return -1;
     }

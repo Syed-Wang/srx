@@ -55,3 +55,42 @@ int send_time_broadcast()
 
     return 0;
 }
+
+int recv_time(struct sockaddr_in* addr, time_packet_t* time_packet)
+{
+    int time_socketfd; // 时间套接字
+    struct sockaddr_in time_addr; // 时间地址
+
+    // 创建套接字
+    time_socketfd = socket(AF_INET, SOCK_DGRAM, 0); // UDP
+    if (time_socketfd < 0) {
+        PTR_PERROR("socket time error");
+        return -1;
+    }
+
+    // 设置端口复用
+    int opt = 1;
+    if (setsockopt(time_socketfd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt)) < 0) {
+        PTR_PERROR("setsockopt time error");
+        return -1;
+    }
+
+    // 设置绑定地址
+    if (set_bind_addr(time_socketfd, &time_addr, INADDR_ANY, TIME_PORT) < 0) {
+        PTRERR("set_bind_addr time error");
+        return -1;
+    }
+
+    socklen_t addr_len = sizeof(struct sockaddr_in);
+    // 接收时间
+    if (recvfrom(time_socketfd, time_packet, sizeof(time_packet_t), 0, (struct sockaddr*)addr, &addr_len) < 0) {
+        PTR_PERROR("recvfrom time error");
+        return -1;
+    }
+
+    PTR_DEBUG("%s\n", time_packet->head);
+
+    close(time_socketfd);
+
+    return 0;
+}
