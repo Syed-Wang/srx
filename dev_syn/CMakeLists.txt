@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.15) # CMake 最低版本号要求
 project(dev_syn) # 项目信息
 
+# 指定编译器 ARM
+# set(CMAKE_C_COMPILER "aarch64-none-linux-gnu-gcc")
+
 # set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D ARM")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D X86")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pthread -w") # 设置编译选项 -w:关闭警告

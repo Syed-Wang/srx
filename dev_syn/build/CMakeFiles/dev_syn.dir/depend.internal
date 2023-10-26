@@ -9,6 +9,7 @@ CMakeFiles/dev_syn.dir/src/cmd.c.o
 CMakeFiles/dev_syn.dir/src/main.c.o
  ../inc/cmd.h
  ../inc/sys_config.h
+ ../inc/time.h
  ../utils/tool.h
  /home/linux/srx/dev_syn/src/main.c
 CMakeFiles/dev_syn.dir/src/sys_config.c.o

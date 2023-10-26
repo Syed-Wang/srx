@@ -13,11 +13,13 @@
 #define CMD_START "/setup:d,1;" // 开始指令
 // 获取组网内所有节点的 ip 地址数组
 #define CMD_GET_IP_LIST "/getIPList:s,ip;" // 获取组网内所有节点的 ip 地址数组
+#define CMD_SET_TIME_SERVER(ip) "/setTimeServer:s," #ip ";" // 设置授时服务器
 
 extern char ip[128][16]; // ip 数组
 extern int net_id; // 组网 ID
 extern char local_ip[16]; // 本机 IP
 extern unsigned long long time_gap; // 时间差
+extern unsigned char server_client_flag; // 服务器-客户端标志 1 服务器 0 客户端
 
 /**
  * @brief 广播发送指令函数

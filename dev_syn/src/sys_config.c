@@ -3,21 +3,8 @@
 #include "tool.h"
 #include <stdio.h>
 
-fps_t fps = {
-    .frame_rate = 60,
-    .sync_encoder = 0,
-    .priority = 0,
-    .net_flag = 0,
-    .ip = ip
-}; // 帧率结构体
-window_t window = {
-    .id = 1,
-    .src_ip = "192.168.0.180",
-    .x = 0,
-    .y = 0,
-    .w = 1920,
-    .h = 1080
-}; // 窗口结构体
+fps_t fps; // 帧率结构体
+window_t window; // 窗口结构体
 
 int save_sys_config(fps_t* fps, window_t* window)
 {
@@ -118,6 +105,8 @@ int load_sys_config(fps_t* fps, window_t* window)
     fps->sync_encoder = cJSON_GetObjectItem(fps_obj, "sync_encoder")->valueint;
     fps->priority = cJSON_GetObjectItem(fps_obj, "priority")->valueint;
     fps->net_flag = cJSON_GetObjectItem(fps_obj, "net_flag")->valueint;
+    // TODO
+
 
     // 解析 window 对象
     cJSON* window_obj = cJSON_GetObjectItem(root, "window");
@@ -140,7 +129,7 @@ int load_sys_config(fps_t* fps, window_t* window)
     return 0;
 }
 
-int set_net_flag(fps_t* fps, unsigned char flag)
+/* int set_net_flag(fps_t* fps, unsigned char flag)
 {
     if (flag != 0 && flag != 1) {
         perror("flag error");
@@ -148,4 +137,4 @@ int set_net_flag(fps_t* fps, unsigned char flag)
     }
     fps->net_flag = flag;
     return 0;
-}
+} */

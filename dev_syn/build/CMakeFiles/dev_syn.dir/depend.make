@@ -8,6 +8,7 @@ CMakeFiles/dev_syn.dir/src/cmd.c.o: ../src/cmd.c
 
 CMakeFiles/dev_syn.dir/src/main.c.o: ../inc/cmd.h
 CMakeFiles/dev_syn.dir/src/main.c.o: ../inc/sys_config.h
+CMakeFiles/dev_syn.dir/src/main.c.o: ../inc/time.h
 CMakeFiles/dev_syn.dir/src/main.c.o: ../utils/tool.h
 CMakeFiles/dev_syn.dir/src/main.c.o: ../src/main.c
 

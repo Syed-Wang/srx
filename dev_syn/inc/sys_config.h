@@ -1,7 +1,7 @@
 #ifndef __SYS_CONFIG_H__
 #define __SYS_CONFIG_H__
 
-#define SYS_CONFIG_PATH "../config/sys_config.json" // JSON 文件路径
+#define SYS_CONFIG_PATH "./sys_config.json" // JSON 文件路径
 
 extern char ip[128][16]; // ip 数组
 extern int node_num; // 组网中节点数量
@@ -12,7 +12,8 @@ typedef struct {
     unsigned char sync_encoder; // 同步编码器 (预留) (0 不同步 1 同步)
     unsigned char priority; // 优先级(0-0xff 0最高)
     unsigned char net_flag; // 组网标志(指定服务器，自主) (0指定服务器 1自主)
-    char (*ip)[16]; // IP 地址表
+    char ip[128][16]; // TODO：IP 地址表
+    // char (*ip)[16]; // IP 地址表
 } fps_t;
 
 // 窗口结构体
@@ -53,6 +54,6 @@ int load_sys_config(fps_t* fps, window_t* window);
  * @param flag 组网标志
  * @return int 成功返回 0，失败返回 -1
  */
-int set_net_flag(fps_t* fps, unsigned char flag);
+// int set_net_flag(fps_t* fps, unsigned char flag);
 
 #endif // __SYS_CONFIG_H__

@@ -12,6 +12,10 @@ netinet/in.h
 
 ../inc/sys_config.h
 
+../inc/time.h
+netinet/in.h
+-
+
 ../utils/cJSON.h
 stddef.h
 -
@@ -20,11 +24,33 @@ stddef.h
 netinet/in.h
 -
 
+/home/linux/srx/dev_syn/src/cmd.c
+cmd.h
+/home/linux/srx/dev_syn/src/cmd.h
+sys_config.h
+/home/linux/srx/dev_syn/src/sys_config.h
+tool.h
+/home/linux/srx/dev_syn/src/tool.h
+arpa/inet.h
+-
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+sys/time.h
+-
+unistd.h
+-
+
 /home/linux/srx/dev_syn/src/main.c
 cmd.h
 /home/linux/srx/dev_syn/src/cmd.h
 sys_config.h
 /home/linux/srx/dev_syn/src/sys_config.h
+time.h
+/home/linux/srx/dev_syn/src/time.h
 tool.h
 /home/linux/srx/dev_syn/src/tool.h
 pthread.h
@@ -48,5 +74,25 @@ cJSON.h
 tool.h
 /home/linux/srx/dev_syn/src/tool.h
 stdio.h
+-
+
+/home/linux/srx/dev_syn/src/time.c
+time.h
+/home/linux/srx/dev_syn/src/time.h
+sys_config.h
+/home/linux/srx/dev_syn/src/sys_config.h
+tool.h
+/home/linux/srx/dev_syn/src/tool.h
+arpa/inet.h
+-
+errno.h
+-
+stdio.h
+-
+string.h
+-
+sys/time.h
+-
+unistd.h
 -
 

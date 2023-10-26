@@ -231,6 +231,28 @@ int cmd_handler(struct sockaddr_in* addr, const char* cmd)
     } else if (!strcmp(cmd, CMD_START)) { // 开始指令
         // TODO
         PTR_DEBUG("start\n");
+    } else if (!strncmp(cmd, CMD_SET_TIME_SERVER(0), 17)) { // 设置授时服务器
+        // 字符串解析
+        char ip_buf[16] = { 0 }; // IP 地址
+        sscanf(cmd, CMD_SET_TIME_SERVER(% s), ip_buf);
+
+        if (is_ip(ip_buf)) { // 判断是否为 IP 地址
+            for (int i = 0; i < node_num; i++) { // 判断是否在组网中
+                if (!strcmp(ip[i], ip_buf)) {
+                    if (!strcmp(ip_buf, local_ip)) { // 如果是本机 IP 地址
+                        server_client_flag = 1; // 服务器
+                    } else {
+                        server_client_flag = 0; // 客户端
+                    }
+                    break;
+                }
+            }
+        } else {
+            PTRERR("ip error");
+            return -1;
+        }
+    } else {
+        PTR_DEBUG("recv_cmd: %s\n", cmd);
     }
 
     return 0;
