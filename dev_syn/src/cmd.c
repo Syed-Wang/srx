@@ -1,4 +1,5 @@
 #include "cmd.h"
+#include "h264.h"
 #include "sys_config.h"
 #include "tool.h"
 #include <arpa/inet.h>
@@ -115,6 +116,9 @@ int node_num = 0; // 组网中节点数量
 unsigned long long* detect_time = NULL; // 探测时间
 unsigned long long time_gap = 0; // 时间差
 char tmp_ip[128][16] = { 0 }; // 临时 ip 数组
+char missing_ip[128][16] = { 0 }; // 缺失的 ip 地址
+char min_ip[16] = { 0 }; // 缺失的最小 ip 地址
+unsigned char request_mode_flag; // 请求模式标志(1请求模式 0非请求模式)
 
 int cmd_handler(struct sockaddr_in* addr, const char* cmd)
 {
@@ -145,7 +149,7 @@ int cmd_handler(struct sockaddr_in* addr, const char* cmd)
                 }
             }
             // 组网内所有节点同步组网中的所有节点 IP 地址
-            if (net_id_buf == net_id) { // // 组网 ID 相同，保存 IP 地址
+            if (net_id_buf == net_id) { // 组网 ID 相同，保存 IP 地址
                 for (int i = 0; i < sizeof(ip) / sizeof(ip[0]); i++) {
                     if (!strcmp(ip[i], ip_buf)) {
                         break; // 已存在，跳过
@@ -156,7 +160,7 @@ int cmd_handler(struct sockaddr_in* addr, const char* cmd)
                         node_num++;
                         PTR_DEBUG("ip[%d]: %s, node_num: %d\n", i, ip[i], node_num);
                         // 更新设备系统配置文件
-                        fps.ip = ip; // 更新 IP 地址表
+                        memcpy(fps.ip, ip, sizeof(ip)); // 拷贝 IP 地址表
                         if (save_sys_config(&fps, &window) < 0) {
                             PTRERR("save_sys_config error");
                             return -1;
@@ -166,7 +170,6 @@ int cmd_handler(struct sockaddr_in* addr, const char* cmd)
                 }
                 // 再发送自己的 IP 地址和组网 ID，与其他节点同步
                 char cmd_buf[CMD_BUF_SIZE] = { 0 };
-                // sprintf(cmd_buf, CMD_SET_NETWORK_ID(% s, % d), local_ip, net_id);
                 sprintf(cmd_buf, "/setNetworkID:s,%s,%d;", local_ip, net_id);
                 send_cmd_broadcast(cmd_buf);
             }
@@ -229,7 +232,14 @@ int cmd_handler(struct sockaddr_in* addr, const char* cmd)
             }
         }
     } else if (!strcmp(cmd, CMD_START)) { // 开始指令
-        // TODO
+        // 如果客户端，开始接收视频文件
+        if (server_client_flag == 0) {
+            if (recv_h264() < 0) {
+                PTRERR("recv_h264 error");
+                return -1;
+            }
+        }
+
         PTR_DEBUG("start\n");
     } else if (!strncmp(cmd, CMD_SET_TIME_SERVER(0), 17)) { // 设置授时服务器
         // 字符串解析
@@ -251,8 +261,77 @@ int cmd_handler(struct sockaddr_in* addr, const char* cmd)
             PTRERR("ip error");
             return -1;
         }
-    } else {
-        PTR_DEBUG("recv_cmd: %s\n", cmd);
+    } else if (!strcmp(cmd, CMD_REQUEST_CONNECT)) { // 请求连接
+        if (server_client_flag == 1 && min_ip[0] != '\0') { // 服务器且缺失的最小 IP 地址不为空
+            // 回应json文件
+            if (send_file(addr, SYS_CONFIG_PATH) < 0) {
+                PTRERR("send_file error");
+                return -1;
+            }
+
+            // 发送网络中的全部信息(IP 地址表)
+            char buf[CMD_BUF_SIZE] = { 0 };
+            for (int i = 0; i < node_num; i++) { // 拼接 IP 地址表
+                sprintf(buf, "%s%s,", buf, ip[i]);
+            }
+            // 将缺失的最小 IP 地址拼接到字符串末尾
+            sprintf(buf, "%s%s", buf, min_ip);
+
+            char cmd_buf[CMD_BUF_SIZE] = { 0 };
+            sprintf(cmd_buf, "/setIPList:s,%s;", buf);
+            if (send_cmd_unicast(addr, cmd_buf) < 0) {
+                PTRERR("send_cmd_unicast error");
+                return -1;
+            }
+        }
+    } else if (!strncmp(cmd, "/setIPList:s", 12)) { // 设置 IP 地址表
+        // 字符串解析
+        char buf[CMD_BUF_SIZE] = { 0 }; // IP 地址表
+        char ip_buf[16] = { 0 }; // IP 地址表的最后一个 IP 地址
+        sscanf(cmd, "/setIPList:s,%[^;];", buf); // %[^;]：匹配除分号以外的所有字符
+
+        // 解析 IP 地址表
+        memset(ip, 0, sizeof(ip)); // 清空 IP 地址表
+        int i = 0, j = 0, k = 0;
+        for (i = 0; i < sizeof(ip) / sizeof(ip[0]); i++) {
+            for (j = 0; j < sizeof(ip[0]); j++) {
+                if (buf[k] == ',') {
+                    k++;
+                    break;
+                }
+                ip[i][j] = buf[k++];
+            }
+            if (buf[k] == '\0') {
+                break;
+            }
+        }
+        // 解析出 IP 地址表的最后一个 IP 地址，作为本机 IP 地址
+        memcpy(ip_buf, ip[i], sizeof(ip[i]));
+        memset(ip[i], 0, sizeof(ip[i])); // 清空 IP 地址表的最后一个 IP 地址
+        // 更新节点数量
+        node_num = i;
+        // 设置更新本机 IP 地址
+        strcpy(local_ip, ip_buf);
+        char cmd_buf[CMD_BUF_SIZE] = { 0 };
+#ifdef ARM
+        sprintf(cmd_buf, "ifconfig eth0 %s netmask 255.255.255.0 up", local_ip);
+#elif X86
+        // wsy: 需要 root 权限
+        sprintf(cmd_buf, "ifconfig ens33 %s netmask 255.255.255.0 up", local_ip);
+#endif
+        // 重新设置 IP 地址
+        if (system(cmd_buf) < 0) { // 设置本机 IP 地址
+            PTRERR("system ifconfig error");
+            return -1;
+        }
+        // 更新设备系统配置文件
+        memcpy(fps.ip, ip, sizeof(ip)); // 拷贝 IP 地址表
+        if (save_sys_config(&fps, &window) < 0) {
+            PTRERR("save_sys_config error");
+            return -1;
+        }
+        // 退出请求模式
+        request_mode_flag = 0;
     }
 
     return 0;
@@ -319,6 +398,8 @@ int confirm_ready()
     cmd_addr.sin_family = AF_INET;
     cmd_addr.sin_port = htons(atoi(CMD_PORT));
     int i, j, k, flag = 0;
+    flag = 1; // 标志是否所有节点都已就绪
+
     for (i = 0; i < node_num; i++) {
         cmd_addr.sin_addr.s_addr = inet_addr(ip[i]);
         memset(tmp_ip, 0, sizeof(tmp_ip)); // 先清空临时 ip 数组
@@ -327,8 +408,15 @@ int confirm_ready()
             return -1;
         }
         sleep(1); // 等待 1s，完成接收
+        // 记录所有缺失的 IP(判断tmp_ip是否为空)
+        if (!strcmp(tmp_ip[0], "")) {
+            strcpy(missing_ip[i], ip[i]);
+            PTR_DEBUG("missing_ip[%d]: %s\n", i, missing_ip[i]);
+            flag = 0;
+            continue; // 跳过当前节点
+        }
+
         // 比对 IP 表
-        flag = 1; // 标志是否所有节点都已就绪
         for (j = 0; j < node_num; j++) {
             for (k = 0; k < node_num; k++) {
                 if (!strcmp(ip[j], tmp_ip[k])) {
@@ -343,14 +431,28 @@ int confirm_ready()
                 break;
             }
         }
-        if (flag == 0) { // 当前节点未就绪，结束
-            return 0;
-        }
     }
 
     if (flag == 1) { // 所有节点都已就绪
+        memset(missing_ip, 0, sizeof(missing_ip)); // 清空缺失的 IP 地址
         PTR_DEBUG("all ready\n");
         return 1;
+    } else if (flag == 0) { // 有节点未就绪
+        PTR_DEBUG("not ready\n");
+        // 获取缺失的最小 IP 地址
+        for (i = 0; i < node_num; i++) {
+            if (!strcmp(missing_ip[i], "")) {
+                continue; // 跳过空 IP 地址
+            }
+            if (!strcmp(min_ip, "")) {
+                strcpy(min_ip, missing_ip[i]);
+                continue;
+            }
+            if (strcmp(min_ip, missing_ip[i]) > 0) {
+                strcpy(min_ip, missing_ip[i]);
+            }
+        }
+        return 0;
     }
 
     return 0;

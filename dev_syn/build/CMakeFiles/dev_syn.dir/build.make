@@ -57,87 +57,213 @@ include CMakeFiles/dev_syn.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/dev_syn.dir/flags.make
 
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c.o: CMakeFiles/dev_syn.dir/flags.make
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c.o: /home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c.o"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c.o   -c /home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c
+
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c.i"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c > CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c.i
+
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c.s"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c -o CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c.s
+
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c.o: CMakeFiles/dev_syn.dir/flags.make
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c.o: /home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c.o"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c.o   -c /home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c
+
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c.i"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c > CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c.i
+
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c.s"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c -o CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c.s
+
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c.o: CMakeFiles/dev_syn.dir/flags.make
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c.o: /home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c.o"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c.o   -c /home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c
+
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c.i"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c > CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c.i
+
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c.s"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c -o CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c.s
+
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c.o: CMakeFiles/dev_syn.dir/flags.make
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c.o: /home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c.o"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c.o   -c /home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c
+
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c.i"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c > CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c.i
+
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c.s"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c -o CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c.s
+
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c.o: CMakeFiles/dev_syn.dir/flags.make
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c.o: /home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c.o"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c.o   -c /home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c
+
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c.i"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c > CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c.i
+
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c.s"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c -o CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c.s
+
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c.o: CMakeFiles/dev_syn.dir/flags.make
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c.o: /home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c.o"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c.o   -c /home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c
+
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c.i"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c > CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c.i
+
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c.s"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c -o CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c.s
+
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.o: CMakeFiles/dev_syn.dir/flags.make
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.o: /home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.o"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.o   -c /home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c
+
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.i"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c > CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.i
+
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.s"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c -o CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.s
+
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.o: CMakeFiles/dev_syn.dir/flags.make
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.o: /home/linux/rk356x_linux_230210/external/mpp/utils/utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.o"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.o   -c /home/linux/rk356x_linux_230210/external/mpp/utils/utils.c
+
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.i"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linux/rk356x_linux_230210/external/mpp/utils/utils.c > CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.i
+
+CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.s"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/rk356x_linux_230210/external/mpp/utils/utils.c -o CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.s
+
 CMakeFiles/dev_syn.dir/src/cmd.c.o: CMakeFiles/dev_syn.dir/flags.make
 CMakeFiles/dev_syn.dir/src/cmd.c.o: ../src/cmd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/dev_syn.dir/src/cmd.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dev_syn.dir/src/cmd.c.o   -c /home/linux/srx/dev_syn/src/cmd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/dev_syn.dir/src/cmd.c.o"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dev_syn.dir/src/cmd.c.o   -c /home/linux/srx/dev_syn/src/cmd.c
 
 CMakeFiles/dev_syn.dir/src/cmd.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dev_syn.dir/src/cmd.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linux/srx/dev_syn/src/cmd.c > CMakeFiles/dev_syn.dir/src/cmd.c.i
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linux/srx/dev_syn/src/cmd.c > CMakeFiles/dev_syn.dir/src/cmd.c.i
 
 CMakeFiles/dev_syn.dir/src/cmd.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dev_syn.dir/src/cmd.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/srx/dev_syn/src/cmd.c -o CMakeFiles/dev_syn.dir/src/cmd.c.s
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/srx/dev_syn/src/cmd.c -o CMakeFiles/dev_syn.dir/src/cmd.c.s
+
+CMakeFiles/dev_syn.dir/src/h264.c.o: CMakeFiles/dev_syn.dir/flags.make
+CMakeFiles/dev_syn.dir/src/h264.c.o: ../src/h264.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/dev_syn.dir/src/h264.c.o"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dev_syn.dir/src/h264.c.o   -c /home/linux/srx/dev_syn/src/h264.c
+
+CMakeFiles/dev_syn.dir/src/h264.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dev_syn.dir/src/h264.c.i"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linux/srx/dev_syn/src/h264.c > CMakeFiles/dev_syn.dir/src/h264.c.i
+
+CMakeFiles/dev_syn.dir/src/h264.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dev_syn.dir/src/h264.c.s"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/srx/dev_syn/src/h264.c -o CMakeFiles/dev_syn.dir/src/h264.c.s
 
 CMakeFiles/dev_syn.dir/src/main.c.o: CMakeFiles/dev_syn.dir/flags.make
 CMakeFiles/dev_syn.dir/src/main.c.o: ../src/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/dev_syn.dir/src/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dev_syn.dir/src/main.c.o   -c /home/linux/srx/dev_syn/src/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/dev_syn.dir/src/main.c.o"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dev_syn.dir/src/main.c.o   -c /home/linux/srx/dev_syn/src/main.c
 
 CMakeFiles/dev_syn.dir/src/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dev_syn.dir/src/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linux/srx/dev_syn/src/main.c > CMakeFiles/dev_syn.dir/src/main.c.i
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linux/srx/dev_syn/src/main.c > CMakeFiles/dev_syn.dir/src/main.c.i
 
 CMakeFiles/dev_syn.dir/src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dev_syn.dir/src/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/srx/dev_syn/src/main.c -o CMakeFiles/dev_syn.dir/src/main.c.s
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/srx/dev_syn/src/main.c -o CMakeFiles/dev_syn.dir/src/main.c.s
 
 CMakeFiles/dev_syn.dir/src/sys_config.c.o: CMakeFiles/dev_syn.dir/flags.make
 CMakeFiles/dev_syn.dir/src/sys_config.c.o: ../src/sys_config.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/dev_syn.dir/src/sys_config.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dev_syn.dir/src/sys_config.c.o   -c /home/linux/srx/dev_syn/src/sys_config.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/dev_syn.dir/src/sys_config.c.o"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dev_syn.dir/src/sys_config.c.o   -c /home/linux/srx/dev_syn/src/sys_config.c
 
 CMakeFiles/dev_syn.dir/src/sys_config.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dev_syn.dir/src/sys_config.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linux/srx/dev_syn/src/sys_config.c > CMakeFiles/dev_syn.dir/src/sys_config.c.i
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linux/srx/dev_syn/src/sys_config.c > CMakeFiles/dev_syn.dir/src/sys_config.c.i
 
 CMakeFiles/dev_syn.dir/src/sys_config.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dev_syn.dir/src/sys_config.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/srx/dev_syn/src/sys_config.c -o CMakeFiles/dev_syn.dir/src/sys_config.c.s
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/srx/dev_syn/src/sys_config.c -o CMakeFiles/dev_syn.dir/src/sys_config.c.s
 
 CMakeFiles/dev_syn.dir/src/time.c.o: CMakeFiles/dev_syn.dir/flags.make
 CMakeFiles/dev_syn.dir/src/time.c.o: ../src/time.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/dev_syn.dir/src/time.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dev_syn.dir/src/time.c.o   -c /home/linux/srx/dev_syn/src/time.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/dev_syn.dir/src/time.c.o"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dev_syn.dir/src/time.c.o   -c /home/linux/srx/dev_syn/src/time.c
 
 CMakeFiles/dev_syn.dir/src/time.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dev_syn.dir/src/time.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linux/srx/dev_syn/src/time.c > CMakeFiles/dev_syn.dir/src/time.c.i
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linux/srx/dev_syn/src/time.c > CMakeFiles/dev_syn.dir/src/time.c.i
 
 CMakeFiles/dev_syn.dir/src/time.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dev_syn.dir/src/time.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/srx/dev_syn/src/time.c -o CMakeFiles/dev_syn.dir/src/time.c.s
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/srx/dev_syn/src/time.c -o CMakeFiles/dev_syn.dir/src/time.c.s
 
 CMakeFiles/dev_syn.dir/utils/cJSON.c.o: CMakeFiles/dev_syn.dir/flags.make
 CMakeFiles/dev_syn.dir/utils/cJSON.c.o: ../utils/cJSON.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/dev_syn.dir/utils/cJSON.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dev_syn.dir/utils/cJSON.c.o   -c /home/linux/srx/dev_syn/utils/cJSON.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/dev_syn.dir/utils/cJSON.c.o"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dev_syn.dir/utils/cJSON.c.o   -c /home/linux/srx/dev_syn/utils/cJSON.c
 
 CMakeFiles/dev_syn.dir/utils/cJSON.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dev_syn.dir/utils/cJSON.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linux/srx/dev_syn/utils/cJSON.c > CMakeFiles/dev_syn.dir/utils/cJSON.c.i
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linux/srx/dev_syn/utils/cJSON.c > CMakeFiles/dev_syn.dir/utils/cJSON.c.i
 
 CMakeFiles/dev_syn.dir/utils/cJSON.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dev_syn.dir/utils/cJSON.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/srx/dev_syn/utils/cJSON.c -o CMakeFiles/dev_syn.dir/utils/cJSON.c.s
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/srx/dev_syn/utils/cJSON.c -o CMakeFiles/dev_syn.dir/utils/cJSON.c.s
 
 CMakeFiles/dev_syn.dir/utils/tool.c.o: CMakeFiles/dev_syn.dir/flags.make
 CMakeFiles/dev_syn.dir/utils/tool.c.o: ../utils/tool.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/dev_syn.dir/utils/tool.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dev_syn.dir/utils/tool.c.o   -c /home/linux/srx/dev_syn/utils/tool.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/dev_syn.dir/utils/tool.c.o"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dev_syn.dir/utils/tool.c.o   -c /home/linux/srx/dev_syn/utils/tool.c
 
 CMakeFiles/dev_syn.dir/utils/tool.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dev_syn.dir/utils/tool.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linux/srx/dev_syn/utils/tool.c > CMakeFiles/dev_syn.dir/utils/tool.c.i
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linux/srx/dev_syn/utils/tool.c > CMakeFiles/dev_syn.dir/utils/tool.c.i
 
 CMakeFiles/dev_syn.dir/utils/tool.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dev_syn.dir/utils/tool.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/srx/dev_syn/utils/tool.c -o CMakeFiles/dev_syn.dir/utils/tool.c.s
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/srx/dev_syn/utils/tool.c -o CMakeFiles/dev_syn.dir/utils/tool.c.s
 
 # Object files for target dev_syn
 dev_syn_OBJECTS = \
+"CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c.o" \
+"CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c.o" \
+"CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c.o" \
+"CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c.o" \
+"CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c.o" \
+"CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c.o" \
+"CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.o" \
+"CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.o" \
 "CMakeFiles/dev_syn.dir/src/cmd.c.o" \
+"CMakeFiles/dev_syn.dir/src/h264.c.o" \
 "CMakeFiles/dev_syn.dir/src/main.c.o" \
 "CMakeFiles/dev_syn.dir/src/sys_config.c.o" \
 "CMakeFiles/dev_syn.dir/src/time.c.o" \
@@ -147,7 +273,16 @@ dev_syn_OBJECTS = \
 # External object files for target dev_syn
 dev_syn_EXTERNAL_OBJECTS =
 
+../bin/dev_syn: CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c.o
+../bin/dev_syn: CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c.o
+../bin/dev_syn: CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c.o
+../bin/dev_syn: CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c.o
+../bin/dev_syn: CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c.o
+../bin/dev_syn: CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c.o
+../bin/dev_syn: CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.o
+../bin/dev_syn: CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.o
 ../bin/dev_syn: CMakeFiles/dev_syn.dir/src/cmd.c.o
+../bin/dev_syn: CMakeFiles/dev_syn.dir/src/h264.c.o
 ../bin/dev_syn: CMakeFiles/dev_syn.dir/src/main.c.o
 ../bin/dev_syn: CMakeFiles/dev_syn.dir/src/sys_config.c.o
 ../bin/dev_syn: CMakeFiles/dev_syn.dir/src/time.c.o
@@ -155,7 +290,7 @@ dev_syn_EXTERNAL_OBJECTS =
 ../bin/dev_syn: CMakeFiles/dev_syn.dir/utils/tool.c.o
 ../bin/dev_syn: CMakeFiles/dev_syn.dir/build.make
 ../bin/dev_syn: CMakeFiles/dev_syn.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable ../bin/dev_syn"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking C executable ../bin/dev_syn"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/dev_syn.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

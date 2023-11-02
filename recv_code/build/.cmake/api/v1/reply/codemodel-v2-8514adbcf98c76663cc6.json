@@ -18,7 +18,7 @@
 					]
 				}
 			],
-			"name" : "",
+			"name" : "Debug",
 			"projects" : 
 			[
 				{
@@ -38,7 +38,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "recv_code::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-recv_code-afc60cfbeda23872a1f9.json",
+					"jsonFile" : "target-recv_code-Debug-74cdb1cb9b74d64e6558.json",
 					"name" : "recv_code",
 					"projectIndex" : 0
 				}

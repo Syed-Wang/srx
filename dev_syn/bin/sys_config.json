@@ -3,12 +3,12 @@
 		"frame_rate":	60,
 		"sync_encoder":	0,
 		"priority":	0,
-		"net_flag":	0,
+		"net_flag":	1,
 		"ip":	[]
 	},
 	"window":	{
 		"id":	1,
-		"src_ip":	"192.168.0.100",
+		"src_ip":	"192.168.0.182",
 		"x":	0,
 		"y":	0,
 		"w":	1920,

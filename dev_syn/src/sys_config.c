@@ -2,6 +2,8 @@
 #include "cJSON.h"
 #include "tool.h"
 #include <stdio.h>
+#include <stdlib.h> // malloc()
+#include <string.h> // memset()
 
 fps_t fps; // 帧率结构体
 window_t window; // 窗口结构体
@@ -69,8 +71,9 @@ int load_sys_config(fps_t* fps, window_t* window)
 {
     FILE* fp = fopen(SYS_CONFIG_PATH, "r"); // r 只读
     if (fp == NULL) {
-        perror("fopen sys_config error");
-        return -1;
+        // PTR_PERROR("fopen sys_config error");
+        printf("The file %s does not exist, create it.\n", SYS_CONFIG_PATH);
+        return -2; // 文件不存在
     }
 
     // 读取 JSON 文件内容
@@ -105,8 +108,17 @@ int load_sys_config(fps_t* fps, window_t* window)
     fps->sync_encoder = cJSON_GetObjectItem(fps_obj, "sync_encoder")->valueint;
     fps->priority = cJSON_GetObjectItem(fps_obj, "priority")->valueint;
     fps->net_flag = cJSON_GetObjectItem(fps_obj, "net_flag")->valueint;
-    // TODO
-
+    // 解析 ip 数组到 fps 对象 (类型：char ip[128][16])
+    memset(fps->ip, 0, sizeof(fps->ip)); // 清空内存
+    cJSON* ip_array = cJSON_GetObjectItem(fps_obj, "ip");
+    if (ip_array == NULL) {
+        perror("cJSON_GetObjectItem ip error");
+        return -1;
+    }
+    node_num = cJSON_GetArraySize(ip_array); // 获取 ip 数组长度
+    for (int i = 0; i < node_num; i++) {
+        strcpy(fps->ip[i], cJSON_GetArrayItem(ip_array, i)->valuestring); // 获取 ip 数组元素
+    }
 
     // 解析 window 对象
     cJSON* window_obj = cJSON_GetObjectItem(root, "window");
@@ -128,13 +140,3 @@ int load_sys_config(fps_t* fps, window_t* window)
 
     return 0;
 }
-
-/* int set_net_flag(fps_t* fps, unsigned char flag)
-{
-    if (flag != 0 && flag != 1) {
-        perror("flag error");
-        return -1;
-    }
-    fps->net_flag = flag;
-    return 0;
-} */

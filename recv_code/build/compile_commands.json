@@ -1,0 +1,37 @@
+[
+{
+  "directory": "/home/linux/srx/recv_code/build",
+  "command": "/usr/bin/cc  -I/home/linux/srx/recv_code/inc -I/home/linux/srx/recv_code/utils   -pthread -w -g   -o CMakeFiles/recv_code.dir/src/cmd_recv.c.o   -c /home/linux/srx/recv_code/src/cmd_recv.c",
+  "file": "/home/linux/srx/recv_code/src/cmd_recv.c"
+},
+{
+  "directory": "/home/linux/srx/recv_code/build",
+  "command": "/usr/bin/cc  -I/home/linux/srx/recv_code/inc -I/home/linux/srx/recv_code/utils   -pthread -w -g   -o CMakeFiles/recv_code.dir/src/h264_recv.c.o   -c /home/linux/srx/recv_code/src/h264_recv.c",
+  "file": "/home/linux/srx/recv_code/src/h264_recv.c"
+},
+{
+  "directory": "/home/linux/srx/recv_code/build",
+  "command": "/usr/bin/cc  -I/home/linux/srx/recv_code/inc -I/home/linux/srx/recv_code/utils   -pthread -w -g   -o CMakeFiles/recv_code.dir/src/main.c.o   -c /home/linux/srx/recv_code/src/main.c",
+  "file": "/home/linux/srx/recv_code/src/main.c"
+},
+{
+  "directory": "/home/linux/srx/recv_code/build",
+  "command": "/usr/bin/cc  -I/home/linux/srx/recv_code/inc -I/home/linux/srx/recv_code/utils   -pthread -w -g   -o CMakeFiles/recv_code.dir/src/sys_config.c.o   -c /home/linux/srx/recv_code/src/sys_config.c",
+  "file": "/home/linux/srx/recv_code/src/sys_config.c"
+},
+{
+  "directory": "/home/linux/srx/recv_code/build",
+  "command": "/usr/bin/cc  -I/home/linux/srx/recv_code/inc -I/home/linux/srx/recv_code/utils   -pthread -w -g   -o CMakeFiles/recv_code.dir/src/time_recv.c.o   -c /home/linux/srx/recv_code/src/time_recv.c",
+  "file": "/home/linux/srx/recv_code/src/time_recv.c"
+},
+{
+  "directory": "/home/linux/srx/recv_code/build",
+  "command": "/usr/bin/cc  -I/home/linux/srx/recv_code/inc -I/home/linux/srx/recv_code/utils   -pthread -w -g   -o CMakeFiles/recv_code.dir/utils/cJSON.c.o   -c /home/linux/srx/recv_code/utils/cJSON.c",
+  "file": "/home/linux/srx/recv_code/utils/cJSON.c"
+},
+{
+  "directory": "/home/linux/srx/recv_code/build",
+  "command": "/usr/bin/cc  -I/home/linux/srx/recv_code/inc -I/home/linux/srx/recv_code/utils   -pthread -w -g   -o CMakeFiles/recv_code.dir/utils/tool.c.o   -c /home/linux/srx/recv_code/utils/tool.c",
+  "file": "/home/linux/srx/recv_code/utils/tool.c"
+}
+]

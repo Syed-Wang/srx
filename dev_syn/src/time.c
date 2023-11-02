@@ -7,6 +7,7 @@
 #include <string.h>
 #include <sys/time.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 // 服务器-客户端标志
 unsigned char server_client_flag; // 1 服务器 0 客户端
@@ -105,9 +106,10 @@ int recv_time(struct sockaddr_in* addr, time_packet_t* time_packet)
             close(time_socketfd);
             PTR_DEBUG("recvfrom time timeout\n");
             return 0;
+        } else {
+            PTR_PERROR("recvfrom time error");
+            return -1;
         }
-        PTR_PERROR("recvfrom time error");
-        return -1;
     }
 
     PTR_DEBUG("%s\n", time_packet->head);

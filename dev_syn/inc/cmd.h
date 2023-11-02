@@ -3,7 +3,7 @@
 
 #include <netinet/in.h> // sockaddr_in
 
-#define CMD_BUF_SIZE 128 // 指令缓冲区大小
+#define CMD_BUF_SIZE 1024 // 指令缓冲区大小
 #define CMD_PORT "8112" // 指令端口
 #define CMD_GET_IP "/getIP:s,ip;" // 获取IP指令
 #define CMD_SET_NETWORK_ID(ip, id) "/setNetworkID:s," #ip "," #id ";" // 选择设备进行组网，并分配组网ID
@@ -14,12 +14,14 @@
 // 获取组网内所有节点的 ip 地址数组
 #define CMD_GET_IP_LIST "/getIPList:s,ip;" // 获取组网内所有节点的 ip 地址数组
 #define CMD_SET_TIME_SERVER(ip) "/setTimeServer:s," #ip ";" // 设置授时服务器
+#define CMD_REQUEST_CONNECT "/requestConnect:d,1;" // 请求连接
 
 extern char ip[128][16]; // ip 数组
 extern int net_id; // 组网 ID
 extern char local_ip[16]; // 本机 IP
 extern unsigned long long time_gap; // 时间差
 extern unsigned char server_client_flag; // 服务器-客户端标志 1 服务器 0 客户端
+extern unsigned char request_mode_flag; // 请求模式标志 1 请求模式 0 非请求模式
 
 /**
  * @brief 广播发送指令函数

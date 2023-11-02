@@ -3,6 +3,8 @@
 
 #include <netinet/in.h> // sockaddr_in
 
+#define FILE_BUF_SIZE 1024 // 文件缓冲区大小
+
 #define PTR_PERROR(msg)                                     \
     do {                                                    \
         printf("%s %s %d: ", __FILE__, __func__, __LINE__); \
@@ -59,5 +61,23 @@ int get_local_ip(const char* ifname, char* ip);
  * @return int 1:是 0:否
  */
 int is_ip(const char* ip);
+
+/**
+ * @brief 发送文件
+ *
+ * @param addr 目的地址
+ * @param file_path 文件路径
+ * @return int 0:成功 -1:失败
+ */
+int send_file(struct sockaddr_in* addr, const char* file_path);
+
+/**
+ * @brief 接收文件
+ *
+ * @param port 接收的端口号
+ * @param file_path 文件路径
+ * @return int 0:成功 -1:失败
+ */
+int recv_file(const char* port, const char* file_path);
 
 #endif // __TOOL_H__

@@ -123,6 +123,222 @@ dev_syn/fast:
 	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/build
 .PHONY : dev_syn/fast
 
+home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.o: home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c.o
+
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.o
+
+# target to build an object file
+home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c.o:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c.o
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c.o
+
+home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.i: home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c.i
+
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.i
+
+# target to preprocess a source file
+home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c.i:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c.i
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c.i
+
+home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.s: home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c.s
+
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.s
+
+# target to generate assembly for a file
+home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c.s:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c.s
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c.s
+
+home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.o: home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c.o
+
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.o
+
+# target to build an object file
+home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c.o:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c.o
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c.o
+
+home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.i: home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c.i
+
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.i
+
+# target to preprocess a source file
+home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c.i:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c.i
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c.i
+
+home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.s: home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c.s
+
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.s
+
+# target to generate assembly for a file
+home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c.s:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c.s
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c.s
+
+home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.o: home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c.o
+
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.o
+
+# target to build an object file
+home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c.o:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c.o
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c.o
+
+home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.i: home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c.i
+
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.i
+
+# target to preprocess a source file
+home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c.i:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c.i
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c.i
+
+home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.s: home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c.s
+
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.s
+
+# target to generate assembly for a file
+home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c.s:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c.s
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c.s
+
+home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.o: home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c.o
+
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.o
+
+# target to build an object file
+home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c.o:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c.o
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c.o
+
+home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.i: home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c.i
+
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.i
+
+# target to preprocess a source file
+home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c.i:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c.i
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c.i
+
+home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.s: home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c.s
+
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.s
+
+# target to generate assembly for a file
+home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c.s:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c.s
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c.s
+
+home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.o: home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c.o
+
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.o
+
+# target to build an object file
+home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c.o:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c.o
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c.o
+
+home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.i: home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c.i
+
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.i
+
+# target to preprocess a source file
+home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c.i:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c.i
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c.i
+
+home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.s: home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c.s
+
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.s
+
+# target to generate assembly for a file
+home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c.s:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c.s
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c.s
+
+home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.o: home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c.o
+
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.o
+
+# target to build an object file
+home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c.o:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c.o
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c.o
+
+home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.i: home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c.i
+
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.i
+
+# target to preprocess a source file
+home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c.i:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c.i
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c.i
+
+home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.s: home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c.s
+
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.s
+
+# target to generate assembly for a file
+home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c.s:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c.s
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c.s
+
+home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.o: home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.o
+
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.o
+
+# target to build an object file
+home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.o:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.o
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.o
+
+home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.i: home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.i
+
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.i
+
+# target to preprocess a source file
+home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.i:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.i
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.i
+
+home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.s: home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.s
+
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.s
+
+# target to generate assembly for a file
+home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.s:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.s
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.s
+
+home/linux/rk356x_linux_230210/external/mpp/utils/utils.o: home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.o
+
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/utils.o
+
+# target to build an object file
+home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.o:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.o
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.o
+
+home/linux/rk356x_linux_230210/external/mpp/utils/utils.i: home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.i
+
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/utils.i
+
+# target to preprocess a source file
+home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.i:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.i
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.i
+
+home/linux/rk356x_linux_230210/external/mpp/utils/utils.s: home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.s
+
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/utils.s
+
+# target to generate assembly for a file
+home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.s:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.s
+.PHONY : home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.s
+
 src/cmd.o: src/cmd.c.o
 
 .PHONY : src/cmd.o
@@ -149,6 +365,33 @@ src/cmd.s: src/cmd.c.s
 src/cmd.c.s:
 	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/src/cmd.c.s
 .PHONY : src/cmd.c.s
+
+src/h264.o: src/h264.c.o
+
+.PHONY : src/h264.o
+
+# target to build an object file
+src/h264.c.o:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/src/h264.c.o
+.PHONY : src/h264.c.o
+
+src/h264.i: src/h264.c.i
+
+.PHONY : src/h264.i
+
+# target to preprocess a source file
+src/h264.c.i:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/src/h264.c.i
+.PHONY : src/h264.c.i
+
+src/h264.s: src/h264.c.s
+
+.PHONY : src/h264.s
+
+# target to generate assembly for a file
+src/h264.c.s:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/src/h264.c.s
+.PHONY : src/h264.c.s
 
 src/main.o: src/main.c.o
 
@@ -294,9 +537,36 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... dev_syn"
+	@echo "... home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.o"
+	@echo "... home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.i"
+	@echo "... home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.s"
+	@echo "... home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.o"
+	@echo "... home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.i"
+	@echo "... home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.s"
+	@echo "... home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.o"
+	@echo "... home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.i"
+	@echo "... home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.s"
+	@echo "... home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.o"
+	@echo "... home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.i"
+	@echo "... home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.s"
+	@echo "... home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.o"
+	@echo "... home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.i"
+	@echo "... home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.s"
+	@echo "... home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.o"
+	@echo "... home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.i"
+	@echo "... home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.s"
+	@echo "... home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.o"
+	@echo "... home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.i"
+	@echo "... home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.s"
+	@echo "... home/linux/rk356x_linux_230210/external/mpp/utils/utils.o"
+	@echo "... home/linux/rk356x_linux_230210/external/mpp/utils/utils.i"
+	@echo "... home/linux/rk356x_linux_230210/external/mpp/utils/utils.s"
 	@echo "... src/cmd.o"
 	@echo "... src/cmd.i"
 	@echo "... src/cmd.s"
+	@echo "... src/h264.o"
+	@echo "... src/h264.i"
+	@echo "... src/h264.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
