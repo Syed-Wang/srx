@@ -1,4 +1,4 @@
-#include "time.h"
+#include "dev_time.h"
 #include "sys_config.h"
 #include "tool.h"
 #include <arpa/inet.h>

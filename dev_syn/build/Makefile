@@ -366,6 +366,33 @@ src/cmd.c.s:
 	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/src/cmd.c.s
 .PHONY : src/cmd.c.s
 
+src/dev_time.o: src/dev_time.c.o
+
+.PHONY : src/dev_time.o
+
+# target to build an object file
+src/dev_time.c.o:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/src/dev_time.c.o
+.PHONY : src/dev_time.c.o
+
+src/dev_time.i: src/dev_time.c.i
+
+.PHONY : src/dev_time.i
+
+# target to preprocess a source file
+src/dev_time.c.i:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/src/dev_time.c.i
+.PHONY : src/dev_time.c.i
+
+src/dev_time.s: src/dev_time.c.s
+
+.PHONY : src/dev_time.s
+
+# target to generate assembly for a file
+src/dev_time.c.s:
+	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/src/dev_time.c.s
+.PHONY : src/dev_time.c.s
+
 src/h264.o: src/h264.c.o
 
 .PHONY : src/h264.o
@@ -446,33 +473,6 @@ src/sys_config.s: src/sys_config.c.s
 src/sys_config.c.s:
 	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/src/sys_config.c.s
 .PHONY : src/sys_config.c.s
-
-src/time.o: src/time.c.o
-
-.PHONY : src/time.o
-
-# target to build an object file
-src/time.c.o:
-	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/src/time.c.o
-.PHONY : src/time.c.o
-
-src/time.i: src/time.c.i
-
-.PHONY : src/time.i
-
-# target to preprocess a source file
-src/time.c.i:
-	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/src/time.c.i
-.PHONY : src/time.c.i
-
-src/time.s: src/time.c.s
-
-.PHONY : src/time.s
-
-# target to generate assembly for a file
-src/time.c.s:
-	$(MAKE) -f CMakeFiles/dev_syn.dir/build.make CMakeFiles/dev_syn.dir/src/time.c.s
-.PHONY : src/time.c.s
 
 utils/cJSON.o: utils/cJSON.c.o
 
@@ -564,6 +564,9 @@ help:
 	@echo "... src/cmd.o"
 	@echo "... src/cmd.i"
 	@echo "... src/cmd.s"
+	@echo "... src/dev_time.o"
+	@echo "... src/dev_time.i"
+	@echo "... src/dev_time.s"
 	@echo "... src/h264.o"
 	@echo "... src/h264.i"
 	@echo "... src/h264.s"
@@ -573,9 +576,6 @@ help:
 	@echo "... src/sys_config.o"
 	@echo "... src/sys_config.i"
 	@echo "... src/sys_config.s"
-	@echo "... src/time.o"
-	@echo "... src/time.i"
-	@echo "... src/time.s"
 	@echo "... utils/cJSON.o"
 	@echo "... utils/cJSON.i"
 	@echo "... utils/cJSON.s"

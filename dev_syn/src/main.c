@@ -1,7 +1,7 @@
 #include "cmd.h"
 #include "h264.h"
 #include "sys_config.h"
-#include "time.h"
+#include "dev_time.h"
 #include "tool.h"
 #include <pthread.h>
 #include <signal.h> // signal()

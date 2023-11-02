@@ -1,5 +1,5 @@
-#ifndef __TIME_H__
-#define __TIME_H__
+#ifndef __DEV_TIME_H__
+#define __DEV_TIME_H__
 
 #include <netinet/in.h> // sockaddr_in
 
@@ -35,4 +35,4 @@ int send_time_broadcast();
  */
 int recv_time(struct sockaddr_in* addr, time_packet_t* time_packet);
 
-#endif // __TIME_H__
+#endif // __DEV_TIME_H__

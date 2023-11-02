@@ -10,6 +10,10 @@
 netinet/in.h
 -
 
+../inc/dev_time.h
+netinet/in.h
+-
+
 ../inc/h264.h
 camera_source.h
 ../inc/camera_source.h
@@ -31,10 +35,6 @@ utils.h
 ../inc/utils.h
 
 ../inc/sys_config.h
-
-../inc/time.h
-netinet/in.h
--
 
 ../utils/cJSON.h
 stddef.h
@@ -448,6 +448,28 @@ sys/time.h
 unistd.h
 -
 
+/home/linux/srx/dev_syn/src/dev_time.c
+dev_time.h
+/home/linux/srx/dev_syn/src/dev_time.h
+sys_config.h
+/home/linux/srx/dev_syn/src/sys_config.h
+tool.h
+/home/linux/srx/dev_syn/src/tool.h
+arpa/inet.h
+-
+errno.h
+-
+stdio.h
+-
+string.h
+-
+sys/time.h
+-
+unistd.h
+-
+stdlib.h
+-
+
 /home/linux/srx/dev_syn/src/h264.c
 h264.h
 /home/linux/srx/dev_syn/src/h264.h
@@ -481,8 +503,8 @@ h264.h
 /home/linux/srx/dev_syn/src/h264.h
 sys_config.h
 /home/linux/srx/dev_syn/src/sys_config.h
-time.h
-/home/linux/srx/dev_syn/src/time.h
+dev_time.h
+/home/linux/srx/dev_syn/src/dev_time.h
 tool.h
 /home/linux/srx/dev_syn/src/tool.h
 pthread.h
@@ -512,28 +534,6 @@ stdio.h
 stdlib.h
 -
 string.h
--
-
-/home/linux/srx/dev_syn/src/time.c
-time.h
-/home/linux/srx/dev_syn/src/time.h
-sys_config.h
-/home/linux/srx/dev_syn/src/sys_config.h
-tool.h
-/home/linux/srx/dev_syn/src/tool.h
-arpa/inet.h
--
-errno.h
--
-stdio.h
--
-string.h
--
-sys/time.h
--
-unistd.h
--
-stdlib.h
 -
 
 /home/linux/srx/dev_syn/utils/cJSON.c

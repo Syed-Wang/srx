@@ -174,9 +174,22 @@ CMakeFiles/dev_syn.dir/src/cmd.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dev_syn.dir/src/cmd.c.s"
 	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/srx/dev_syn/src/cmd.c -o CMakeFiles/dev_syn.dir/src/cmd.c.s
 
+CMakeFiles/dev_syn.dir/src/dev_time.c.o: CMakeFiles/dev_syn.dir/flags.make
+CMakeFiles/dev_syn.dir/src/dev_time.c.o: ../src/dev_time.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/dev_syn.dir/src/dev_time.c.o"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dev_syn.dir/src/dev_time.c.o   -c /home/linux/srx/dev_syn/src/dev_time.c
+
+CMakeFiles/dev_syn.dir/src/dev_time.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dev_syn.dir/src/dev_time.c.i"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linux/srx/dev_syn/src/dev_time.c > CMakeFiles/dev_syn.dir/src/dev_time.c.i
+
+CMakeFiles/dev_syn.dir/src/dev_time.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dev_syn.dir/src/dev_time.c.s"
+	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/srx/dev_syn/src/dev_time.c -o CMakeFiles/dev_syn.dir/src/dev_time.c.s
+
 CMakeFiles/dev_syn.dir/src/h264.c.o: CMakeFiles/dev_syn.dir/flags.make
 CMakeFiles/dev_syn.dir/src/h264.c.o: ../src/h264.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/dev_syn.dir/src/h264.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/dev_syn.dir/src/h264.c.o"
 	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dev_syn.dir/src/h264.c.o   -c /home/linux/srx/dev_syn/src/h264.c
 
 CMakeFiles/dev_syn.dir/src/h264.c.i: cmake_force
@@ -189,7 +202,7 @@ CMakeFiles/dev_syn.dir/src/h264.c.s: cmake_force
 
 CMakeFiles/dev_syn.dir/src/main.c.o: CMakeFiles/dev_syn.dir/flags.make
 CMakeFiles/dev_syn.dir/src/main.c.o: ../src/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/dev_syn.dir/src/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/dev_syn.dir/src/main.c.o"
 	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dev_syn.dir/src/main.c.o   -c /home/linux/srx/dev_syn/src/main.c
 
 CMakeFiles/dev_syn.dir/src/main.c.i: cmake_force
@@ -202,7 +215,7 @@ CMakeFiles/dev_syn.dir/src/main.c.s: cmake_force
 
 CMakeFiles/dev_syn.dir/src/sys_config.c.o: CMakeFiles/dev_syn.dir/flags.make
 CMakeFiles/dev_syn.dir/src/sys_config.c.o: ../src/sys_config.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/dev_syn.dir/src/sys_config.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/dev_syn.dir/src/sys_config.c.o"
 	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dev_syn.dir/src/sys_config.c.o   -c /home/linux/srx/dev_syn/src/sys_config.c
 
 CMakeFiles/dev_syn.dir/src/sys_config.c.i: cmake_force
@@ -212,19 +225,6 @@ CMakeFiles/dev_syn.dir/src/sys_config.c.i: cmake_force
 CMakeFiles/dev_syn.dir/src/sys_config.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dev_syn.dir/src/sys_config.c.s"
 	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/srx/dev_syn/src/sys_config.c -o CMakeFiles/dev_syn.dir/src/sys_config.c.s
-
-CMakeFiles/dev_syn.dir/src/time.c.o: CMakeFiles/dev_syn.dir/flags.make
-CMakeFiles/dev_syn.dir/src/time.c.o: ../src/time.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/linux/srx/dev_syn/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/dev_syn.dir/src/time.c.o"
-	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dev_syn.dir/src/time.c.o   -c /home/linux/srx/dev_syn/src/time.c
-
-CMakeFiles/dev_syn.dir/src/time.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dev_syn.dir/src/time.c.i"
-	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/linux/srx/dev_syn/src/time.c > CMakeFiles/dev_syn.dir/src/time.c.i
-
-CMakeFiles/dev_syn.dir/src/time.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dev_syn.dir/src/time.c.s"
-	aarch64-none-linux-gnu-gcc --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/linux/srx/dev_syn/src/time.c -o CMakeFiles/dev_syn.dir/src/time.c.s
 
 CMakeFiles/dev_syn.dir/utils/cJSON.c.o: CMakeFiles/dev_syn.dir/flags.make
 CMakeFiles/dev_syn.dir/utils/cJSON.c.o: ../utils/cJSON.c
@@ -263,10 +263,10 @@ dev_syn_OBJECTS = \
 "CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.o" \
 "CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.o" \
 "CMakeFiles/dev_syn.dir/src/cmd.c.o" \
+"CMakeFiles/dev_syn.dir/src/dev_time.c.o" \
 "CMakeFiles/dev_syn.dir/src/h264.c.o" \
 "CMakeFiles/dev_syn.dir/src/main.c.o" \
 "CMakeFiles/dev_syn.dir/src/sys_config.c.o" \
-"CMakeFiles/dev_syn.dir/src/time.c.o" \
 "CMakeFiles/dev_syn.dir/utils/cJSON.c.o" \
 "CMakeFiles/dev_syn.dir/utils/tool.c.o"
 
@@ -282,10 +282,10 @@ dev_syn_EXTERNAL_OBJECTS =
 ../bin/dev_syn: CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.o
 ../bin/dev_syn: CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.o
 ../bin/dev_syn: CMakeFiles/dev_syn.dir/src/cmd.c.o
+../bin/dev_syn: CMakeFiles/dev_syn.dir/src/dev_time.c.o
 ../bin/dev_syn: CMakeFiles/dev_syn.dir/src/h264.c.o
 ../bin/dev_syn: CMakeFiles/dev_syn.dir/src/main.c.o
 ../bin/dev_syn: CMakeFiles/dev_syn.dir/src/sys_config.c.o
-../bin/dev_syn: CMakeFiles/dev_syn.dir/src/time.c.o
 ../bin/dev_syn: CMakeFiles/dev_syn.dir/utils/cJSON.c.o
 ../bin/dev_syn: CMakeFiles/dev_syn.dir/utils/tool.c.o
 ../bin/dev_syn: CMakeFiles/dev_syn.dir/build.make

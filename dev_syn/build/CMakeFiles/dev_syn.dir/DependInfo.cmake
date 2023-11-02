@@ -13,10 +13,10 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c" "/home/linux/srx/dev_syn/build/CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.o"
   "/home/linux/rk356x_linux_230210/external/mpp/utils/utils.c" "/home/linux/srx/dev_syn/build/CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.o"
   "/home/linux/srx/dev_syn/src/cmd.c" "/home/linux/srx/dev_syn/build/CMakeFiles/dev_syn.dir/src/cmd.c.o"
+  "/home/linux/srx/dev_syn/src/dev_time.c" "/home/linux/srx/dev_syn/build/CMakeFiles/dev_syn.dir/src/dev_time.c.o"
   "/home/linux/srx/dev_syn/src/h264.c" "/home/linux/srx/dev_syn/build/CMakeFiles/dev_syn.dir/src/h264.c.o"
   "/home/linux/srx/dev_syn/src/main.c" "/home/linux/srx/dev_syn/build/CMakeFiles/dev_syn.dir/src/main.c.o"
   "/home/linux/srx/dev_syn/src/sys_config.c" "/home/linux/srx/dev_syn/build/CMakeFiles/dev_syn.dir/src/sys_config.c.o"
-  "/home/linux/srx/dev_syn/src/time.c" "/home/linux/srx/dev_syn/build/CMakeFiles/dev_syn.dir/src/time.c.o"
   "/home/linux/srx/dev_syn/utils/cJSON.c" "/home/linux/srx/dev_syn/build/CMakeFiles/dev_syn.dir/utils/cJSON.c.o"
   "/home/linux/srx/dev_syn/utils/tool.c" "/home/linux/srx/dev_syn/build/CMakeFiles/dev_syn.dir/utils/tool.c.o"
   )
