@@ -26,10 +26,11 @@ file(GLOB_RECURSE DIR_SRCS
 add_executable(dev_syn ${DIR_SRCS}) # 指定生成目标
 
 target_compile_definitions(dev_syn PUBLIC
+	_GNU_SOURCE # 使用GNU扩展(struct ip_mreqn)
 	ARM
 	# X86
-	# DEBUG
-) # 设置宏定义
+	# DEBUG # 打印调试信息
+) # 设置宏定义(-D)
 target_link_libraries(dev_syn PUBLIC
 	rockchip_mpp
 	pthread

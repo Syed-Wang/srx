@@ -1,0 +1,17 @@
+# ninja log v5
+3	59	1698998126492028011	CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_opt.c.o	1692c775da5341cc
+0	73	1698998126492028011	CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/dictionary.c.o	1086d28fce176e54
+2	73	1698998126504027727	CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/iniparser.c.o	a098039fc665fd55
+3	78	1698998126512027538	CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpp_enc_roi_utils.c.o	304d6e66d0069430
+4	87	1698998126516027444	CMakeFiles/dev_syn.dir/src/dev_time.c.o	8ebfd9ca1d5c512e
+2	91	1698998126524027254	CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_enc_utils.c.o	48c67c99dbb4364
+5	100	1698998126532027065	CMakeFiles/dev_syn.dir/src/main.c.o	868d76f28b2c4c48
+5	108	1698998126540026876	CMakeFiles/dev_syn.dir/src/sys_config.c.o	d6e70108d25f73a1
+2	119	1698998126552026592	CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/mpi_dec_utils.c.o	ee2f3b5ed1d8966a
+60	119	1698998126552026592	CMakeFiles/dev_syn.dir/utils/tool.c.o	76ad4f85193dfaf2
+0	119	1698998126552026592	CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/camera_source.c.o	64ca477a8e1bd0f6
+3	126	1698998126560026403	CMakeFiles/dev_syn.dir/src/cmd.c.o	6cbe0f97699d1f46
+5	133	1698998126568026213	CMakeFiles/dev_syn.dir/src/h264.c.o	e2d5fcfa0eb2d943
+3	143	1698998126576026024	CMakeFiles/dev_syn.dir/home/linux/rk356x_linux_230210/external/mpp/utils/utils.c.o	e64fa60a40c86245
+12	190	1698998126624024889	CMakeFiles/dev_syn.dir/utils/cJSON.c.o	9d1e2bb69e7df4
+190	231	1698998126664023942	../bin/dev_syn	3a6a108dcd7c3855

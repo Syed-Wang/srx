@@ -1,7 +1,7 @@
 #include "cmd.h"
+#include "dev_time.h"
 #include "h264.h"
 #include "sys_config.h"
-#include "dev_time.h"
 #include "tool.h"
 #include <pthread.h>
 #include <signal.h> // signal()
@@ -120,10 +120,11 @@ int main(int argc, const char* argv[])
 {
 // 1. 每个节点独立配置 IP 地址和掩码
 #ifdef ARM
-    if (system("udhcpc -i eth0 -b") < 0) { // 申请IP地址 -i eth0:指定网卡 -b:后台运行
+    // wsy：暂不需要申请IP地址，直接使用本地IP地址
+    /* if (system("udhcpc -i eth0 -b") < 0) { // 申请IP地址 -i eth0:指定网卡 -b:后台运行
         PTRERR("system udhcpc error");
         return -1;
-    }
+    } */
     if (get_local_ip("eth0", local_ip) < 0) { // 获取本机IP地址
         PTRERR("get_local_ip error");
         return -1;
@@ -252,10 +253,10 @@ int main(int argc, const char* argv[])
                 sleep(1); // 等待客户端启动
                 // 开始发送视频
                 // ./dev_syn -w 1280 -h 720 -f 30 -t 7 -i ./sample.yuv
-                if (send_h264(argc, (char**)argv) < 0) {
+                /* if (send_h264(argc, (char**)argv) < 0) {
                     PTRERR("send_h264 error");
                     return -1;
-                }
+                } */
                 printf("send_h264 success\n");
             }
         }
