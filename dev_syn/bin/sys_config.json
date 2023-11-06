@@ -2,7 +2,7 @@
 	"fps": {
 		"frame_rate": 60,
 		"sync_encoder": 0,
-		"priority": 0,
+		"priority": 1,
 		"net_flag": 1,
 		"ip": [
 			"192.168.0.180",

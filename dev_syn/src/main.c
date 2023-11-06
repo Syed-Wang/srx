@@ -19,10 +19,12 @@ time_packet_t time_packet; // 时间包
 // 定时器处理函数
 void timer_handler(int signum)
 {
+    if (stop_flag == 1) {
+        pthread_exit(NULL);
+    }
     if (server_client_flag == 1) { // 服务器
         if (send_time_broadcast() < 0) {
             PTRERR("send_time_broadcast error");
-            exit(1);
         }
     }
 }
@@ -31,10 +33,12 @@ void timer_handler(int signum)
 void* thread_recv_time(void* arg)
 {
     while (1) {
+        if (stop_flag == 1) {
+            pthread_exit(NULL);
+        }
         memset(&time_packet, 0, sizeof(time_packet));
         if (recv_time(&time_addr, &time_packet) < 0) {
             PTRERR("recv_time error");
-            exit(1);
         }
     }
 }
@@ -43,10 +47,12 @@ void* thread_recv_time(void* arg)
 void* thread_recv_cmd(void* arg)
 {
     while (1) {
+        if (stop_flag == 1) {
+            pthread_exit(NULL);
+        }
         memset(cmd, 0, sizeof(cmd));
         if (recv_cmd(&cmd_addr, cmd) < 0) {
             PTRERR("recv_cmd error");
-            exit(1);
         }
     }
 }
@@ -55,9 +61,11 @@ void* thread_recv_cmd(void* arg)
 void* thread_deal_cmd(void* arg)
 {
     while (1) {
+        if (stop_flag == 1) {
+            pthread_exit(NULL);
+        }
         if (cmd_handler(&cmd_addr, cmd) < 0) {
             PTRERR("cmd_handler error");
-            exit(1);
         }
     }
 }
@@ -74,12 +82,10 @@ void* thread_send_time(void* arg)
 
     if (signal(SIGALRM, timer_handler) == SIG_ERR) { // 注册信号处理函数
         PTRERR("signal error");
-        exit(1);
     }
 
     if (setitimer(ITIMER_REAL, &itv, NULL) < 0) { // ITIMER_REAL:真实时间
         PTRERR("setitimer error");
-        exit(1);
     }
 }
 
@@ -87,10 +93,12 @@ void* thread_send_time(void* arg)
 void* thread_delay_correct(void* arg)
 {
     while (1) {
+        if (stop_flag == 1) {
+            pthread_exit(NULL);
+        }
         if (server_client_flag == 1) { // 服务器
             if (detect_time_gap() < 0) {
                 PTRERR("detect_time_gap error");
-                exit(1);
             }
         }
     }
@@ -120,7 +128,7 @@ int main(int argc, const char* argv[])
 {
 // 1. 每个节点独立配置 IP 地址和掩码
 #ifdef ARM
-    // wsy：暂不需要申请IP地址，直接使用本地IP地址
+    // 暂不需要申请IP地址，直接使用本地IP地址
     /* if (system("udhcpc -i eth0 -b") < 0) { // 申请IP地址 -i eth0:指定网卡 -b:后台运行
         PTRERR("system udhcpc error");
         return -1;
@@ -253,17 +261,22 @@ int main(int argc, const char* argv[])
                 sleep(1); // 等待客户端启动
                 // 开始发送视频
                 // ./dev_syn -w 1280 -h 720 -f 30 -t 7 -i ./sample.yuv
-                /* if (send_h264(argc, (char**)argv) < 0) {
+                if (send_h264(argc, (char**)argv) < 0) {
                     PTRERR("send_h264 error");
                     return -1;
-                } */
+                }
                 printf("send_h264 success\n");
+                break;
             }
         }
     }
 
     // 等待线程结束
+    pthread_join(tid_recv_time, NULL);
+    pthread_join(tid_recv, NULL);
     pthread_join(tid_cmd, NULL);
+    pthread_join(tid_time, NULL);
+    pthread_join(tid_delay_correct, NULL);
 
     return 0;
 }

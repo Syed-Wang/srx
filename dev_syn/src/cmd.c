@@ -121,6 +121,7 @@ char tmp_ip[128][16] = { 0 }; // 临时 ip 数组
 char missing_ip[128][16] = { 0 }; // 缺失的 ip 地址
 char min_ip[16] = { 0 }; // 缺失的最小 ip 地址
 unsigned char request_mode_flag; // 请求模式标志(1请求模式 0非请求模式)
+int stop_flag = 0; // 程序退出标志(1退出 0不退出)
 
 int cmd_handler(struct sockaddr_in* addr, const char* cmd)
 {
@@ -241,7 +242,6 @@ int cmd_handler(struct sockaddr_in* addr, const char* cmd)
                 return -1;
             }
         }
-
         PTR_DEBUG("start\n");
     } else if (!strncmp(cmd, CMD_SET_TIME_SERVER(0), 17)) { // 设置授时服务器
         // 字符串解析
@@ -457,5 +457,5 @@ int confirm_ready()
         return 0;
     }
 
-    return 0;
+    return 0; // 有节点未就绪
 }

@@ -22,6 +22,7 @@ extern char local_ip[16]; // 本机 IP
 extern unsigned long long time_gap; // 时间差
 extern unsigned char server_client_flag; // 服务器-客户端标志 1 服务器 0 客户端
 extern unsigned char request_mode_flag; // 请求模式标志 1 请求模式 0 非请求模式
+extern int stop_flag; // 程序退出标志(1退出 0不退出)
 
 /**
  * @brief 广播发送指令函数

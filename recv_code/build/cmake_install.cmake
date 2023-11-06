@@ -1,4 +1,4 @@
-# Install script for directory: /home/linux/srx/recv_code
+# Install script for directory: /home/linux/srx/send_code
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

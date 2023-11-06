@@ -8,7 +8,7 @@
 					"build" : ".",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.15"
+						"string" : "2.8"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
@@ -26,7 +26,7 @@
 					[
 						0
 					],
-					"name" : "recv_code",
+					"name" : "send_code",
 					"targetIndexes" : 
 					[
 						0
@@ -37,9 +37,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "recv_code::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-recv_code-Debug-74cdb1cb9b74d64e6558.json",
-					"name" : "recv_code",
+					"id" : "send_code::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-send_code-Debug-2f98fe59a984748fa6b1.json",
+					"name" : "send_code",
 					"projectIndex" : 0
 				}
 			]
@@ -49,7 +49,7 @@
 	"paths" : 
 	{
 		"build" : "/home/linux/srx/recv_code/build",
-		"source" : "/home/linux/srx/recv_code"
+		"source" : "/home/linux/srx/send_code"
 	},
 	"version" : 
 	{

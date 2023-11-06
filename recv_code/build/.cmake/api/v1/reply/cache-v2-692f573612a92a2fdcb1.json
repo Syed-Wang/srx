@@ -94,22 +94,6 @@
 			"value" : "3"
 		},
 		{
-			"name" : "CMAKE_COLOR_MAKEFILE",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Enable/Disable color output during build."
-				}
-			],
-			"type" : "BOOL",
-			"value" : "ON"
-		},
-		{
 			"name" : "CMAKE_COMMAND",
 			"properties" : 
 			[
@@ -402,6 +386,18 @@
 			"value" : "-O2 -g -DNDEBUG"
 		},
 		{
+			"name" : "CMAKE_C_LINK_FLAGS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : " --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot --sysroot=/home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot"
+		},
+		{
 			"name" : "CMAKE_DLLTOOL",
 			"properties" : 
 			[
@@ -547,7 +543,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "Unix Makefiles"
+			"value" : "Ninja"
 		},
 		{
 			"name" : "CMAKE_GENERATOR_INSTANCE",
@@ -595,7 +591,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/linux/srx/recv_code"
+			"value" : "/home/linux/srx/send_code"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -647,11 +643,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "Path to a program."
+					"value" : "Program used to build from build.ninja files."
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/usr/bin/make"
+			"value" : "/usr/bin/ninja"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -839,7 +835,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "recv_code"
+			"value" : "send_code"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1122,7 +1118,7 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "recv_code_BINARY_DIR",
+			"name" : "send_code_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1134,7 +1130,7 @@
 			"value" : "/home/linux/srx/recv_code/build"
 		},
 		{
-			"name" : "recv_code_SOURCE_DIR",
+			"name" : "send_code_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1143,7 +1139,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/linux/srx/recv_code"
+			"value" : "/home/linux/srx/send_code"
 		}
 	],
 	"kind" : "cache",

@@ -6,7 +6,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "build/CMakeFiles/3.16.3/CMakeSystem.cmake"
+			"path" : "/home/linux/srx/recv_code/build/CMakeFiles/3.16.3/CMakeSystem.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -15,11 +15,11 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "build/CMakeFiles/3.16.3/CMakeCCompiler.cmake"
+			"path" : "/home/linux/srx/recv_code/build/CMakeFiles/3.16.3/CMakeCCompiler.cmake"
 		},
 		{
 			"isGenerated" : true,
-			"path" : "build/CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"
+			"path" : "/home/linux/srx/recv_code/build/CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -136,7 +136,7 @@
 	"paths" : 
 	{
 		"build" : "/home/linux/srx/recv_code/build",
-		"source" : "/home/linux/srx/recv_code"
+		"source" : "/home/linux/srx/send_code"
 	},
 	"version" : 
 	{
