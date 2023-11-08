@@ -211,9 +211,9 @@ int main(int argc, const char* argv[])
         return -1;
     }
 
-    // 进入请求模式，广播发送请求指令
-    request_mode_flag = 1;
     if (server_client_flag == 0) { // 客户端
+        // 进入请求模式，广播发送请求指令
+        request_mode_flag = 1;
         // 替换节点
         if (send_cmd_broadcast(CMD_REQUEST_CONNECT) < 0) { // 替换节点
             PTRERR("send_cmd_broadcast error");
@@ -224,6 +224,8 @@ int main(int argc, const char* argv[])
             PTRERR("recv_file error");
             return -1;
         }
+        // 退出请求模式
+        request_mode_flag = 0;
     }
 
     // 4. 创建广播发送授时包线程

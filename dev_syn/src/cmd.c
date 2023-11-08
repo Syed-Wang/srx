@@ -332,8 +332,6 @@ int cmd_handler(struct sockaddr_in* addr, const char* cmd)
             PTRERR("save_sys_config error");
             return -1;
         }
-        // 退出请求模式
-        request_mode_flag = 0;
     }
 
     return 0;
