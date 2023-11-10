@@ -51,3 +51,7 @@
 1	60	1699259892649658712	CMakeFiles/dev_syn.dir/src/main.c.o	8d40f381bf392b66
 1	68	1699259892657658552	CMakeFiles/dev_syn.dir/src/cmd.c.o	d5f8dcef999e25cb
 68	110	1699259892701657673	../bin/dev_syn	b81176f0e7c34a5c
+1	153	1699506897876375493	CMakeFiles/dev_syn.dir/src/dev_time.c.o	81c8b0b3c1604def
+1	153	1699506897908378003	CMakeFiles/dev_syn.dir/src/main.c.o	8d40f381bf392b66
+0	155	1699506897916378630	CMakeFiles/dev_syn.dir/src/cmd.c.o	d5f8dcef999e25cb
+155	281	1699506898040388356	../bin/dev_syn	b81176f0e7c34a5c
