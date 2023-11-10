@@ -241,6 +241,7 @@ int cmd_handler(struct sockaddr_in* addr, const char* cmd)
                 PTRERR("recv_h264 error");
                 return -1;
             }
+            printf("recv_h264 success\n");
         }
         PTR_DEBUG("start\n");
     } else if (!strncmp(cmd, CMD_SET_TIME_SERVER(0), 17)) { // 设置授时服务器

@@ -1,0 +1,3 @@
+/home/srx/work/build/CMakeFiles/dev_syn.dir
+/home/srx/work/build/CMakeFiles/edit_cache.dir
+/home/srx/work/build/CMakeFiles/rebuild_cache.dir

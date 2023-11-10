@@ -14,8 +14,8 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pie -fPIE -Wno-psabi") # 设置编译选项
 set(PROJECT_BINARY_DIR ${PROJECT_SOURCE_DIR}/build) # 设置编译目录
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin) # 设置可执行文件目录
 
-set(INCLUDE_PATH /home/linux/rk356x_linux_230210/external/mpp) # 指定文件路径
-set(MYSYSROOT /home/linux/rk356x_linux_230210/buildroot/output/rockchip_rk3568/host/aarch64-buildroot-linux-gnu/sysroot)
+set(INCLUDE_PATH /home/srx/rk3588/external/mpp) # 指定文件路径
+set(MYSYSROOT /home/srx/rk3588/buildroot/output/rockchip_rk3588/host/aarch64-buildroot-linux-gnu/sysroot)
 set(CMAKE_SYSROOT ${MYSYSROOT}) # 设置库文件路径(交叉编译时需要设置)
 
 file(GLOB_RECURSE DIR_SRCS
@@ -35,7 +35,7 @@ target_compile_definitions(dev_syn PUBLIC
 target_link_libraries(dev_syn PUBLIC
 	rockchip_mpp
 	pthread
-) # 设置链接库
+) # 设置链接库(-l)
 target_include_directories(dev_syn PUBLIC 
 	${PROJECT_SOURCE_DIR}/inc
 	${PROJECT_SOURCE_DIR}/utils
@@ -43,4 +43,4 @@ target_include_directories(dev_syn PUBLIC
 	${INCLUDE_PATH}/utils
 	${INCLUDE_PATH}/osal/inc
 	${INCLUDE_PATH}/mpp/base/inc
-) # 设置头文件目录
+) # 设置头文件目录(-I)
