@@ -1,9 +1,9 @@
 #ifndef __CMD_H__
 #define __CMD_H__
 
+#include "link_queue.h"
 #include <netinet/in.h> // sockaddr_in
 
-#define CMD_BUF_SIZE 1024 // 指令缓冲区大小
 #define CMD_PORT "8112" // 指令端口
 #define CMD_GET_IP "/getIP:s,ip;" // 获取IP指令
 #define CMD_SET_NETWORK_ID(ip, id) "/setNetworkID:s," #ip "," #id ";" // 选择设备进行组网，并分配组网ID
@@ -23,6 +23,7 @@ extern unsigned long long time_gap; // 时间差
 extern unsigned char server_client_flag; // 服务器-客户端标志 1 服务器 0 客户端
 extern unsigned char request_mode_flag; // 请求模式标志 1 请求模式 0 非请求模式
 extern int stop_flag; // 程序退出标志(1退出 0不退出)
+extern pthread_mutex_t mutex; // 互斥锁
 
 /**
  * @brief 广播发送指令函数
@@ -44,20 +45,18 @@ int send_cmd_unicast(struct sockaddr_in* addr, const char* cmd);
 /**
  * @brief 接收指令函数(本机任意地址)
  *
- * @param addr 存放发送方地址
- * @param cmd 存放接收的指令
+ * @param queue 指令队列
  * @return int 成功返回 0，失败返回 -1
  */
-int recv_cmd(struct sockaddr_in* addr, char* cmd);
+int recv_cmd(link_queue_t* queue);
 
 /**
  * @brief 指令处理函数
  *
- * @param addr 发送方地址
- * @param cmd 指令
+ * @param queue 指令队列
  * @return int 成功返回 0，失败返回 -1
  */
-int cmd_handler(struct sockaddr_in* addr, const char* cmd);
+int cmd_handler(link_queue_t* queue);
 
 /**
  * @brief 网络延时校正函数(单播)

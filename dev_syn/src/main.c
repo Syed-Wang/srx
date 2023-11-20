@@ -1,6 +1,7 @@
 #include "cmd.h"
 #include "dev_time.h"
 #include "h264.h"
+#include "link_queue.h"
 #include "sys_config.h"
 #include "tool.h"
 #include <pthread.h>
@@ -12,9 +13,9 @@
 #include <unistd.h> // sleep()
 
 struct sockaddr_in time_addr; // 授时包发送端地址
-struct sockaddr_in cmd_addr; // 指令发送端地址
-char cmd[CMD_BUF_SIZE] = { 0 }; // 指令缓冲区
 time_packet_t time_packet; // 时间包
+link_queue_t* cmd_queue = NULL; // 指令队列
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER; // 互斥锁
 
 // 定时器处理函数
 void timer_handler(int signum)
@@ -50,8 +51,7 @@ void* thread_recv_cmd(void* arg)
         if (stop_flag == 1) {
             pthread_exit(NULL);
         }
-        memset(cmd, 0, sizeof(cmd));
-        if (recv_cmd(&cmd_addr, cmd) < 0) {
+        if (recv_cmd(cmd_queue) < 0) {
             PTRERR("recv_cmd error");
         }
     }
@@ -64,7 +64,8 @@ void* thread_deal_cmd(void* arg)
         if (stop_flag == 1) {
             pthread_exit(NULL);
         }
-        if (cmd_handler(&cmd_addr, cmd) < 0) {
+        // 处理指令
+        if (cmd_handler(cmd_queue) < 0) {
             PTRERR("cmd_handler error");
         }
     }
@@ -104,26 +105,6 @@ void* thread_delay_correct(void* arg)
     }
 }
 
-// 确认所有客户端是否就绪线程
-/* void* thread_confirm_ready(void* arg)
-{
-    int ret = -1;
-    while (1) {
-        if (server_client_flag == 1) { // 服务器
-            ret = confirm_ready();
-            if (ret == -1) {
-                PTRERR("confirm_ready error");
-                exit(1);
-            } else if (ret == 1) { // 所有客户端就绪
-                if (send_cmd_broadcast(CMD_START) < 0) {
-                    PTRERR("send_cmd_broadcast error");
-                    exit(1);
-                }
-            }
-        }
-    }
-} */
-
 int main(int argc, const char* argv[])
 {
 // 1. 每个节点独立配置 IP 地址和掩码
@@ -149,12 +130,12 @@ int main(int argc, const char* argv[])
     if (ret == -1) {
         PTRERR("load_sys_config error");
         return -1;
-    } else if (ret == -2) {
-        // 如果文件不存在，初始化并创建文件
+    } else if (ret == -2 || ret == -3) {
+        // 如果文件不存在或为空，初始化并创建文件
         fps.frame_rate = 60; // 帧率
         fps.sync_encoder = 0; // 同步编码器
         fps.priority = 0; // 优先级
-        fps.net_flag = 1; // 组网标志
+        fps.net_flag = 0; // 组网标志
         memcpy(fps.ip, ip, sizeof(ip)); // IP 地址表
 
         window.id = 1; // 设备 id
@@ -192,6 +173,15 @@ int main(int argc, const char* argv[])
         server_client_flag = 1;
     }
 
+    // 4. 创建指令队列
+    cmd_queue = link_queue_create();
+    if (cmd_queue == NULL) {
+        PTRERR("link_queue_create error");
+        return -1;
+    }
+
+    /* ************************************************************************************* */
+
     // 1. 创建接收授时包线程
     pthread_t tid_recv_time;
     if (pthread_create(&tid_recv_time, NULL, thread_recv_time, NULL) != 0) {
@@ -211,10 +201,8 @@ int main(int argc, const char* argv[])
         return -1;
     }
 
-    if (server_client_flag == 0) { // 客户端
+    if (server_client_flag == 0 && request_mode_flag == 1) { // 客户端，请求模式(手动指定是否进入请求模式)
         // 进入请求模式，广播发送请求指令
-        request_mode_flag = 1;
-        // 替换节点
         if (send_cmd_broadcast(CMD_REQUEST_CONNECT) < 0) { // 替换节点
             PTRERR("send_cmd_broadcast error");
             return -1;
@@ -240,12 +228,6 @@ int main(int argc, const char* argv[])
         PTR_PERROR("pthread_create delay_correct error");
         return -1;
     }
-    // 6. 创建确认所有客户端是否就绪线程
-    /* pthread_t tid_confirm_ready;
-    if (pthread_create(&tid_confirm_ready, NULL, thread_confirm_ready, NULL) != 0) {
-        PTR_PERROR("pthread_create confirm_ready error");
-        return -1;
-    } */
 
     // 确认所有客户端是否就绪
     ret = -1;
@@ -279,6 +261,8 @@ int main(int argc, const char* argv[])
     pthread_join(tid_cmd, NULL);
     pthread_join(tid_time, NULL);
     pthread_join(tid_delay_correct, NULL);
+
+    pthread_mutex_destroy(&mutex); // 销毁互斥锁
 
     return 0;
 }

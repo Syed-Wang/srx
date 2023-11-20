@@ -10,6 +10,7 @@ extern char ip[128][16]; // ip 数组
 extern int net_id; // 组网 ID
 extern unsigned char server_client_flag; // 服务器-客户端标志 1 服务器 0 客户端
 extern char local_ip[16]; // 本机 IP
+extern int manual_server_flag; // 手动指定服务器标志(1指定 0不指定)
 
 typedef struct {
     char head[64]; // 数据包头部

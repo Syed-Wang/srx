@@ -79,6 +79,10 @@ int load_sys_config(fps_t* fps, window_t* window)
     // 读取 JSON 文件内容
     fseek(fp, 0, SEEK_END); // 定位到文件末尾
     int len = ftell(fp); // 获取文件长度
+    if(len == 0) {
+        printf("The file %s is empty, create it.\n", SYS_CONFIG_PATH);
+        return -3; // 文件为空
+    }
     fseek(fp, 0, SEEK_SET); // 定位到文件开头
     char* json_str = (char*)malloc(len + 1); // 分配内存
     if (json_str == NULL) {

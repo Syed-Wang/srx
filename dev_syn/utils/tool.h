@@ -1,7 +1,7 @@
 #ifndef __TOOL_H__
 #define __TOOL_H__
 
-#include <netinet/in.h> // sockaddr_in
+#include <arpa/inet.h> // struct sockaddr_in
 
 #define FILE_BUF_SIZE 1024 // 文件缓冲区大小
 

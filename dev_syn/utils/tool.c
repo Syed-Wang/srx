@@ -102,6 +102,13 @@ int send_file(struct sockaddr_in* addr, const char* file_path)
     file_len = ftell(fp);
     fseek(fp, 0, SEEK_SET);
 
+    // 先发送文件长度
+    ret = sendto(socketfd, &file_len, sizeof(file_len), 0, (struct sockaddr*)addr, sizeof(*addr));
+    if (ret < 0) {
+        PTR_PERROR("sendto error");
+        return -1;
+    }
+
     // 发送文件
     while (1) {
         memset(buf, 0, sizeof(buf));
@@ -167,6 +174,13 @@ int recv_file(const char* port, const char* file_path)
     fp = fopen(file_path, "wb");
     if (fp == NULL) {
         PTR_PERROR("fopen error");
+        return -1;
+    }
+
+    // 先接收文件长度
+    ret = recvfrom(socketfd, &file_len, sizeof(file_len), 0, NULL, NULL);
+    if (ret < 0) {
+        PTR_PERROR("recvfrom error");
         return -1;
     }
 

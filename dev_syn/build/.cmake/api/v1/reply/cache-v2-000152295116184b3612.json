@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/srx/work/build"
+			"value" : "/home/srx/work/dev_syn/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -509,6 +509,10 @@
 			"name" : "CMAKE_EXPORT_COMPILE_COMMANDS",
 			"properties" : 
 			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
 				{
 					"name" : "HELPSTRING",
 					"value" : "No help, variable specified on the command line."
@@ -1123,7 +1127,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/srx/work/build"
+			"value" : "/home/srx/work/dev_syn/build"
 		},
 		{
 			"name" : "dev_syn_IS_TOP_LEVEL",

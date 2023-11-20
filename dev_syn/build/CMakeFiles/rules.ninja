@@ -7,14 +7,14 @@
 
 # =============================================================================
 # Project: dev_syn
-# Configurations: 
+# Configurations: Debug
 # =============================================================================
 # =============================================================================
 
 #############################################
 # Rule for compiling C files.
 
-rule C_COMPILER__dev_syn_
+rule C_COMPILER__dev_syn_Debug
   depfile = $DEP_FILE
   deps = gcc
   command = aarch64-none-linux-gnu-gcc --sysroot=/home/srx/rk3588/buildroot/output/rockchip_rk3588/host/aarch64-buildroot-linux-gnu/sysroot $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
@@ -24,7 +24,7 @@ rule C_COMPILER__dev_syn_
 #############################################
 # Rule for linking C executable.
 
-rule C_EXECUTABLE_LINKER__dev_syn_
+rule C_EXECUTABLE_LINKER__dev_syn_Debug
   command = $PRE_LINK && aarch64-none-linux-gnu-gcc --sysroot=/home/srx/rk3588/buildroot/output/rockchip_rk3588/host/aarch64-buildroot-linux-gnu/sysroot $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking C executable $TARGET_FILE
   restat = $RESTAT

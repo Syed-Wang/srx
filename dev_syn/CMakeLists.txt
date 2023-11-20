@@ -9,7 +9,7 @@ set(VERSION_PATCH 0) # 补丁版本号
 
 set(CMAKE_C_COMPILER "aarch64-none-linux-gnu-gcc") # 指定编译器 ARM
 # set(CMAKE_C_COMPILER "gcc") # 指定编译器 X86
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pie -fPIE -Wno-psabi") # 设置编译选项 -Wno-psabi:关闭GCC对ABI的警告
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pie -fPIE -Wno-psabi -w") # 设置编译选项 -Wno-psabi:关闭GCC对ABI的警告
 
 set(PROJECT_BINARY_DIR ${PROJECT_SOURCE_DIR}/build) # 设置编译目录
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin) # 设置可执行文件目录

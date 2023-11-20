@@ -4,10 +4,10 @@
 #include <arpa/inet.h>
 #include <errno.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <sys/time.h>
 #include <unistd.h>
-#include <stdlib.h>
 
 // 服务器-客户端标志
 unsigned char server_client_flag; // 1 服务器 0 客户端
@@ -92,7 +92,7 @@ int recv_time(struct sockaddr_in* addr, time_packet_t* time_packet)
     struct timeval timeout;
     timeout.tv_sec = 0;
     timeout.tv_usec = 80000; // 80ms
-    if (setsockopt(time_socketfd, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof(timeout)) < 0) {
+    if (setsockopt(time_socketfd, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof(timeout)) < 0) { // 设置接收超时
         PTR_PERROR("setsockopt time error");
         return -1;
     }
@@ -101,10 +101,10 @@ int recv_time(struct sockaddr_in* addr, time_packet_t* time_packet)
     socklen_t addr_len = sizeof(struct sockaddr_in);
     // 接收时间
     if (recvfrom(time_socketfd, time_packet, sizeof(time_packet_t), 0, (struct sockaddr*)addr, &addr_len) < 0) {
-        if (errno == EAGAIN || errno == EWOULDBLOCK) {
+        if (errno == EAGAIN || errno == EWOULDBLOCK || errno == EINTR) {
+            PTR_DEBUG("recvfrom time timeout\n");
             server_client_flag = 1;
             close(time_socketfd);
-            PTR_DEBUG("recvfrom time timeout\n");
             return 0;
         } else {
             PTR_PERROR("recvfrom time error");
@@ -114,21 +114,23 @@ int recv_time(struct sockaddr_in* addr, time_packet_t* time_packet)
 
     PTR_DEBUG("%s\n", time_packet->head);
 
-    // 如果收到高优先级授时包当前服务器变为客户端，如果优先级相同则 IP 较小的为服务器
-    if (time_packet->priority < fps.priority) {
-        server_client_flag = 0;
-        PTR_DEBUG("client\n");
-    } else if (time_packet->priority == fps.priority) {
-        if (addr->sin_addr.s_addr < inet_addr(local_ip)) {
+    if (!manual_server_flag) { // 自主组网且未指定服务器
+        // 如果收到高优先级授时包当前服务器变为客户端，如果优先级相同则 IP 较小的为服务器
+        if (time_packet->priority < fps.priority) {
             server_client_flag = 0;
             PTR_DEBUG("client\n");
+        } else if (time_packet->priority == fps.priority) {
+            if (addr->sin_addr.s_addr < inet_addr(local_ip)) {
+                server_client_flag = 0;
+                PTR_DEBUG("client\n");
+            } else {
+                server_client_flag = 1;
+                PTR_DEBUG("server\n");
+            }
         } else {
             server_client_flag = 1;
             PTR_DEBUG("server\n");
         }
-    } else {
-        server_client_flag = 1;
-        PTR_DEBUG("server\n");
     }
 
     close(time_socketfd);

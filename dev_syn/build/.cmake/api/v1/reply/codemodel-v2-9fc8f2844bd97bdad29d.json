@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "dev_syn::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-dev_syn-Debug-9995aff7c0be228b8124.json",
+					"jsonFile" : "target-dev_syn-Debug-6c4e748ad86076dfbf20.json",
 					"name" : "dev_syn",
 					"projectIndex" : 0
 				}
@@ -49,7 +49,7 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/srx/work/build",
+		"build" : "/home/srx/work/dev_syn/build",
 		"source" : "/home/srx/work/dev_syn"
 	},
 	"version" : 

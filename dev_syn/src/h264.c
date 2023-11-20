@@ -1172,6 +1172,9 @@ int recv_h264()
                 // 打印包信息，序号
                 if (pkt_tr_seq++ == ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no))
                     PTR_DEBUG("最后一包: pkt_tr_seq=%d, bao=%d\n", pkt_tr_seq - 1, ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no));
+                
+                // 接受完毕，跳出循环
+                break;
             } else {
                 // 2.7 中间包
                 // 2.7.1 将负载数据写入h264_buf

@@ -1,8 +1,10 @@
 #include "cmd.h"
 #include "h264.h"
+#include "common.h"
 #include "sys_config.h"
 #include "tool.h"
 #include <arpa/inet.h>
+#include <pthread.h> // pthread_mutex_t
 #include <stdio.h>
 #include <stdlib.h> // malloc
 #include <string.h>
@@ -72,7 +74,7 @@ int send_cmd_unicast(struct sockaddr_in* addr, const char* cmd)
     return 0;
 }
 
-int recv_cmd(struct sockaddr_in* addr, char* cmd)
+int recv_cmd(link_queue_t* queue)
 {
     int cmd_socketfd = socket(AF_INET, SOCK_DGRAM, 0);
     if (cmd_socketfd < 0) {
@@ -80,7 +82,7 @@ int recv_cmd(struct sockaddr_in* addr, char* cmd)
         return -1;
     }
 
-    struct sockaddr_in cmd_addr; // 指令地址
+    struct sockaddr_in addr; // 接收方地址
 
     // 设置端口复用
     int opt = 1;
@@ -89,19 +91,35 @@ int recv_cmd(struct sockaddr_in* addr, char* cmd)
         return -1;
     }
 
-    if (set_bind_addr(cmd_socketfd, &cmd_addr, INADDR_ANY, CMD_PORT) < 0) {
+    if (set_bind_addr(cmd_socketfd, &addr, INADDR_ANY, CMD_PORT) < 0) {
         PTRERR("set_bind_addr cmd error");
         return -1;
     }
 
-    socklen_t server_addr_len = sizeof(*addr);
-    // 接收指令
-    if (recvfrom(cmd_socketfd, cmd, CMD_BUF_SIZE, 0, (struct sockaddr*)addr, &server_addr_len) < 0) {
-        PTR_PERROR("recvfrom cmd error");
-        return -1;
-    }
+    struct sockaddr_in cmd_addr; // 指令发送端地址
+    socklen_t cmd_addr_len = sizeof(cmd_addr);
+    char cmd[CMD_BUF_SIZE] = { 0 }; // 指令缓冲区
 
-    PTR_DEBUG("recv_cmd: %s\n", cmd);
+    while (1) {
+        memset(cmd, 0, CMD_BUF_SIZE);
+
+        // 接收指令
+        if (recvfrom(cmd_socketfd, cmd, CMD_BUF_SIZE, 0, (struct sockaddr*)&cmd_addr, &cmd_addr_len) < 0) {
+            PTR_PERROR("recvfrom cmd error");
+            return -1;
+        }
+        PTR_DEBUG("recv_cmd: %s\n", cmd);
+
+        // 加锁
+        pthread_mutex_lock(&mutex);
+        // 入队
+        if (link_queue_enqueue(queue, &cmd_addr, cmd) < 0) {
+            PTRERR("link_queue_enqueue error");
+            return -1;
+        }
+        // 解锁
+        pthread_mutex_unlock(&mutex);
+    }
 
     // 关闭套接字
     close(cmd_socketfd);
@@ -120,14 +138,36 @@ unsigned long long time_gap = 0; // 时间差
 char tmp_ip[128][16] = { 0 }; // 临时 ip 数组
 char missing_ip[128][16] = { 0 }; // 缺失的 ip 地址
 char min_ip[16] = { 0 }; // 缺失的最小 ip 地址
-unsigned char request_mode_flag; // 请求模式标志(1请求模式 0非请求模式)
+unsigned char request_mode_flag = 0; // 请求模式标志(1请求模式 0非请求模式)
 int stop_flag = 0; // 程序退出标志(1退出 0不退出)
+int manual_server_flag = 0; // 手动指定服务器标志(1指定 0不指定)
 
-int cmd_handler(struct sockaddr_in* addr, const char* cmd)
+int cmd_handler(link_queue_t* queue)
 {
+    // 判断队列是否为空
+    if (link_queue_is_empty(queue) == 1) {
+        return 0; // 队列为空
+    } else if (link_queue_is_empty(queue) == -1) {
+        PTRERR("queue is NULL");
+        return -1;
+    }
+
+    // 加锁
+    pthread_mutex_lock(&mutex);
+    // 出队
+    struct sockaddr_in cmd_addr; // 指令发送端地址
+    char cmd[CMD_BUF_SIZE] = { 0 };
+    if (link_queue_dequeue(queue, &cmd_addr, cmd) < 0) {
+        PTRERR("link_queue_dequeue error");
+        return -1;
+    }
+    // 解锁
+    pthread_mutex_unlock(&mutex);
+
+    // 处理指令
     if (!strcmp(cmd, CMD_GET_IP)) { // 获取节点 IP
         char ip_buf[16] = { 0 };
-        if (send_cmd_unicast(addr, local_ip) < 0) { // 单播发送本机 IP 地址
+        if (send_cmd_unicast(&cmd_addr, local_ip) < 0) { // 单播发送本机 IP 地址
             PTRERR("send_cmd_unicast error");
             return -1;
         }
@@ -142,13 +182,14 @@ int cmd_handler(struct sockaddr_in* addr, const char* cmd)
         if (is_ip(ip_buf) && net_id_buf > 0) { // 判断是否为 IP 地址和组网 ID
             // 判断是否为本机 IP 地址
             if (!strcmp(ip_buf, local_ip)) { // 如果是本机 IP 地址
-                if (net_id_buf != net_id) { // 如果组网 ID 不同
+                if (net_id_buf != net_id) { // 如果组网 ID 不同，重新组网
                     // 清空 IP 地址
                     memset(ip, 0, sizeof(ip));
                     node_num = 0;
                     // 设置组网 ID
                     net_id = net_id_buf;
                     PTR_DEBUG("set network id: %d\n", net_id);
+                    manual_server_flag = 0; // 重新组网还未指定服务器
                 }
             }
             // 组网内所有节点同步组网中的所有节点 IP 地址
@@ -178,7 +219,7 @@ int cmd_handler(struct sockaddr_in* addr, const char* cmd)
             }
         }
     } else if (!strcmp(cmd, CMD_DETECT_TIME_GAP)) { // 检测时间差
-        if (send_cmd_unicast(addr, CMD_ACK_TIME_GAP) < 0) {
+        if (send_cmd_unicast(&cmd_addr, CMD_ACK_TIME_GAP) < 0) {
             PTRERR("send_cmd_unicast error");
             return -1;
         }
@@ -191,7 +232,7 @@ int cmd_handler(struct sockaddr_in* addr, const char* cmd)
         // 查找 IP 地址对应的数组下标
         int index = -1;
         for (int i = 0; i < node_num; i++) {
-            if (!strcmp(ip[i], inet_ntoa(addr->sin_addr))) {
+            if (!strcmp(ip[i], inet_ntoa(cmd_addr.sin_addr))) {
                 index = i;
                 break;
             }
@@ -206,7 +247,7 @@ int cmd_handler(struct sockaddr_in* addr, const char* cmd)
         // 设置时间差
         char cmd_buf[CMD_BUF_SIZE] = { 0 };
         sprintf(cmd_buf, CMD_SET_TIME_GAP(% llu), gap);
-        if (send_cmd_unicast(addr, cmd_buf) < 0) {
+        if (send_cmd_unicast(&cmd_addr, cmd_buf) < 0) {
             PTRERR("send_cmd_unicast error");
             return -1;
         }
@@ -217,7 +258,7 @@ int cmd_handler(struct sockaddr_in* addr, const char* cmd)
     } else if (!strcmp(cmd, CMD_GET_IP_LIST)) {
         // 发送 IP 地址数组
         for (int i = 0; i < node_num; i++) {
-            send_cmd_unicast(addr, ip[i]);
+            send_cmd_unicast(&cmd_addr, ip[i]);
         }
     } else if (is_ip(cmd)) {
         PTR_DEBUG("recv ip: %s\n", cmd);
@@ -250,8 +291,8 @@ int cmd_handler(struct sockaddr_in* addr, const char* cmd)
         sscanf(cmd, CMD_SET_TIME_SERVER(% s), ip_buf);
 
         if (is_ip(ip_buf)) { // 判断是否为 IP 地址
-            for (int i = 0; i < node_num; i++) { // 判断是否在组网中
-                if (!strcmp(ip[i], ip_buf)) {
+            for (int i = 0; i < node_num; i++) {
+                if (!strcmp(ip[i], ip_buf)) { // 判断是否在组网中
                     if (!strcmp(ip_buf, local_ip)) { // 如果是本机 IP 地址
                         server_client_flag = 1; // 服务器
                     } else {
@@ -259,6 +300,7 @@ int cmd_handler(struct sockaddr_in* addr, const char* cmd)
                     }
                     break;
                 }
+                manual_server_flag = 1; // 手动指定服务器标志
             }
         } else {
             PTRERR("ip error");
@@ -267,7 +309,7 @@ int cmd_handler(struct sockaddr_in* addr, const char* cmd)
     } else if (!strcmp(cmd, CMD_REQUEST_CONNECT)) { // 请求连接
         if (server_client_flag == 1 && min_ip[0] != '\0') { // 服务器且缺失的最小 IP 地址不为空
             // 回应json文件
-            if (send_file(addr, SYS_CONFIG_PATH) < 0) {
+            if (send_file(&cmd_addr, SYS_CONFIG_PATH) < 0) {
                 PTRERR("send_file error");
                 return -1;
             }
@@ -282,7 +324,7 @@ int cmd_handler(struct sockaddr_in* addr, const char* cmd)
 
             char cmd_buf[CMD_BUF_SIZE] = { 0 };
             sprintf(cmd_buf, "/setIPList:s,%s;", buf);
-            if (send_cmd_unicast(addr, cmd_buf) < 0) {
+            if (send_cmd_unicast(&cmd_addr, cmd_buf) < 0) {
                 PTRERR("send_cmd_unicast error");
                 return -1;
             }
@@ -319,7 +361,7 @@ int cmd_handler(struct sockaddr_in* addr, const char* cmd)
 #ifdef ARM
         sprintf(cmd_buf, "ifconfig eth0 %s netmask 255.255.255.0 up", local_ip);
 #elif X86
-        // wsy: 需要 root 权限
+        // 需要 root 权限
         sprintf(cmd_buf, "ifconfig ens33 %s netmask 255.255.255.0 up", local_ip);
 #endif
         // 重新设置 IP 地址
@@ -395,6 +437,10 @@ int detect_time_gap()
 
 int confirm_ready()
 {
+    if (node_num < 2) {
+        return 0; // 组网中节点数量小于 2，无法进行时间校正，等待其他节点加入
+    }
+
     struct sockaddr_in cmd_addr; // 指令地址
     cmd_addr.sin_family = AF_INET;
     cmd_addr.sin_port = htons(atoi(CMD_PORT));
