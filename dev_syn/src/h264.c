@@ -659,7 +659,7 @@ MPP_RET test_mpp_run(MpiEncMultiCtxInfo* info)
 
             if (packet) {
                 // write packet to file here
-                void* ptr = mpp_packet_get_pos(packet);
+                void* ptr = mpp_packet_get_pos(packet); // 获取包的起始地址
                 size_t len = mpp_packet_get_length(packet);
                 char log_buf[256];
                 RK_S32 log_size = sizeof(log_buf) - 1;
@@ -670,7 +670,7 @@ MPP_RET test_mpp_run(MpiEncMultiCtxInfo* info)
 
                 p->pkt_eos = mpp_packet_get_eos(packet);
                 // wsy 1
-                if (p->fp_output) {
+                if (p->fp_output) { // 如果有指定输出文件
                     fwrite(ptr, 1, len, p->fp_output);
                 } else {
                     if (len) {
@@ -696,9 +696,12 @@ MPP_RET test_mpp_run(MpiEncMultiCtxInfo* info)
                         rtp_hdr->marker = 0; // 标志位，由具体协议规定其值( 1 为最后一个包)
                         nalu_type = ((char*)ptr)[4] & 0x1F; // nalu 头的第5个字节的后5位表示 nalu 的类型
 
-                        if (len < RET_LEN) {
+                        if (len < RET_LEN) { // 单包
                             rtp_hdr->marker = 1;
-                            memcpy(&arr[sizeof(RTP_FIXED_HEADER) + sizeof(NALU_HEADER)], ptr, len);
+
+                            // note: 4字节的nalu头不发送
+                            memcpy(&arr[sizeof(RTP_FIXED_HEADER) + sizeof(NALU_HEADER)], ptr + 4, len - 4);
+                            // memcpy(&arr[sizeof(RTP_FIXED_HEADER) + sizeof(NALU_HEADER)], ptr, len);
                             nalu_hdr->F = 0; // 1 bit，禁止位，固定为0，发送端将此位置为0，接收端会忽略该比特位的信息
                             nalu_hdr->TYPE = nalu_type; // 5 bit
                             if (nalu_hdr->TYPE == 5 || nalu_hdr->TYPE == 7 || nalu_hdr->TYPE == 8) { // 5 IDR 7 SPS 8 PPS
@@ -710,11 +713,11 @@ MPP_RET test_mpp_run(MpiEncMultiCtxInfo* info)
                             rtp_hdr->seq_no = htons(pkt_tr_seq);
                             pkt_tr_seq++;
                             send_data_to_udp(arr, pkt_long); // 发送包的内容
-                        } else {
+                        } else { // 多包
                             while (pkt_idx <= pkt_num) {
                                 memset(arr, 0, sizeof(arr));
                                 rtp_hdr->seq_no = htons(pkt_tr_seq);
-                                if (pkt_idx == 0) {
+                                if (pkt_idx == 0) { // 第一个包
                                     rtp_hdr->marker = 0;
                                     nalu_hdr->TYPE = nalu_type;
                                     if (nalu_hdr->TYPE == 5 || nalu_hdr->TYPE == 7 || nalu_hdr->TYPE == 8) {
@@ -731,8 +734,11 @@ MPP_RET test_mpp_run(MpiEncMultiCtxInfo* info)
                                     fu_hdr->R = 0; // 保留位
                                     fu_hdr->S = 1; // 起始包
                                     fu_hdr->TYPE = nalu_type;
-                                    memcpy(&arr[sizeof(RTP_FIXED_HEADER) + sizeof(FU_INDICATOR) + sizeof(FU_HEADER)], ptr + pkt_idx * RET_LEN, RET_LEN);
-                                    pkt_long = RET_LEN + sizeof(RTP_FIXED_HEADER) + sizeof(FU_INDICATOR) + sizeof(FU_HEADER);
+
+                                    // note: 4字节的nalu头不发送
+                                    memcpy(&arr[sizeof(RTP_FIXED_HEADER) + sizeof(FU_INDICATOR) + sizeof(FU_HEADER)], ptr + pkt_idx * RET_LEN + 4, RET_LEN - 4);
+                                    // memcpy(&arr[sizeof(RTP_FIXED_HEADER) + sizeof(FU_INDICATOR) + sizeof(FU_HEADER)], ptr + pkt_idx * RET_LEN, RET_LEN);
+                                    pkt_long = RET_LEN + sizeof(RTP_FIXED_HEADER) + sizeof(FU_INDICATOR) + sizeof(FU_HEADER) - 4; // 减去4字节的nalu头
                                 } else if (pkt_idx == pkt_num) {
                                     rtp_hdr->marker = 1;
                                     fu_ind = (FU_INDICATOR*)(arr + sizeof(RTP_FIXED_HEADER));
@@ -1119,6 +1125,8 @@ int recv_h264()
     }
     NALU_HEADER* nalu_hdr = (NALU_HEADER*)(rtp_buf + 12); // NALU头
 
+    unsigned char start_code[4] = { 0x00, 0x00, 0x00, 0x01 }; // NALU头的起始码
+
     // 接收H264码流
     while (1) {
         // 接收H264数据
@@ -1135,6 +1143,10 @@ int recv_h264()
             unsigned char* payload = rtp_buf + 13;
             // 1.2 获取负载数据长度
             int payload_len = sizeof(rtp_buf) - 13;
+
+            // note: 写入起始码
+            fwrite(start_code, 1, 4, fp);
+
             // 1.3 将负载数据写入文件
             fwrite(payload, 1, payload_len, fp);
             // 打印包信息，序号
@@ -1150,15 +1162,20 @@ int recv_h264()
             unsigned char* payload = rtp_buf + 14;
             // 2.4 获取负载数据长度F
             int payload_len = sizeof(rtp_buf) - 14;
-            // 2.5 判断是否是第一包
-            if (fu_hdr->S == 1) {
+
+            if (fu_hdr->S == 1) { // 2.5 判断是否是第一包
                 // 2.5.1 申请内存
                 if (h264_buf == NULL) {
                     perror("malloc error");
                     break;
                 }
-                // 2.5.3 将负载数据写入h264_buf
-                memcpy(h264_buf, payload, payload_len);
+
+                // note: 插入起始码
+                memcpy(h264_buf, start_code, 4);
+                ptr = h264_buf + 4;
+
+                // 2.5.2 将负载数据写入h264_buf
+                memcpy(ptr, payload, payload_len);
                 ptr = h264_buf + payload_len;
                 // 打印包信息，序号
                 if (pkt_tr_seq++ == ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no))
@@ -1172,9 +1189,9 @@ int recv_h264()
                 // 打印包信息，序号
                 if (pkt_tr_seq++ == ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no))
                     PTR_DEBUG("最后一包: pkt_tr_seq=%d, bao=%d\n", pkt_tr_seq - 1, ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no));
-                
+
                 // 接受完毕，跳出循环
-                break;
+                // break;
             } else {
                 // 2.7 中间包
                 // 2.7.1 将负载数据写入h264_buf

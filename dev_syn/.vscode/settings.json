@@ -1,7 +1,8 @@
 {
 	"files.associations": {
 		"cmd.h": "c",
-		"link_queue.h": "c"
+		"link_queue.h": "c",
+		"h264.h": "c"
 	},
 	"commentTranslate.source": "Bing"
 }

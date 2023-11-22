@@ -142,7 +142,7 @@ typedef struct _RTP_FIXED_HEADER {
     unsigned int timestamp;
     /**/ /* bytes 8-11 */
     unsigned int ssrc; /**/ /* stream number is used here. */
-} RTP_FIXED_HEADER;
+} RTP_FIXED_HEADER; /**/ /* 12 BYTES */
 
 // NALU头 (NALU: Network Abstraction Layer Unit)
 typedef struct _NALU_HEADER {

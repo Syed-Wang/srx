@@ -22,6 +22,11 @@ file(GLOB_RECURSE DIR_SRCS
 	${PROJECT_SOURCE_DIR}/src/*.c
 	${PROJECT_SOURCE_DIR}/utils/*.c
 	${INCLUDE_PATH}/utils/*.c
+
+	# 测试
+	# ${PROJECT_SOURCE_DIR}/test/main_send_h264.c
+	# ${PROJECT_SOURCE_DIR}/src/h264.c
+	# ${PROJECT_SOURCE_DIR}/utils/tool.c
 ) # 设置源文件目录
 
 add_executable(dev_syn ${DIR_SRCS}) # 指定生成目标
