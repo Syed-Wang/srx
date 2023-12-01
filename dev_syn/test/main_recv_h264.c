@@ -139,14 +139,7 @@ int recv_h264()
     unsigned int pkt_tr_seq = 0; // 传输的第几个包
     unsigned char* ptr = NULL; // 指向h264_buf的末尾
     // 写入前先清空文件
-    FILE* fp = fopen(H264_PATH, "wb"); // H264文件 wb以二进制写入方式打开
-    if (fp == NULL) {
-        perror("fopen error");
-        return -1;
-    }
-    fclose(fp);
-    // 再次打开文件
-    fp = fopen(H264_PATH, "ab+"); // H264文件 ab+以二进制追加方式打开
+    FILE* fp = fopen(H264_PATH, "wb+"); // H264文件 wb以二进制写入方式打开
     if (fp == NULL) {
         perror("fopen error");
         return -1;
@@ -208,7 +201,7 @@ int recv_h264()
                 memcpy(ptr, payload, payload_len);
                 ptr = h264_buf + payload_len;
                 // 打印包信息，序号
-                if (pkt_tr_seq++ == ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no))
+                if (pkt_tr_seq++ != ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no))
                     PTR_DEBUG("第一包: pkt_tr_seq=%d, bao=%d\n", pkt_tr_seq - 1, ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no));
             } else if (fu_hdr->E == 1) { // 2.6 判断是否是最后一包
                 // 2.6.1 将负载数据写入h264_buf
@@ -217,7 +210,7 @@ int recv_h264()
                 // 2.6.2 将h264_buf写入文件
                 fwrite(h264_buf, 1, ptr - h264_buf, fp);
                 // 打印包信息，序号
-                if (pkt_tr_seq++ == ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no))
+                if (pkt_tr_seq++ != ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no))
                     PTR_DEBUG("最后一包: pkt_tr_seq=%d, bao=%d\n", pkt_tr_seq - 1, ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no));
                 // 接受完毕，跳出循环
                 // break;
@@ -227,7 +220,7 @@ int recv_h264()
                 memcpy(ptr, payload, payload_len);
                 ptr += payload_len;
                 // 打印包信息，序号
-                if (pkt_tr_seq++ == ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no))
+                if (pkt_tr_seq++ != ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no))
                     PTR_DEBUG("中间包: pkt_tr_seq=%d, bao=%d\n", pkt_tr_seq - 1, ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no));
             }
         }
