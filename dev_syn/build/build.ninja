@@ -52,96 +52,144 @@ build cmake_object_order_depends_target_dev_syn: phony || CMakeFiles/dev_syn.dir
 build CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/camera_source.c.o: C_COMPILER__dev_syn_Debug /home/srx/rk3588/external/mpp/utils/camera_source.c || cmake_object_order_depends_target_dev_syn
   DEFINES = -DARM -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/camera_source.c.o.d
-  FLAGS = -pie -fPIE -Wno-psabi -w -g
-  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON
+  FLAGS = -pie -fPIE -Wno-psabi -g
+  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc/rtp -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/test/ffmpeg-4.4.4 -I/home/srx/work/dev_syn/utils/cJSON
   OBJECT_DIR = CMakeFiles/dev_syn.dir
   OBJECT_FILE_DIR = CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils
 
 build CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/dictionary.c.o: C_COMPILER__dev_syn_Debug /home/srx/rk3588/external/mpp/utils/dictionary.c || cmake_object_order_depends_target_dev_syn
   DEFINES = -DARM -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/dictionary.c.o.d
-  FLAGS = -pie -fPIE -Wno-psabi -w -g
-  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON
+  FLAGS = -pie -fPIE -Wno-psabi -g
+  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc/rtp -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/test/ffmpeg-4.4.4 -I/home/srx/work/dev_syn/utils/cJSON
   OBJECT_DIR = CMakeFiles/dev_syn.dir
   OBJECT_FILE_DIR = CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils
 
 build CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/iniparser.c.o: C_COMPILER__dev_syn_Debug /home/srx/rk3588/external/mpp/utils/iniparser.c || cmake_object_order_depends_target_dev_syn
   DEFINES = -DARM -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/iniparser.c.o.d
-  FLAGS = -pie -fPIE -Wno-psabi -w -g
-  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON
+  FLAGS = -pie -fPIE -Wno-psabi -g
+  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc/rtp -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/test/ffmpeg-4.4.4 -I/home/srx/work/dev_syn/utils/cJSON
   OBJECT_DIR = CMakeFiles/dev_syn.dir
   OBJECT_FILE_DIR = CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils
 
 build CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/mpi_dec_utils.c.o: C_COMPILER__dev_syn_Debug /home/srx/rk3588/external/mpp/utils/mpi_dec_utils.c || cmake_object_order_depends_target_dev_syn
   DEFINES = -DARM -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/mpi_dec_utils.c.o.d
-  FLAGS = -pie -fPIE -Wno-psabi -w -g
-  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON
+  FLAGS = -pie -fPIE -Wno-psabi -g
+  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc/rtp -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/test/ffmpeg-4.4.4 -I/home/srx/work/dev_syn/utils/cJSON
   OBJECT_DIR = CMakeFiles/dev_syn.dir
   OBJECT_FILE_DIR = CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils
 
 build CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/mpi_enc_utils.c.o: C_COMPILER__dev_syn_Debug /home/srx/rk3588/external/mpp/utils/mpi_enc_utils.c || cmake_object_order_depends_target_dev_syn
   DEFINES = -DARM -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/mpi_enc_utils.c.o.d
-  FLAGS = -pie -fPIE -Wno-psabi -w -g
-  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON
+  FLAGS = -pie -fPIE -Wno-psabi -g
+  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc/rtp -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/test/ffmpeg-4.4.4 -I/home/srx/work/dev_syn/utils/cJSON
   OBJECT_DIR = CMakeFiles/dev_syn.dir
   OBJECT_FILE_DIR = CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils
 
 build CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/mpp_enc_roi_utils.c.o: C_COMPILER__dev_syn_Debug /home/srx/rk3588/external/mpp/utils/mpp_enc_roi_utils.c || cmake_object_order_depends_target_dev_syn
   DEFINES = -DARM -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/mpp_enc_roi_utils.c.o.d
-  FLAGS = -pie -fPIE -Wno-psabi -w -g
-  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON
+  FLAGS = -pie -fPIE -Wno-psabi -g
+  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc/rtp -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/test/ffmpeg-4.4.4 -I/home/srx/work/dev_syn/utils/cJSON
   OBJECT_DIR = CMakeFiles/dev_syn.dir
   OBJECT_FILE_DIR = CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils
 
 build CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/mpp_opt.c.o: C_COMPILER__dev_syn_Debug /home/srx/rk3588/external/mpp/utils/mpp_opt.c || cmake_object_order_depends_target_dev_syn
   DEFINES = -DARM -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/mpp_opt.c.o.d
-  FLAGS = -pie -fPIE -Wno-psabi -w -g
-  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON
+  FLAGS = -pie -fPIE -Wno-psabi -g
+  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc/rtp -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/test/ffmpeg-4.4.4 -I/home/srx/work/dev_syn/utils/cJSON
   OBJECT_DIR = CMakeFiles/dev_syn.dir
   OBJECT_FILE_DIR = CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils
 
 build CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/utils.c.o: C_COMPILER__dev_syn_Debug /home/srx/rk3588/external/mpp/utils/utils.c || cmake_object_order_depends_target_dev_syn
   DEFINES = -DARM -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/utils.c.o.d
-  FLAGS = -pie -fPIE -Wno-psabi -w -g
-  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON
+  FLAGS = -pie -fPIE -Wno-psabi -g
+  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc/rtp -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/test/ffmpeg-4.4.4 -I/home/srx/work/dev_syn/utils/cJSON
   OBJECT_DIR = CMakeFiles/dev_syn.dir
   OBJECT_FILE_DIR = CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils
+
+build CMakeFiles/dev_syn.dir/src/ffmpeg_test_pc/rtp/H2645ParseSPS.cpp.o: CXX_COMPILER__dev_syn_Debug /home/srx/work/dev_syn/src/ffmpeg_test_pc/rtp/H2645ParseSPS.cpp || cmake_object_order_depends_target_dev_syn
+  DEFINES = -DARM -D_GNU_SOURCE
+  DEP_FILE = CMakeFiles/dev_syn.dir/src/ffmpeg_test_pc/rtp/H2645ParseSPS.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc/rtp -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/test/ffmpeg-4.4.4 -I/home/srx/work/dev_syn/utils/cJSON
+  OBJECT_DIR = CMakeFiles/dev_syn.dir
+  OBJECT_FILE_DIR = CMakeFiles/dev_syn.dir/src/ffmpeg_test_pc/rtp
+
+build CMakeFiles/dev_syn.dir/src/ffmpeg_test_pc/rtp/ParseSPS.cpp.o: CXX_COMPILER__dev_syn_Debug /home/srx/work/dev_syn/src/ffmpeg_test_pc/rtp/ParseSPS.cpp || cmake_object_order_depends_target_dev_syn
+  DEFINES = -DARM -D_GNU_SOURCE
+  DEP_FILE = CMakeFiles/dev_syn.dir/src/ffmpeg_test_pc/rtp/ParseSPS.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc/rtp -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/test/ffmpeg-4.4.4 -I/home/srx/work/dev_syn/utils/cJSON
+  OBJECT_DIR = CMakeFiles/dev_syn.dir
+  OBJECT_FILE_DIR = CMakeFiles/dev_syn.dir/src/ffmpeg_test_pc/rtp
+
+build CMakeFiles/dev_syn.dir/src/ffmpeg_test_pc/rtp/RTPProcessor.cpp.o: CXX_COMPILER__dev_syn_Debug /home/srx/work/dev_syn/src/ffmpeg_test_pc/rtp/RTPProcessor.cpp || cmake_object_order_depends_target_dev_syn
+  DEFINES = -DARM -D_GNU_SOURCE
+  DEP_FILE = CMakeFiles/dev_syn.dir/src/ffmpeg_test_pc/rtp/RTPProcessor.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc/rtp -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/test/ffmpeg-4.4.4 -I/home/srx/work/dev_syn/utils/cJSON
+  OBJECT_DIR = CMakeFiles/dev_syn.dir
+  OBJECT_FILE_DIR = CMakeFiles/dev_syn.dir/src/ffmpeg_test_pc/rtp
+
+build CMakeFiles/dev_syn.dir/src/ffmpeg_test_pc/rtp/RTPRecvProcessor.cpp.o: CXX_COMPILER__dev_syn_Debug /home/srx/work/dev_syn/src/ffmpeg_test_pc/rtp/RTPRecvProcessor.cpp || cmake_object_order_depends_target_dev_syn
+  DEFINES = -DARM -D_GNU_SOURCE
+  DEP_FILE = CMakeFiles/dev_syn.dir/src/ffmpeg_test_pc/rtp/RTPRecvProcessor.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc/rtp -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/test/ffmpeg-4.4.4 -I/home/srx/work/dev_syn/utils/cJSON
+  OBJECT_DIR = CMakeFiles/dev_syn.dir
+  OBJECT_FILE_DIR = CMakeFiles/dev_syn.dir/src/ffmpeg_test_pc/rtp
+
+build CMakeFiles/dev_syn.dir/src/ffmpeg_test_pc/rtp/RTPSendProcessor.cpp.o: CXX_COMPILER__dev_syn_Debug /home/srx/work/dev_syn/src/ffmpeg_test_pc/rtp/RTPSendProcessor.cpp || cmake_object_order_depends_target_dev_syn
+  DEFINES = -DARM -D_GNU_SOURCE
+  DEP_FILE = CMakeFiles/dev_syn.dir/src/ffmpeg_test_pc/rtp/RTPSendProcessor.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc/rtp -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/test/ffmpeg-4.4.4 -I/home/srx/work/dev_syn/utils/cJSON
+  OBJECT_DIR = CMakeFiles/dev_syn.dir
+  OBJECT_FILE_DIR = CMakeFiles/dev_syn.dir/src/ffmpeg_test_pc/rtp
 
 build CMakeFiles/dev_syn.dir/src/h264.c.o: C_COMPILER__dev_syn_Debug /home/srx/work/dev_syn/src/h264.c || cmake_object_order_depends_target_dev_syn
   DEFINES = -DARM -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/dev_syn.dir/src/h264.c.o.d
-  FLAGS = -pie -fPIE -Wno-psabi -w -g
-  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON
+  FLAGS = -pie -fPIE -Wno-psabi -g
+  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc/rtp -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/test/ffmpeg-4.4.4 -I/home/srx/work/dev_syn/utils/cJSON
+  OBJECT_DIR = CMakeFiles/dev_syn.dir
+  OBJECT_FILE_DIR = CMakeFiles/dev_syn.dir/src
+
+build CMakeFiles/dev_syn.dir/src/send_h264.cpp.o: CXX_COMPILER__dev_syn_Debug /home/srx/work/dev_syn/src/send_h264.cpp || cmake_object_order_depends_target_dev_syn
+  DEFINES = -DARM -D_GNU_SOURCE
+  DEP_FILE = CMakeFiles/dev_syn.dir/src/send_h264.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc/rtp -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/test/ffmpeg-4.4.4 -I/home/srx/work/dev_syn/utils/cJSON
   OBJECT_DIR = CMakeFiles/dev_syn.dir
   OBJECT_FILE_DIR = CMakeFiles/dev_syn.dir/src
 
 build CMakeFiles/dev_syn.dir/test/main_send_h264.c.o: C_COMPILER__dev_syn_Debug /home/srx/work/dev_syn/test/main_send_h264.c || cmake_object_order_depends_target_dev_syn
   DEFINES = -DARM -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/dev_syn.dir/test/main_send_h264.c.o.d
-  FLAGS = -pie -fPIE -Wno-psabi -w -g
-  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON
+  FLAGS = -pie -fPIE -Wno-psabi -g
+  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc/rtp -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/test/ffmpeg-4.4.4 -I/home/srx/work/dev_syn/utils/cJSON
   OBJECT_DIR = CMakeFiles/dev_syn.dir
   OBJECT_FILE_DIR = CMakeFiles/dev_syn.dir/test
 
 build CMakeFiles/dev_syn.dir/utils/cJSON/cJSON.c.o: C_COMPILER__dev_syn_Debug /home/srx/work/dev_syn/utils/cJSON/cJSON.c || cmake_object_order_depends_target_dev_syn
   DEFINES = -DARM -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/dev_syn.dir/utils/cJSON/cJSON.c.o.d
-  FLAGS = -pie -fPIE -Wno-psabi -w -g
-  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON
+  FLAGS = -pie -fPIE -Wno-psabi -g
+  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc/rtp -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/test/ffmpeg-4.4.4 -I/home/srx/work/dev_syn/utils/cJSON
   OBJECT_DIR = CMakeFiles/dev_syn.dir
   OBJECT_FILE_DIR = CMakeFiles/dev_syn.dir/utils/cJSON
 
 build CMakeFiles/dev_syn.dir/utils/tool.c.o: C_COMPILER__dev_syn_Debug /home/srx/work/dev_syn/utils/tool.c || cmake_object_order_depends_target_dev_syn
   DEFINES = -DARM -D_GNU_SOURCE
   DEP_FILE = CMakeFiles/dev_syn.dir/utils/tool.c.o.d
-  FLAGS = -pie -fPIE -Wno-psabi -w -g
-  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON
+  FLAGS = -pie -fPIE -Wno-psabi -g
+  INCLUDES = -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc -I/home/srx/work/dev_syn/src/ffmpeg_test_pc/rtp -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/test/ffmpeg-4.4.4 -I/home/srx/work/dev_syn/utils/cJSON
   OBJECT_DIR = CMakeFiles/dev_syn.dir
   OBJECT_FILE_DIR = CMakeFiles/dev_syn.dir/utils
 
@@ -153,8 +201,8 @@ build CMakeFiles/dev_syn.dir/utils/tool.c.o: C_COMPILER__dev_syn_Debug /home/srx
 #############################################
 # Link the executable ../bin/dev_syn
 
-build ../bin/dev_syn: C_EXECUTABLE_LINKER__dev_syn_Debug CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/camera_source.c.o CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/dictionary.c.o CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/iniparser.c.o CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/mpi_dec_utils.c.o CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/mpi_enc_utils.c.o CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/mpp_enc_roi_utils.c.o CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/mpp_opt.c.o CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/utils.c.o CMakeFiles/dev_syn.dir/src/h264.c.o CMakeFiles/dev_syn.dir/test/main_send_h264.c.o CMakeFiles/dev_syn.dir/utils/cJSON/cJSON.c.o CMakeFiles/dev_syn.dir/utils/tool.c.o
-  FLAGS = -pie -fPIE -Wno-psabi -w -g
+build ../bin/dev_syn: CXX_EXECUTABLE_LINKER__dev_syn_Debug CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/camera_source.c.o CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/dictionary.c.o CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/iniparser.c.o CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/mpi_dec_utils.c.o CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/mpi_enc_utils.c.o CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/mpp_enc_roi_utils.c.o CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/mpp_opt.c.o CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/utils.c.o CMakeFiles/dev_syn.dir/src/ffmpeg_test_pc/rtp/H2645ParseSPS.cpp.o CMakeFiles/dev_syn.dir/src/ffmpeg_test_pc/rtp/ParseSPS.cpp.o CMakeFiles/dev_syn.dir/src/ffmpeg_test_pc/rtp/RTPProcessor.cpp.o CMakeFiles/dev_syn.dir/src/ffmpeg_test_pc/rtp/RTPRecvProcessor.cpp.o CMakeFiles/dev_syn.dir/src/ffmpeg_test_pc/rtp/RTPSendProcessor.cpp.o CMakeFiles/dev_syn.dir/src/h264.c.o CMakeFiles/dev_syn.dir/src/send_h264.cpp.o CMakeFiles/dev_syn.dir/test/main_send_h264.c.o CMakeFiles/dev_syn.dir/utils/cJSON/cJSON.c.o CMakeFiles/dev_syn.dir/utils/tool.c.o
+  FLAGS = -g
   LINK_LIBRARIES = -lrockchip_mpp  -lpthread
   OBJECT_DIR = CMakeFiles/dev_syn.dir
   POST_BUILD = :

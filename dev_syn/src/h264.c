@@ -398,7 +398,7 @@ RET:
     return ret;
 }
 
-MPP_RET send_data_to_udp(char* ptr, size_t len)
+/* MPP_RET send_data_to_udp(char* ptr, size_t len)
 {
     // 多播组发送端
     // 1. 创建套接字
@@ -433,6 +433,7 @@ MPP_RET send_data_to_udp(char* ptr, size_t len)
     close(socketfd);
     return MPP_OK;
 }
+ */
 
 MPP_RET test_mpp_run(MpiEncMultiCtxInfo* info)
 {

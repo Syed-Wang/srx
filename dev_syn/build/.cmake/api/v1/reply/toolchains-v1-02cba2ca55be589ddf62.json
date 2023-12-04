@@ -79,7 +79,7 @@
 						"gcc"
 					]
 				},
-				"path" : "/usr/bin/c++",
+				"path" : "aarch64-none-linux-gnu-g++",
 				"version" : "11.4.0"
 			},
 			"language" : "CXX",
