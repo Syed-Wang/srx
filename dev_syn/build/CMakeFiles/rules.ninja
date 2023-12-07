@@ -22,21 +22,11 @@ rule C_COMPILER__dev_syn_Debug
 
 
 #############################################
-# Rule for compiling CXX files.
+# Rule for linking C executable.
 
-rule CXX_COMPILER__dev_syn_Debug
-  depfile = $DEP_FILE
-  deps = gcc
-  command = aarch64-none-linux-gnu-g++ --sysroot=/home/srx/rk3588/buildroot/output/rockchip_rk3588/host/aarch64-buildroot-linux-gnu/sysroot $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
-  description = Building CXX object $out
-
-
-#############################################
-# Rule for linking CXX executable.
-
-rule CXX_EXECUTABLE_LINKER__dev_syn_Debug
-  command = $PRE_LINK && aarch64-none-linux-gnu-g++ --sysroot=/home/srx/rk3588/buildroot/output/rockchip_rk3588/host/aarch64-buildroot-linux-gnu/sysroot $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
-  description = Linking CXX executable $TARGET_FILE
+rule C_EXECUTABLE_LINKER__dev_syn_Debug
+  command = $PRE_LINK && aarch64-none-linux-gnu-gcc --sysroot=/home/srx/rk3588/buildroot/output/rockchip_rk3588/host/aarch64-buildroot-linux-gnu/sysroot $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
+  description = Linking C executable $TARGET_FILE
   restat = $RESTAT
 
 

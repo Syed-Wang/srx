@@ -146,7 +146,13 @@ int recv_h264()
     }
     NALU_HEADER* nalu_hdr = (NALU_HEADER*)(rtp_buf + 12); // NALU头
 
-    unsigned char start_code[4] = { 0x00, 0x00, 0x00, 0x01 };
+    unsigned char start_code[4] = { 0x00, 0x00, 0x00, 0x01 }; // 起始码
+
+    /* FILE* fp1 = fopen("./test_yuan.h264", "wb+");
+    if (fp1 == NULL) {
+        perror("fopen error");
+        return -1;
+    } */
 
     // 接收H264码流
     while (1) {
@@ -156,6 +162,8 @@ int recv_h264()
             perror("recvfrom h264 error");
             return -1;
         }
+
+        // fwrite(rtp_buf, 1, sizeof(rtp_buf), fp1);
 
         // 解 RTP 包，获取负载数据(H264)
         // 分为两种情况：1. 单包 2. 分包
@@ -169,7 +177,12 @@ int recv_h264()
             // 1.3 插入起始码
             fwrite(start_code, 1, 4, fp);
 
-            // 1.3 将负载数据写入文件
+            // 去除末尾的 0
+            while (*(payload + payload_len - 1) == 0) {
+                payload_len--;
+            }
+
+            // 1.4 将负载数据写入文件
             fwrite(payload, 1, payload_len, fp);
             // 打印包信息，序号
             if (pkt_tr_seq++ == ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no))
@@ -191,7 +204,7 @@ int recv_h264()
                     perror("malloc error");
                     break;
                 }
-
+                
                 // 2.5.2 插入起始码
                 memcpy(h264_buf, start_code, 4);
                 ptr = h264_buf + 4;
@@ -201,16 +214,23 @@ int recv_h264()
                 memcpy(ptr, payload, payload_len);
                 ptr = h264_buf + payload_len;
                 // 打印包信息，序号
-                if (pkt_tr_seq++ != ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no))
+                if (pkt_tr_seq++ == ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no))
                     PTR_DEBUG("第一包: pkt_tr_seq=%d, bao=%d\n", pkt_tr_seq - 1, ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no));
             } else if (fu_hdr->E == 1) { // 2.6 判断是否是最后一包
                 // 2.6.1 将负载数据写入h264_buf
                 memcpy(ptr, payload, payload_len);
                 ptr += payload_len;
+
+                // 去除末尾的0
+                while (*(ptr - 1) == 0) {
+                    ptr--;
+                }
+
                 // 2.6.2 将h264_buf写入文件
                 fwrite(h264_buf, 1, ptr - h264_buf, fp);
+                ptr = NULL; // 重置ptr
                 // 打印包信息，序号
-                if (pkt_tr_seq++ != ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no))
+                if (pkt_tr_seq++ == ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no))
                     PTR_DEBUG("最后一包: pkt_tr_seq=%d, bao=%d\n", pkt_tr_seq - 1, ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no));
                 // 接受完毕，跳出循环
                 // break;
@@ -220,7 +240,7 @@ int recv_h264()
                 memcpy(ptr, payload, payload_len);
                 ptr += payload_len;
                 // 打印包信息，序号
-                if (pkt_tr_seq++ != ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no))
+                if (pkt_tr_seq++ == ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no))
                     PTR_DEBUG("中间包: pkt_tr_seq=%d, bao=%d\n", pkt_tr_seq - 1, ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no));
             }
         }

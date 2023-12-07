@@ -244,7 +244,8 @@ int main(int argc, const char* argv[])
                 }
                 sleep(1); // 等待客户端启动
                 // 开始发送视频
-                // ./dev_syn -w 1920 -h 1080 -f 30 -t 7 -i ./sample.yuv
+                // BGR3(bgr24): 65543
+                // ./dev_syn -w 1920 -h 1080 -t 7 -f 65543 -i /dev/video0
                 if (send_h264(argc, (char**)argv) < 0) {
                     PTRERR("send_h264 error");
                     return -1;

@@ -2,12 +2,8 @@
 #include "tool.h"
 #include <stdio.h>
 
-extern int send_init();
-
 int main(int argc, const char* argv[])
 {
-    send_init();
-
     // BGR3(bgr24): 65543
     // ./dev_syn -w 1920 -h 1080 -t 7 -f 65543 -i /dev/video0
     if (send_h264(argc, (char**)argv) < 0) {

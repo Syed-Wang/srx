@@ -27,31 +27,31 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 56,
+				"line" : 52,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 65,
+				"line" : 61,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 58,
+				"line" : 54,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 70,
+				"line" : 66,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 85,
+				"line" : 77,
 				"parent" : 0
 			}
 		]
@@ -84,14 +84,6 @@
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/home/srx/work/dev_syn/src/ffmpeg_test_pc"
-				},
-				{
-					"backtrace" : 4,
-					"path" : "/home/srx/work/dev_syn/src/ffmpeg_test_pc/rtp"
-				},
-				{
-					"backtrace" : 4,
 					"path" : "/home/srx/work/dev_syn/utils"
 				},
 				{
@@ -109,10 +101,6 @@
 				{
 					"backtrace" : 4,
 					"path" : "/home/srx/rk3588/external/mpp/mpp/base/inc"
-				},
-				{
-					"backtrace" : 4,
-					"path" : "/home/srx/test/ffmpeg-4.4.4"
 				},
 				{
 					"backtrace" : 5,
@@ -130,86 +118,14 @@
 				5,
 				6,
 				7,
-				13,
-				15,
-				16,
-				17
-			],
-			"sysroot" : 
-			{
-				"path" : "/home/srx/rk3588/buildroot/output/rockchip_rk3588/host/aarch64-buildroot-linux-gnu/sysroot"
-			}
-		},
-		{
-			"compileCommandFragments" : 
-			[
-				{
-					"fragment" : "-g"
-				}
-			],
-			"defines" : 
-			[
-				{
-					"backtrace" : 3,
-					"define" : "ARM"
-				},
-				{
-					"backtrace" : 3,
-					"define" : "_GNU_SOURCE"
-				}
-			],
-			"includes" : 
-			[
-				{
-					"backtrace" : 4,
-					"path" : "/home/srx/work/dev_syn/inc"
-				},
-				{
-					"backtrace" : 4,
-					"path" : "/home/srx/work/dev_syn/src/ffmpeg_test_pc"
-				},
-				{
-					"backtrace" : 4,
-					"path" : "/home/srx/work/dev_syn/src/ffmpeg_test_pc/rtp"
-				},
-				{
-					"backtrace" : 4,
-					"path" : "/home/srx/work/dev_syn/utils"
-				},
-				{
-					"backtrace" : 4,
-					"path" : "/home/srx/rk3588/external/mpp/inc"
-				},
-				{
-					"backtrace" : 4,
-					"path" : "/home/srx/rk3588/external/mpp/utils"
-				},
-				{
-					"backtrace" : 4,
-					"path" : "/home/srx/rk3588/external/mpp/osal/inc"
-				},
-				{
-					"backtrace" : 4,
-					"path" : "/home/srx/rk3588/external/mpp/mpp/base/inc"
-				},
-				{
-					"backtrace" : 4,
-					"path" : "/home/srx/test/ffmpeg-4.4.4"
-				},
-				{
-					"backtrace" : 5,
-					"path" : "/home/srx/work/dev_syn/utils/cJSON"
-				}
-			],
-			"language" : "CXX",
-			"sourceIndexes" : 
-			[
 				8,
 				9,
 				10,
 				11,
 				12,
-				14
+				13,
+				14,
+				15
 			],
 			"sysroot" : 
 			{
@@ -223,7 +139,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-g",
+				"fragment" : "-pie -fPIE -Wno-psabi -g",
 				"role" : "flags"
 			},
 			{
@@ -241,7 +157,7 @@
 				"role" : "libraries"
 			}
 		],
-		"language" : "CXX",
+		"language" : "C",
 		"sysroot" : 
 		{
 			"path" : "/home/srx/rk3588/buildroot/output/rockchip_rk3588/host/aarch64-buildroot-linux-gnu/sysroot"
@@ -275,9 +191,7 @@
 				12,
 				13,
 				14,
-				15,
-				16,
-				17
+				15
 			]
 		}
 	],
@@ -333,32 +247,14 @@
 		},
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 1,
-			"path" : "src/ffmpeg_test_pc/rtp/H2645ParseSPS.cpp",
+			"compileGroupIndex" : 0,
+			"path" : "src/cmd.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 1,
-			"path" : "src/ffmpeg_test_pc/rtp/ParseSPS.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 1,
-			"path" : "src/ffmpeg_test_pc/rtp/RTPProcessor.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 1,
-			"path" : "src/ffmpeg_test_pc/rtp/RTPRecvProcessor.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 1,
-			"path" : "src/ffmpeg_test_pc/rtp/RTPSendProcessor.cpp",
+			"compileGroupIndex" : 0,
+			"path" : "src/dev_time.c",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -369,14 +265,20 @@
 		},
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 1,
-			"path" : "src/send_h264.cpp",
+			"compileGroupIndex" : 0,
+			"path" : "src/link_queue.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "test/main_send_h264.c",
+			"path" : "src/main.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/sys_config.c",
 			"sourceGroupIndex" : 0
 		},
 		{

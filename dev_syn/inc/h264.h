@@ -218,7 +218,7 @@ int enc_test_multi(MpiEncTestArgs* cmd, const char* name);
  * @param len 数据长度
  * @return MPP_RET
  */
-int send_data_to_udp(char* ptr, size_t len);
+MPP_RET send_data_to_udp(char* ptr, size_t len);
 
 /**
  * @brief 发送H264码流
