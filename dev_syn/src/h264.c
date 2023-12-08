@@ -428,7 +428,7 @@ MPP_RET send_data_to_udp(char* ptr, size_t len)
         perror("sendto error");
         exit(1);
     }
-    PTR_DEBUG("send_len=%ld\n", send_len);
+    printf("send_len=%ld\n", send_len);
     // 4. 关闭套接字
     close(socketfd);
     return MPP_OK;
@@ -822,7 +822,7 @@ MPP_RET test_mpp_run(MpiEncMultiCtxInfo* info)
                     }
                     printf("len = %d\n", len);
 
-                    PTR_DEBUG("---------------h264_end---------------\n");
+                    printf("---------------h264_end---------------\n");
                 }
 
                 if (p->fp_verify && !p->pkt_eos) {
@@ -1196,7 +1196,7 @@ int recv_h264()
             fwrite(payload, 1, payload_len, fp);
             // 打印包信息，序号
             if (pkt_tr_seq++ == ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no))
-                PTR_DEBUG("单包: pkt_tr_seq=%d, bao=%d\n", pkt_tr_seq - 1, ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no));
+                printf("单包: pkt_tr_seq=%d, bao=%d\n", pkt_tr_seq - 1, ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no));
         } else {
             // 2. 分包
             // 2.1 获取FU_INDICATOR
@@ -1224,7 +1224,7 @@ int recv_h264()
                 ptr = h264_buf + payload_len;
                 // 打印包信息，序号
                 if (pkt_tr_seq++ == ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no))
-                    PTR_DEBUG("第一包: pkt_tr_seq=%d, bao=%d\n", pkt_tr_seq - 1, ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no));
+                    printf("第一包: pkt_tr_seq=%d, bao=%d\n", pkt_tr_seq - 1, ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no));
             } else if (fu_hdr->E == 1) { // 2.6 判断是否是最后一包
                 // 2.6.1 将负载数据写入h264_buf
                 memcpy(ptr, payload, payload_len);
@@ -1240,7 +1240,7 @@ int recv_h264()
                 ptr = NULL; // 重置ptr
                 // 打印包信息，序号
                 if (pkt_tr_seq++ == ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no))
-                    PTR_DEBUG("最后一包: pkt_tr_seq=%d, bao=%d\n", pkt_tr_seq - 1, ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no));
+                    printf("最后一包: pkt_tr_seq=%d, bao=%d\n", pkt_tr_seq - 1, ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no));
             } else {
                 // 2.7 中间包
                 // 2.7.1 将负载数据写入h264_buf
@@ -1248,7 +1248,7 @@ int recv_h264()
                 ptr += payload_len;
                 // 打印包信息，序号
                 if (pkt_tr_seq++ == ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no))
-                    PTR_DEBUG("中间包: pkt_tr_seq=%d, bao=%d\n", pkt_tr_seq - 1, ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no));
+                    printf("中间包: pkt_tr_seq=%d, bao=%d\n", pkt_tr_seq - 1, ntohs(((RTP_FIXED_HEADER*)rtp_buf)->seq_no));
             }
         }
     }

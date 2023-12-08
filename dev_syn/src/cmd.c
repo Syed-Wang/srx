@@ -1,6 +1,6 @@
 #include "cmd.h"
-#include "h264.h"
 #include "common.h"
+#include "h264.h"
 #include "sys_config.h"
 #include "tool.h"
 #include <arpa/inet.h>
@@ -60,13 +60,19 @@ int send_cmd_unicast(struct sockaddr_in* addr, const char* cmd)
         return -1;
     }
 
+    addr->sin_family = AF_INET;
+    addr->sin_port = htons(atoi(CMD_PORT));
+
     // 发送指令
     if (sendto(cmd_socketfd, cmd, strlen(cmd), 0, (struct sockaddr*)addr, sizeof(*addr)) < 0) {
         PTR_PERROR("sendto cmd error");
         return -1;
     }
 
-    PTR_DEBUG("%s\n", cmd); // 打印发送的数据包
+    PTR_DEBUG("send_cmd: %s\n", cmd); // 打印发送的数据包
+    // printf("addr_ip = %s\n", inet_ntoa(addr->sin_addr));
+    // printf("addr_port = %d\n", ntohs(addr->sin_port));
+    // printf("send_cmd: %s\n", cmd);
 
     // 关闭套接字
     close(cmd_socketfd);
@@ -109,6 +115,7 @@ int recv_cmd(link_queue_t* queue)
             return -1;
         }
         PTR_DEBUG("recv_cmd: %s\n", cmd);
+        // printf("recv_cmd: %s\n", cmd);
 
         // 加锁
         pthread_mutex_lock(&mutex);
@@ -142,6 +149,35 @@ unsigned char request_mode_flag = 0; // 请求模式标志(1请求模式 0非请
 int stop_flag = 0; // 程序退出标志(1退出 0不退出)
 int manual_server_flag = 0; // 手动指定服务器标志(1指定 0不指定)
 
+extern int argc_tmp;
+extern char** argv_tmp;
+
+pthread_t tid_recv_h264; // 接收 H264 线程
+pthread_t tid_send_h264; // 发送 H264 线程
+
+int thread_recv_h264_flag = 0; // 接收 H264 线程标志(1运行 0停止)
+int thread_send_h264_flag = 0; // 发送 H264 线程标志(1运行 0停止)
+
+void* thread_recv_h264(void* arg)
+{
+    // 接收 H264 码流
+    if (recv_h264() < 0) {
+        PTRERR("recv_h264 error");
+    }
+
+    return NULL;
+}
+
+void* thread_send_h264(void* arg)
+{
+    // 发送 H264 码流
+    if (send_h264(argc_tmp, argv_tmp) < 0) {
+        PTRERR("send_h264 error");
+    }
+
+    return NULL;
+}
+
 int cmd_handler(link_queue_t* queue)
 {
     // 判断队列是否为空
@@ -164,7 +200,6 @@ int cmd_handler(link_queue_t* queue)
     // 解锁
     pthread_mutex_unlock(&mutex);
 
-    // 处理指令
     if (!strcmp(cmd, CMD_GET_IP)) { // 获取节点 IP
         char ip_buf[16] = { 0 };
         if (send_cmd_unicast(&cmd_addr, local_ip) < 0) { // 单播发送本机 IP 地址
@@ -276,28 +311,63 @@ int cmd_handler(link_queue_t* queue)
             }
         }
     } else if (!strcmp(cmd, CMD_START)) { // 开始指令
-        // 如果客户端，开始接收视频文件
+        // 如果客户端，关闭发送视频线程，开启接收视频线程；如果服务器，关闭接收视频线程，开启发送视频线程
         if (server_client_flag == 0) {
-            if (recv_h264() < 0) {
-                PTRERR("recv_h264 error");
-                return -1;
+            // 关闭发送 H264 线程
+            if (thread_send_h264_flag == 1) {
+                if (pthread_cancel(tid_send_h264) != 0) {
+                    PTR_PERROR("pthread_cancel send_h264 error");
+                    return -1;
+                }
             }
-            printf("recv_h264 success\n");
+            // 开启接收 H264 线程
+            if (thread_recv_h264_flag == 0) {
+                if (pthread_create(&tid_recv_h264, NULL, thread_recv_h264, NULL) != 0) {
+                    PTR_PERROR("pthread_create recv_h264 error");
+                    return -1;
+                }
+                thread_recv_h264_flag = 1;
+                printf("开始接收视频\n");
+            }
+        } else if (server_client_flag == 1) { // 如果服务器，开始发送视频文件
+            // 关闭接收 H264 线程
+            if (thread_recv_h264_flag == 1) {
+                if (pthread_cancel(tid_recv_h264) != 0) {
+                    PTR_PERROR("pthread_cancel recv_h264 error");
+                    return -1;
+                }
+            }
+            // 开启发送 H264 线程
+            if (thread_send_h264_flag == 0) {
+                if (pthread_create(&tid_send_h264, NULL, thread_send_h264, NULL) != 0) {
+                    PTR_PERROR("pthread_create send_h264 error");
+                    return -1;
+                }
+                thread_send_h264_flag = 1;
+                printf("开始发送视频\n");
+            }
         }
-        PTR_DEBUG("start\n");
     } else if (!strncmp(cmd, CMD_SET_TIME_SERVER(0), 17)) { // 设置授时服务器
         // 字符串解析
         char ip_buf[16] = { 0 }; // IP 地址
-        sscanf(cmd, CMD_SET_TIME_SERVER(% s), ip_buf);
-
+        sscanf(cmd, "/setTimeServer:s,%[^;];", ip_buf); // %[^;]：匹配除分号以外的所有字符
         if (is_ip(ip_buf)) { // 判断是否为 IP 地址
             for (int i = 0; i < node_num; i++) {
                 if (!strcmp(ip[i], ip_buf)) { // 判断是否在组网中
                     if (!strcmp(ip_buf, local_ip)) { // 如果是本机 IP 地址
                         server_client_flag = 1; // 服务器
+                        printf("作为服务器\n");
                     } else {
                         server_client_flag = 0; // 客户端
+                        printf("作为客户端\n");
                     }
+                    // 更新设备系统配置文件(视频源 IP 地址)
+                    strcpy(window.src_ip, ip_buf);
+                    if (save_sys_config(&fps, &window) < 0) {
+                        PTRERR("save_sys_config error");
+                        return -1;
+                    }
+
                     break;
                 }
                 manual_server_flag = 1; // 手动指定服务器标志
@@ -438,6 +508,7 @@ int detect_time_gap()
 int confirm_ready()
 {
     if (node_num < 2) {
+        printf("node_num: %d\n", node_num);
         return 0; // 组网中节点数量小于 2，无法进行时间校正，等待其他节点加入
     }
 
@@ -448,6 +519,10 @@ int confirm_ready()
     flag = 1; // 标志是否所有节点都已就绪
 
     for (i = 0; i < node_num; i++) {
+        // 排除自己
+        if (!strcmp(ip[i], local_ip)) {
+            continue;
+        }
         cmd_addr.sin_addr.s_addr = inet_addr(ip[i]);
         memset(tmp_ip, 0, sizeof(tmp_ip)); // 先清空临时 ip 数组
         if (send_cmd_unicast(&cmd_addr, CMD_GET_IP_LIST) < 0) {
@@ -455,15 +530,17 @@ int confirm_ready()
             return -1;
         }
         sleep(1); // 等待 1s，完成接收
-        // 记录所有缺失的 IP(判断tmp_ip是否为空)
+
+        // 判断是否所有节点都已就绪
         if (!strcmp(tmp_ip[0], "")) {
-            strcpy(missing_ip[i], ip[i]);
+            strcpy(missing_ip[i], ip[i]); // 保存缺失的节点 IP 地址
             PTR_DEBUG("missing_ip[%d]: %s\n", i, missing_ip[i]);
+            // printf("missing_ip[%d]: %s\n", i, missing_ip[i]);
             flag = 0;
             continue; // 跳过当前节点
         }
 
-        // 比对 IP 表
+        // 如果节点就绪，对比 ip 表
         for (j = 0; j < node_num; j++) {
             for (k = 0; k < node_num; k++) {
                 if (!strcmp(ip[j], tmp_ip[k])) {
@@ -482,10 +559,10 @@ int confirm_ready()
 
     if (flag == 1) { // 所有节点都已就绪
         memset(missing_ip, 0, sizeof(missing_ip)); // 清空缺失的 IP 地址
-        PTR_DEBUG("all ready\n");
+        // printf("all ready\n");
         return 1;
     } else if (flag == 0) { // 有节点未就绪
-        PTR_DEBUG("not ready\n");
+        // printf("not ready\n");
         // 获取缺失的最小 IP 地址
         for (i = 0; i < node_num; i++) {
             if (!strcmp(missing_ip[i], "")) {

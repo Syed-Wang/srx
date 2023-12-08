@@ -16,6 +16,8 @@ struct sockaddr_in time_addr; // 授时包发送端地址
 time_packet_t time_packet; // 时间包
 link_queue_t* cmd_queue = NULL; // 指令队列
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER; // 互斥锁
+int argc_tmp; // 参数个数
+char** argv_tmp; // 参数列表
 
 // 定时器处理函数
 void timer_handler(int signum)
@@ -105,8 +107,12 @@ void* thread_delay_correct(void* arg)
     }
 }
 
+// BGR3(bgr24): 65543
+// ./dev_syn -w 1920 -h 1080 -t 7 -f 65543 -i /dev/video0
 int main(int argc, const char* argv[])
 {
+    argc_tmp = argc;
+    argv_tmp = (char**)argv;
 // 1. 每个节点独立配置 IP 地址和掩码
 #ifdef ARM
     // 暂不需要申请IP地址，直接使用本地IP地址
@@ -242,16 +248,6 @@ int main(int argc, const char* argv[])
                     PTRERR("send_cmd_broadcast error");
                     return -1;
                 }
-                sleep(1); // 等待客户端启动
-                // 开始发送视频
-                // BGR3(bgr24): 65543
-                // ./dev_syn -w 1920 -h 1080 -t 7 -f 65543 -i /dev/video0
-                if (send_h264(argc, (char**)argv) < 0) {
-                    PTRERR("send_h264 error");
-                    return -1;
-                }
-                printf("send_h264 success\n");
-                break;
             }
         }
     }
