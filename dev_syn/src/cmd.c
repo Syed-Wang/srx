@@ -244,13 +244,15 @@ int cmd_handler(link_queue_t* queue)
                             PTRERR("save_sys_config error");
                             return -1;
                         }
+                        
+                        // 再发送自己的 IP 地址和组网 ID，与其他节点同步
+                        char cmd_buf[CMD_BUF_SIZE] = { 0 };
+                        sprintf(cmd_buf, "/setNetworkID:s,%s,%d;", local_ip, net_id);
+                        send_cmd_broadcast(cmd_buf);
+                        
                         break;
                     }
                 }
-                // 再发送自己的 IP 地址和组网 ID，与其他节点同步
-                char cmd_buf[CMD_BUF_SIZE] = { 0 };
-                sprintf(cmd_buf, "/setNetworkID:s,%s,%d;", local_ip, net_id);
-                send_cmd_broadcast(cmd_buf);
             }
         }
     } else if (!strcmp(cmd, CMD_DETECT_TIME_GAP)) { // 检测时间差
