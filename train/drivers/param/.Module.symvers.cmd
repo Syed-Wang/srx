@@ -1,0 +1,1 @@
+cmd_/home/srx/work/train/drivers/param/Module.symvers :=  scripts/mod/modpost -m -a     -o /home/srx/work/train/drivers/param/Module.symvers -T /home/srx/work/train/drivers/param/modules.order -i Module.symvers -e 

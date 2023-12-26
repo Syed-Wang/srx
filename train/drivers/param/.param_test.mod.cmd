@@ -1,0 +1,1 @@
+cmd_/home/srx/work/train/drivers/param/param_test.mod := printf '%s\n'   param_test.o | awk '!x[$$0]++ { print("/home/srx/work/train/drivers/param/"$$0) }' > /home/srx/work/train/drivers/param/param_test.mod

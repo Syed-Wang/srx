@@ -1,1 +1,0 @@
-/usr/bin/cc  -pthread -w -g   CMakeFiles/recv_code.dir/src/cmd_recv.c.o CMakeFiles/recv_code.dir/src/h264_recv.c.o CMakeFiles/recv_code.dir/src/main.c.o CMakeFiles/recv_code.dir/src/sys_config.c.o CMakeFiles/recv_code.dir/src/time_recv.c.o CMakeFiles/recv_code.dir/utils/cJSON.c.o CMakeFiles/recv_code.dir/utils/tool.c.o  -o ../bin/recv_code 
