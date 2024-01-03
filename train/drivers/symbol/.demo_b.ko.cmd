@@ -1,0 +1,1 @@
+cmd_/home/srx/work/train/drivers/symbol/demo_b.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/srx/work/train/drivers/symbol/demo_b.ko /home/srx/work/train/drivers/symbol/demo_b.o /home/srx/work/train/drivers/symbol/demo_b.mod.o;  true
