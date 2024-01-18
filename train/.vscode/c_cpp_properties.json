@@ -6,6 +6,7 @@
                 "/home/srx/rk3588/kernel/**",
                 "/home/srx/rk3588/kernel/include",
                 "/home/srx/rk3588/kernel/include/uapi",
+                "/home/srx/rk3588/kernel/include/linux",
                 "/home/srx/rk3588/kernel/include/generated",
                 "/home/srx/rk3588/kernel/arch/arm64/include",
                 "/home/srx/rk3588/kernel/arch/arm64/include/uapi",

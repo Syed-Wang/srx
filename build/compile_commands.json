@@ -1,0 +1,82 @@
+[
+{
+  "directory": "/home/srx/work/build",
+  "command": "aarch64-none-linux-gnu-gcc --sysroot=/home/srx/rk3588/buildroot/output/rockchip_rk3588/host/aarch64-buildroot-linux-gnu/sysroot -DARM -D_GNU_SOURCE -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON  -pie -fPIE -Wno-psabi -g -o CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/camera_source.c.o -c /home/srx/rk3588/external/mpp/utils/camera_source.c",
+  "file": "/home/srx/rk3588/external/mpp/utils/camera_source.c"
+},
+{
+  "directory": "/home/srx/work/build",
+  "command": "aarch64-none-linux-gnu-gcc --sysroot=/home/srx/rk3588/buildroot/output/rockchip_rk3588/host/aarch64-buildroot-linux-gnu/sysroot -DARM -D_GNU_SOURCE -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON  -pie -fPIE -Wno-psabi -g -o CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/dictionary.c.o -c /home/srx/rk3588/external/mpp/utils/dictionary.c",
+  "file": "/home/srx/rk3588/external/mpp/utils/dictionary.c"
+},
+{
+  "directory": "/home/srx/work/build",
+  "command": "aarch64-none-linux-gnu-gcc --sysroot=/home/srx/rk3588/buildroot/output/rockchip_rk3588/host/aarch64-buildroot-linux-gnu/sysroot -DARM -D_GNU_SOURCE -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON  -pie -fPIE -Wno-psabi -g -o CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/iniparser.c.o -c /home/srx/rk3588/external/mpp/utils/iniparser.c",
+  "file": "/home/srx/rk3588/external/mpp/utils/iniparser.c"
+},
+{
+  "directory": "/home/srx/work/build",
+  "command": "aarch64-none-linux-gnu-gcc --sysroot=/home/srx/rk3588/buildroot/output/rockchip_rk3588/host/aarch64-buildroot-linux-gnu/sysroot -DARM -D_GNU_SOURCE -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON  -pie -fPIE -Wno-psabi -g -o CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/mpi_dec_utils.c.o -c /home/srx/rk3588/external/mpp/utils/mpi_dec_utils.c",
+  "file": "/home/srx/rk3588/external/mpp/utils/mpi_dec_utils.c"
+},
+{
+  "directory": "/home/srx/work/build",
+  "command": "aarch64-none-linux-gnu-gcc --sysroot=/home/srx/rk3588/buildroot/output/rockchip_rk3588/host/aarch64-buildroot-linux-gnu/sysroot -DARM -D_GNU_SOURCE -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON  -pie -fPIE -Wno-psabi -g -o CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/mpi_enc_utils.c.o -c /home/srx/rk3588/external/mpp/utils/mpi_enc_utils.c",
+  "file": "/home/srx/rk3588/external/mpp/utils/mpi_enc_utils.c"
+},
+{
+  "directory": "/home/srx/work/build",
+  "command": "aarch64-none-linux-gnu-gcc --sysroot=/home/srx/rk3588/buildroot/output/rockchip_rk3588/host/aarch64-buildroot-linux-gnu/sysroot -DARM -D_GNU_SOURCE -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON  -pie -fPIE -Wno-psabi -g -o CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/mpp_enc_roi_utils.c.o -c /home/srx/rk3588/external/mpp/utils/mpp_enc_roi_utils.c",
+  "file": "/home/srx/rk3588/external/mpp/utils/mpp_enc_roi_utils.c"
+},
+{
+  "directory": "/home/srx/work/build",
+  "command": "aarch64-none-linux-gnu-gcc --sysroot=/home/srx/rk3588/buildroot/output/rockchip_rk3588/host/aarch64-buildroot-linux-gnu/sysroot -DARM -D_GNU_SOURCE -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON  -pie -fPIE -Wno-psabi -g -o CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/mpp_opt.c.o -c /home/srx/rk3588/external/mpp/utils/mpp_opt.c",
+  "file": "/home/srx/rk3588/external/mpp/utils/mpp_opt.c"
+},
+{
+  "directory": "/home/srx/work/build",
+  "command": "aarch64-none-linux-gnu-gcc --sysroot=/home/srx/rk3588/buildroot/output/rockchip_rk3588/host/aarch64-buildroot-linux-gnu/sysroot -DARM -D_GNU_SOURCE -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON  -pie -fPIE -Wno-psabi -g -o CMakeFiles/dev_syn.dir/home/srx/rk3588/external/mpp/utils/utils.c.o -c /home/srx/rk3588/external/mpp/utils/utils.c",
+  "file": "/home/srx/rk3588/external/mpp/utils/utils.c"
+},
+{
+  "directory": "/home/srx/work/build",
+  "command": "aarch64-none-linux-gnu-gcc --sysroot=/home/srx/rk3588/buildroot/output/rockchip_rk3588/host/aarch64-buildroot-linux-gnu/sysroot -DARM -D_GNU_SOURCE -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON  -pie -fPIE -Wno-psabi -g -o CMakeFiles/dev_syn.dir/src/cmd.c.o -c /home/srx/work/dev_syn/src/cmd.c",
+  "file": "/home/srx/work/dev_syn/src/cmd.c"
+},
+{
+  "directory": "/home/srx/work/build",
+  "command": "aarch64-none-linux-gnu-gcc --sysroot=/home/srx/rk3588/buildroot/output/rockchip_rk3588/host/aarch64-buildroot-linux-gnu/sysroot -DARM -D_GNU_SOURCE -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON  -pie -fPIE -Wno-psabi -g -o CMakeFiles/dev_syn.dir/src/dev_time.c.o -c /home/srx/work/dev_syn/src/dev_time.c",
+  "file": "/home/srx/work/dev_syn/src/dev_time.c"
+},
+{
+  "directory": "/home/srx/work/build",
+  "command": "aarch64-none-linux-gnu-gcc --sysroot=/home/srx/rk3588/buildroot/output/rockchip_rk3588/host/aarch64-buildroot-linux-gnu/sysroot -DARM -D_GNU_SOURCE -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON  -pie -fPIE -Wno-psabi -g -o CMakeFiles/dev_syn.dir/src/h264.c.o -c /home/srx/work/dev_syn/src/h264.c",
+  "file": "/home/srx/work/dev_syn/src/h264.c"
+},
+{
+  "directory": "/home/srx/work/build",
+  "command": "aarch64-none-linux-gnu-gcc --sysroot=/home/srx/rk3588/buildroot/output/rockchip_rk3588/host/aarch64-buildroot-linux-gnu/sysroot -DARM -D_GNU_SOURCE -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON  -pie -fPIE -Wno-psabi -g -o CMakeFiles/dev_syn.dir/src/link_queue.c.o -c /home/srx/work/dev_syn/src/link_queue.c",
+  "file": "/home/srx/work/dev_syn/src/link_queue.c"
+},
+{
+  "directory": "/home/srx/work/build",
+  "command": "aarch64-none-linux-gnu-gcc --sysroot=/home/srx/rk3588/buildroot/output/rockchip_rk3588/host/aarch64-buildroot-linux-gnu/sysroot -DARM -D_GNU_SOURCE -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON  -pie -fPIE -Wno-psabi -g -o CMakeFiles/dev_syn.dir/src/main.c.o -c /home/srx/work/dev_syn/src/main.c",
+  "file": "/home/srx/work/dev_syn/src/main.c"
+},
+{
+  "directory": "/home/srx/work/build",
+  "command": "aarch64-none-linux-gnu-gcc --sysroot=/home/srx/rk3588/buildroot/output/rockchip_rk3588/host/aarch64-buildroot-linux-gnu/sysroot -DARM -D_GNU_SOURCE -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON  -pie -fPIE -Wno-psabi -g -o CMakeFiles/dev_syn.dir/src/sys_config.c.o -c /home/srx/work/dev_syn/src/sys_config.c",
+  "file": "/home/srx/work/dev_syn/src/sys_config.c"
+},
+{
+  "directory": "/home/srx/work/build",
+  "command": "aarch64-none-linux-gnu-gcc --sysroot=/home/srx/rk3588/buildroot/output/rockchip_rk3588/host/aarch64-buildroot-linux-gnu/sysroot -DARM -D_GNU_SOURCE -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON  -pie -fPIE -Wno-psabi -g -o CMakeFiles/dev_syn.dir/utils/cJSON/cJSON.c.o -c /home/srx/work/dev_syn/utils/cJSON/cJSON.c",
+  "file": "/home/srx/work/dev_syn/utils/cJSON/cJSON.c"
+},
+{
+  "directory": "/home/srx/work/build",
+  "command": "aarch64-none-linux-gnu-gcc --sysroot=/home/srx/rk3588/buildroot/output/rockchip_rk3588/host/aarch64-buildroot-linux-gnu/sysroot -DARM -D_GNU_SOURCE -I/home/srx/work/dev_syn/inc -I/home/srx/work/dev_syn/utils -I/home/srx/rk3588/external/mpp/inc -I/home/srx/rk3588/external/mpp/utils -I/home/srx/rk3588/external/mpp/osal/inc -I/home/srx/rk3588/external/mpp/mpp/base/inc -I/home/srx/work/dev_syn/utils/cJSON  -pie -fPIE -Wno-psabi -g -o CMakeFiles/dev_syn.dir/utils/tool.c.o -c /home/srx/work/dev_syn/utils/tool.c",
+  "file": "/home/srx/work/dev_syn/utils/tool.c"
+}
+]

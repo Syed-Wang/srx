@@ -1,0 +1,1 @@
+cmd_/home/srx/work/train/drivers/GPIO/Module.symvers := sed 's/\.ko$$/\.o/' /home/srx/work/train/drivers/GPIO/modules.order | scripts/mod/modpost     -o /home/srx/work/train/drivers/GPIO/Module.symvers -e -i Module.symvers   -T -
